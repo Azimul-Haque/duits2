@@ -1,6 +1,6 @@
 @extends('adminlte::page')
 
-@section('title', 'Committee & Advisory Panel')
+@section('title', 'Committees & Advisory Panel')
 
 @section('css')
 
@@ -8,7 +8,7 @@
 
 @section('content_header')
     <h1>
-      Committee & Advisory Panel
+      Committees & Advisory Panel
       <div class="pull-right">
         <button class="btn btn-success" data-toggle="modal" data-target="#addMemberModal" data-backdrop="static"><i class="fa fa-fw fa-plus" aria-hidden="true"></i> Add Member</button>
       </div>
@@ -23,6 +23,7 @@
           <th>Contact</th>
           <th>Designation</th>
           <th>Committee</th>
+          <th>Serial</th>
           <th>Photo</th>
           <th>Action</th>
         </tr>
@@ -33,8 +34,9 @@
         <tr>
           <td>{{ $committee->name }}</td>
           <td>{{ $committee->phone }}<br/><small>{{ $committee->email }}</small></td>
-          <td>{{ $committee->committee_type }}</td>
           <td>{{ $committee->designation }}</td>
+          <td>{{ $committee->committeetype->name }}</td>
+          <td>{{ $committee->serial }}</td>
           <td>
             @if($committee->image != null)
             <img src="{{ asset('images/committee/'.$committee->image)}}" style="height: 40px; width: auto;" />
@@ -99,12 +101,30 @@
                         </div>
                         <div class="row">
                           <div class="col-md-6">
-                          </div>
-                          <div class="col-md-6">
                             <div class="form-group">
                               {!! Form::label('linkedin', 'Linkedin Url: (optional)') !!}
                               {!! Form::text('linkedin', null, array('class' => 'form-control', 'placeholder' => 'Linkedin Url')) !!}
                             </div>
+                          </div>
+                          <div class="col-md-6">
+                            {!! Form::label('committeetype_id', 'Committee Type') !!}
+                            <select class="form-control" name="committeetype_id" required="">
+                              <option value="" selected="" disabled="">Select Committee Type</option>
+                              @foreach($committeetypes as $committeetype)
+                                <option value="{{ $committeetype->id }}" @if($committeetype->id == $committee->committeetype_id) selected="" @endif>{{ $committeetype->name }}</option>
+                              @endforeach
+                            </select>
+                          </div>
+                        </div>
+                        <div class="row">
+                          <div class="col-md-6">
+                            <div class="form-group">
+                              {!! Form::label('serial', 'Serial') !!}
+                              {!! Form::number('serial', null, array('class' => 'form-control', 'placeholder' => 'Serial (1, 2, 3...)', 'required' => '')) !!}
+                            </div>
+                          </div>
+                          <div class="col-md-6">
+
                           </div>
                         </div>
                         <div class="row">
@@ -129,7 +149,7 @@
                         </div>
                   </div>
                   <div class="modal-footer">
-                        {!! Form::submit('Add Member', array('class' => 'btn btn-success')) !!}
+                        {!! Form::submit('Update Member', array('class' => 'btn btn-success')) !!}
                         <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
                   </div>
                   {!! Form::close() !!}
@@ -277,9 +297,25 @@
                   </div>
                   <div class="col-md-6">
                     <div class="form-group">
-                      {!! Form::label('committee_type', 'Committee Type') !!}
-                      
+                      {!! Form::label('committeetype_id', 'Committee Type') !!}
+                      <select class="form-control" name="committeetype_id" required="">
+                        <option value="" selected="" disabled="">Select Committee Type</option>
+                        @foreach($committeetypes as $committeetype)
+                          <option value="{{ $committeetype->id }}">{{ $committeetype->name }}</option>
+                        @endforeach
+                      </select>
                     </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      {!! Form::label('serial', 'Serial') !!}
+                      {!! Form::number('serial', null, array('class' => 'form-control', 'placeholder' => 'Serial (1, 2, 3...)', 'required' => '')) !!}
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+
                   </div>
                 </div>
                 <div class="row">

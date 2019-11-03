@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 
 use App\Adhocmember;
 use App\Committee;
+use App\Committeetype;
 use App\User;
 use App\Notice;
 
@@ -41,8 +42,12 @@ class DashboardController extends Controller
 
     public function getCommittee()
     {
+        $committeetypes = Committeetype::all();
+
         $committees = Committee::orderBy('id', 'desc')->get();
-        return view('dashboard.committee')->withCommittees($committees);
+        return view('dashboard.committee')
+                        ->withCommitteetypes($committeetypes)
+                        ->withCommittees($committees);
     }
 
     public function storeCommittee(Request $request)
@@ -55,6 +60,8 @@ class DashboardController extends Controller
             'fb'                        => 'sometimes|max:255',
             'twitter'                   => 'sometimes|max:255',
             'linkedin'                  => 'sometimes|max:255',
+            'committeetype_id'          => 'required',
+            'serial'                    => 'required',
             'image'                     => 'sometimes|image|max:400'
         ));
 
@@ -76,7 +83,7 @@ class DashboardController extends Controller
             $committee->image = $filename;
         }
         $committee->serial = $request->serial;
-        $committee->committee_type = $request->committee_type;
+        $committee->committeetype_id = $request->committeetype_id;
         $committee->save();
         
         Session::flash('success', 'Saved Successfully!');
@@ -92,6 +99,8 @@ class DashboardController extends Controller
             'fb'                        => 'sometimes|max:255',
             'twitter'                   => 'sometimes|max:255',
             'linkedin'                  => 'sometimes|max:255',
+            'committeetype_id'          => 'required',
+            'serial'                    => 'required',
             'image'                     => 'sometimes|image|max:400'
         ));
 
@@ -109,25 +118,25 @@ class DashboardController extends Controller
             if($request->hasFile('image')) {
                 $image      = $request->file('image');
                 $filename   = str_replace(' ','',$request->name).time() .'.' . $image->getClientOriginalExtension();
-                $location   = public_path('/images/committee /'. $filename);
+                $location   = public_path('/images/committee/'. $filename);
                 Image::make($image)->resize(400, 400)->save($location);
                 $committee->image = $filename;
             }
         } else {
             if($request->hasFile('image')) {
-                $image_path = public_path('images/committee /'. $committee->image);
+                $image_path = public_path('images/committee/'. $committee->image);
                 if(File::exists($image_path)) {
                     File::delete($image_path);
                 }
                 $image      = $request->file('image');
                 $filename   = str_replace(' ','',$request->name).time() .'.' . $image->getClientOriginalExtension();
-                $location   = public_path('/images/committee /'. $filename);
+                $location   = public_path('/images/committee/'. $filename);
                 Image::make($image)->resize(400, 400)->save($location);
                 $committee->image = $filename;
             }
         }
         $committee->serial = $request->serial;
-        $committee->committee_type = $request->committee_type;
+        $committee->committeetype_id = $request->committeetype_id;
             
         $committee->save();
         
@@ -138,7 +147,7 @@ class DashboardController extends Controller
     public function deleteCommittee($id)
     {
         $committee = Committee::find($id);
-        $image_path = public_path('images/committee /'. $committee->image);
+        $image_path = public_path('images/committee/'. $committee->image);
         if(File::exists($image_path)) {
             File::delete($image_path);
         }

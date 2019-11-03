@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 
 use App\Adhocmember;
 use App\User;
+use App\Notice;
 
 use DB;
 use Auth;
@@ -216,5 +217,77 @@ class DashboardController extends Controller
 
         // Session::flash('success', 'Deleted Successfully!');
         // return redirect()->route('dashboard.committee');
+    }
+
+    public function getNotice()
+    {
+        $notices = Notice::orderBy('id', 'desc')->paginate(10);
+        return view('dashboard.notice')->withNotices($notices);
+    }
+
+    public function storeNotice(Request $request)
+    {
+        $this->validate($request,array(
+            'name'          =>   'required',
+            'attachment'    => 'required|mimes:doc,docx,ppt,pptx,png,jpeg,jpg,pdf,gif|max:10000'
+        ));
+
+        $notice = new Notice;
+        $notice->name = $request->name;
+
+        if($request->hasFile('attachment')) {
+            $newfile = $request->file('attachment');
+            $filename   = 'file_'.time() .'.' . $newfile->getClientOriginalExtension();
+            $location   = public_path('/files/');
+            $newfile->move($location, $filename);
+            $notice->attachment = $filename;
+        }
+        
+        $notice->save();
+        
+        Session::flash('success', 'Notice has been created successfully!');
+        return redirect()->route('dashboard.notice');
+    }
+
+    public function updateNotice(Request $request, $id)
+    {
+        $this->validate($request,array(
+            'name'          =>   'required',
+            'attachment'    => 'sometimes|mimes:doc,docx,ppt,pptx,png,jpeg,jpg,pdf,gif|max:10000'
+        ));
+
+        $notice = Notice::find($id);
+        $notice->name = $request->name;
+
+        if($request->hasFile('attachment')) {
+            // delete the previous one
+            $file_path = public_path('files/'. $notice->attachment);
+            if(File::exists($file_path)) {
+                File::delete($file_path);
+            }
+            $newfile = $request->file('attachment');
+            $filename   = 'file_'.time() .'.' . $newfile->getClientOriginalExtension();
+            $location   = public_path('/files/');
+            $newfile->move($location, $filename);
+            $notice->attachment = $filename;
+        }
+        
+        $notice->save();
+        
+        Session::flash('success', 'Notice has been created successfully!');
+        return redirect()->route('dashboard.notice');
+    }
+
+    public function deleteNotice($id)
+    {
+        $notice = Notice::find($id);
+        $file_path = public_path('files/'. $notice->attachment);
+        if(File::exists($file_path)) {
+            File::delete($file_path);
+        }
+        $notice->delete();
+        
+        Session::flash('success', 'Deleted Successfully!');
+        return redirect()->route('dashboard.notice');
     }
 }

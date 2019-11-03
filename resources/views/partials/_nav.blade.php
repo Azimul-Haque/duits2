@@ -48,7 +48,7 @@
                             <a href="{{ route('index.members') }}">Gallery</a>
                         </li>
                         <li>
-                            <a href="{{ route('index.members') }}">Notice</a>
+                            <a href="{{ route('index.notice') }}">Notice</a>
                         </li>
                         <li>
                             <a href="{{ route('blogs.index') }}">Blog & Research</a>

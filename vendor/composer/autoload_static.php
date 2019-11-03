@@ -392,6 +392,7 @@ class ComposerStaticInit5ba844acaeab7533148c65467b83a279
         'CreateBlogsTable' => __DIR__ . '/../..' . '/database/migrations/2018_10_25_113938_create_blogs_table.php',
         'CreateCategoriesTable' => __DIR__ . '/../..' . '/database/migrations/2018_10_25_114844_create_categories_table.php',
         'CreateLikesTable' => __DIR__ . '/../..' . '/database/migrations/2018_10_26_095608_create_likes_table.php',
+        'CreateNoticesTable' => __DIR__ . '/../..' . '/database/migrations/2019_11_04_035746_create_notices_table.php',
         'CreatePasswordResetsTable' => __DIR__ . '/../..' . '/database/migrations/2014_10_12_100000_create_password_resets_table.php',
         'CreateUsersTable' => __DIR__ . '/../..' . '/database/migrations/2014_10_12_000000_create_users_table.php',
         'DatabaseSeeder' => __DIR__ . '/../..' . '/database/seeds/DatabaseSeeder.php',

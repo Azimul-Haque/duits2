@@ -146,10 +146,17 @@
                         </a>
                     </li>
                     @if(Auth::user()->role == 'admin')
-                    <li class="{{ Request::is('dashboard/applications') ? 'active' : '' }}">
-                        <a href="{{ route('dashboard.applications') }}">
-                            <i class="fa fa-fw fa-plus"></i>
-                            <span>Applications</span>
+                    <li class="{{ Request::is('dashboard/members') ? 'active' : '' }}">
+                        <a href="{{ route('dashboard.members') }}">
+                            <i class="fa fa-fw fa-users"></i>
+                            <span>Admins</span>
+                        </a>
+                    </li>
+
+                    <li class="{{ Request::is('dashboard/committee') ? 'active' : '' }}">
+                        <a href="{{ route('dashboard.committee') }}">
+                            <i class="fa fa-fw fa-briefcase"></i>
+                            <span>Committee</span>
                         </a>
                     </li>
 {{--                     <li class="{{ Request::is('dashboard/members') ? 'active' : '' }}">
@@ -214,6 +221,12 @@
                             <span>Your Publications</span>
                         </a>
                     </li> --}}
+                    <li class="{{ Request::is('dashboard/applications') ? 'active' : '' }}">
+                        <a href="{{ route('dashboard.applications') }}">
+                            <i class="fa fa-fw fa-plus"></i>
+                            <span>IT Fest Applications</span>
+                        </a>
+                    </li>
                     @endif
                 </ul>
                 <!-- /.sidebar-menu -->

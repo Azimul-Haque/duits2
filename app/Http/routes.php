@@ -31,7 +31,7 @@ Route::post('/contact/form/message/store', ['as'=>'index.storeformmessage','uses
 Route::get('/member/login', ['as'=>'index.login','uses'=>'IndexController@getLogin']);
 Route::get('/member/profile/{unique_key}', ['as'=>'index.profile','uses'=>'IndexController@getProfile']);
 Route::post('/member/application/store', ['as'=>'index.storeapplication','uses'=>'IndexController@storeApplication']);
-
+Route::get('/notice', ['as'=>'index.notice','uses'=>'IndexController@getNotice']);
 
 Route::get('/application', ['as'=>'index.application','uses'=>'IndexController@getApplication']);
 Route::post('/application/store', ['as'=>'application.store','uses'=>'IndexController@storeITFestApplication']);
@@ -76,5 +76,10 @@ Route::delete('/dashboard/deletemember/{id}', ['as'=>'dashboard.deletemember','u
 Route::get('/dashboard/applications', ['as'=>'dashboard.applications','uses'=>'DashboardController@getApplications']);
 Route::patch('/dashboard/applications/{id}/approve', ['as'=>'dashboard.approveapplication','uses'=>'DashboardController@approveApplication']);
 Route::delete('/dashboard/application/{id}', ['as'=>'dashboard.deleteapplication','uses'=>'DashboardController@deleteApplication']);
+
+Route::get('/dashboard/notice', ['as'=>'dashboard.notice','uses'=>'DashboardController@getNotice']);
+Route::post('/dashboard/notice/store', ['as'=>'dashboard.storenotice','uses'=>'DashboardController@storeNotice']);
+Route::put('/dashboard/notice/{id}/update', ['as'=>'dashboard.updatenotice','uses'=>'DashboardController@updateNotice']);
+Route::delete('/dashboard/notice/{id}/delete', ['as'=>'dashboard.deletenotice','uses'=>'DashboardController@deleteNotice']);
 // dashboard routes
 // dashboard routes

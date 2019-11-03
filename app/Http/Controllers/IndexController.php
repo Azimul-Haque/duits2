@@ -10,6 +10,7 @@ use App\Blog;
 use App\Category;
 use App\Adhocmember;
 use App\Application;
+use App\Notice;
 
 use Carbon\Carbon;
 use DB;
@@ -287,6 +288,12 @@ class IndexController extends Controller
     {
         $application = Application::where('registration_id', $registration_id)->first();
         return view('index.application.printreceipt')->withApplication($application);
+    }
+
+    public function getNotice()
+    {
+        $notices = Notice::orderBy('id', 'desc')->paginate(6);
+        return view('index.notice')->withNotices($notices);
     }
 
     // clear configs, routes and serve

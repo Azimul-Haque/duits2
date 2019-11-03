@@ -1,6 +1,6 @@
 @extends('layouts.index')
 @section('title')
-    {{ $committees->first()->committeetype->name }}
+    {{ $committeetype->name }}
 @endsection
 
 @section('css')
@@ -8,24 +8,21 @@
 @endsection
 
 @section('content')
-    <!-- head section -->
-      <section class="content-top-margin page-title page-title-small bg-gray">
+      <section class="content-top-margin wow fadeInUp bg-gray">
           <div class="container">
               <div class="row">
-                  <div class="col-lg-8 col-md-7 col-sm-12 wow fadeInUp" data-wow-duration="300ms">
-                      <!-- page title -->
-                      <h1 class="black-text">{{ $committees->first()->committeetype->name }}</h1>
-                      <!-- end page title -->
+                  <!-- section title -->
+                  <div class="col-md-6 col-sm-6 xs-margin-bottom-four">
+                      <span class="text-large letter-spacing-2 black-text font-weight-600 text-uppercase agency-title">
+                        {{ $committeetype->name }}
+                      </span>
                   </div>
-                  <div class="col-lg-4 col-md-5 col-sm-12 breadcrumb text-uppercase wow fadeInUp xs-display-none" data-wow-duration="600ms">
-                      <!-- breadcrumb -->
-                      <ul>
-                          <li><a href="{{ route('index.index') }}">Home</a></li>
-                          <li><a href="#">Committee</a></li>
-                          <li>Ad Hoc Committee</li>
-                      </ul>
-                      <!-- end breadcrumb -->
+                  <!-- end section title -->
+                  <!-- section highlight text -->
+                  <div class="col-md-6 col-sm-6 text-right xs-text-left">
+                      <span class="text-extra-large font-weight-400"></span>
                   </div>
+                  <!-- end section highlight text -->
               </div>
           </div>
       </section>

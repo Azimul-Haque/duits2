@@ -297,10 +297,14 @@ class IndexController extends Controller
 
     public function getCommittee($committeetype_id)
     {
+        $committeetype = Committeetype::where('id', $committeetype_id)->first();
+
         $committees = Committee::where('committeetype_id', $committeetype_id)
                                ->orderBy('serial', 'asc')
                                ->get();
-        return view('index.committee')->withCommittees($committees);
+        return view('index.committee')
+                        ->withCommitteetype($committeetype)
+                        ->withCommittees($committees);
     }
 
     public function getNotice()

@@ -229,7 +229,7 @@ class DashboardController extends Controller
     {
         $this->validate($request,array(
             'name'          =>   'required',
-            'attachment'    => 'required|mimes:doc,docx,ppt,pptx,png,jpeg,jpg,pdf,gif|max:10000'
+            'attachment'    => 'required|mimes:doc,docx,ppt,pptx,png,jpeg,jpg,pdf,gif,txt|max:10000'
         ));
 
         $notice = new Notice;
@@ -245,7 +245,7 @@ class DashboardController extends Controller
         
         $notice->save();
         
-        Session::flash('success', 'Notice has been created successfully!');
+        Session::flash('success', 'Created successfully!');
         return redirect()->route('dashboard.notice');
     }
 
@@ -253,7 +253,7 @@ class DashboardController extends Controller
     {
         $this->validate($request,array(
             'name'          =>   'required',
-            'attachment'    => 'sometimes|mimes:doc,docx,ppt,pptx,png,jpeg,jpg,pdf,gif|max:10000'
+            'attachment'    => 'sometimes|mimes:doc,docx,ppt,pptx,png,jpeg,jpg,pdf,gif,txt|max:10000'
         ));
 
         $notice = Notice::find($id);
@@ -274,7 +274,7 @@ class DashboardController extends Controller
         
         $notice->save();
         
-        Session::flash('success', 'Notice has been created successfully!');
+        Session::flash('success', 'Updated successfully!');
         return redirect()->route('dashboard.notice');
     }
 

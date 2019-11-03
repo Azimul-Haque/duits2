@@ -117,7 +117,7 @@
                     <h4 class="modal-title">Delete Notice</h4>
                   </div>
                   <div class="modal-body">
-                    Are you sure to delete the Norice?</b>
+                    Are you sure to delete the Notice?</b>
                   </div>
                   <div class="modal-footer">
                     {!! Form::model($notice, ['route' => ['dashboard.deletenotice', $notice->id], 'method' => 'DELETE', 'class' => 'form-default', 'enctype' => 'multipart/form-data']) !!}

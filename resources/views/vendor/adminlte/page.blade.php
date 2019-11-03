@@ -152,11 +152,16 @@
                             <span>Admins</span>
                         </a>
                     </li>
-
                     <li class="{{ Request::is('dashboard/committee') ? 'active' : '' }}">
                         <a href="{{ route('dashboard.committee') }}">
                             <i class="fa fa-fw fa-briefcase"></i>
                             <span>Committee</span>
+                        </a>
+                    </li>
+                    <li class="{{ Request::is('dashboard/notice') ? 'active' : '' }}">
+                        <a href="{{ route('dashboard.notice') }}">
+                            <i class="fa fa-fw fa-bell"></i>
+                            <span>Notice</span>
                         </a>
                     </li>
 {{--                     <li class="{{ Request::is('dashboard/members') ? 'active' : '' }}">

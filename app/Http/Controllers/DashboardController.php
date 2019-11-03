@@ -6,6 +6,7 @@ use App\Http\Requests;
 use Illuminate\Http\Request;
 
 use App\Adhocmember;
+use App\Committee;
 use App\User;
 use App\Notice;
 
@@ -40,8 +41,8 @@ class DashboardController extends Controller
 
     public function getCommittee()
     {
-        $adhocmembers = Adhocmember::orderBy('id', 'desc')->get();
-        return view('dashboard.committee')->withAdhocmembers($adhocmembers);
+        $committees = Committee::orderBy('id', 'desc')->get();
+        return view('dashboard.committee')->withCommittees($committees);
     }
 
     public function storeCommittee(Request $request)
@@ -53,31 +54,30 @@ class DashboardController extends Controller
             'designation'               => 'required|max:255',
             'fb'                        => 'sometimes|max:255',
             'twitter'                   => 'sometimes|max:255',
-            'gplus'                     => 'sometimes|max:255',
             'linkedin'                  => 'sometimes|max:255',
             'image'                     => 'sometimes|image|max:400'
         ));
 
-        $adhocmember = new Adhocmember();
-        $adhocmember->name = htmlspecialchars(preg_replace("/\s+/", " ", ucwords($request->name)));
-        $adhocmember->email = htmlspecialchars(preg_replace("/\s+/", " ", $request->email));
-        $adhocmember->phone = htmlspecialchars(preg_replace("/\s+/", " ", $request->phone));
-        $adhocmember->designation = htmlspecialchars(preg_replace("/\s+/", " ", $request->designation));
-        $adhocmember->fb = htmlspecialchars(preg_replace("/\s+/", " ", $request->fb));
-        $adhocmember->twitter = htmlspecialchars(preg_replace("/\s+/", " ", $request->twitter));
-        $adhocmember->gplus = htmlspecialchars(preg_replace("/\s+/", " ", $request->gplus));
-        $adhocmember->linkedin = htmlspecialchars(preg_replace("/\s+/", " ", $request->linkedin));
+        $committee = new Committee;
+        $committee->name = htmlspecialchars(preg_replace("/\s+/", " ", ucwords($request->name)));
+        $committee->email = htmlspecialchars(preg_replace("/\s+/", " ", $request->email));
+        $committee->phone = htmlspecialchars(preg_replace("/\s+/", " ", $request->phone));
+        $committee->designation = htmlspecialchars(preg_replace("/\s+/", " ", $request->designation));
+        $committee->fb = htmlspecialchars(preg_replace("/\s+/", " ", $request->fb));
+        $committee->twitter = htmlspecialchars(preg_replace("/\s+/", " ", $request->twitter));
+        $committee->linkedin = htmlspecialchars(preg_replace("/\s+/", " ", $request->linkedin));
 
         // image upload
         if($request->hasFile('image')) {
             $image      = $request->file('image');
             $filename   = str_replace(' ','',$request->name).time() .'.' . $image->getClientOriginalExtension();
-            $location   = public_path('/images/committee/adhoc/'. $filename);
+            $location   = public_path('/images/committee/'. $filename);
             Image::make($image)->resize(400, 400)->save($location);
-            $adhocmember->image = $filename;
+            $committee->image = $filename;
         }
-
-        $adhocmember->save();
+        $committee->serial = $request->serial;
+        $committee->committee_type = $request->committee_type;
+        $committee->save();
         
         Session::flash('success', 'Saved Successfully!');
         return redirect()->route('dashboard.committee');
@@ -91,45 +91,45 @@ class DashboardController extends Controller
             'designation'               => 'required|max:255',
             'fb'                        => 'sometimes|max:255',
             'twitter'                   => 'sometimes|max:255',
-            'gplus'                     => 'sometimes|max:255',
             'linkedin'                  => 'sometimes|max:255',
             'image'                     => 'sometimes|image|max:400'
         ));
 
-        $adhocmember = Adhocmember::find($id);
-        $adhocmember->name = htmlspecialchars(preg_replace("/\s+/", " ", ucwords($request->name)));
-        $adhocmember->email = htmlspecialchars(preg_replace("/\s+/", " ", $request->email));
-        $adhocmember->phone = htmlspecialchars(preg_replace("/\s+/", " ", $request->phone));
-        $adhocmember->designation = htmlspecialchars(preg_replace("/\s+/", " ", $request->designation));
-        $adhocmember->fb = htmlspecialchars(preg_replace("/\s+/", " ", $request->fb));
-        $adhocmember->twitter = htmlspecialchars(preg_replace("/\s+/", " ", $request->twitter));
-        $adhocmember->gplus = htmlspecialchars(preg_replace("/\s+/", " ", $request->gplus));
-        $adhocmember->linkedin = htmlspecialchars(preg_replace("/\s+/", " ", $request->linkedin));
+        $committee = Committee::find($id);
+        $committee->name = htmlspecialchars(preg_replace("/\s+/", " ", ucwords($request->name)));
+        $committee->email = htmlspecialchars(preg_replace("/\s+/", " ", $request->email));
+        $committee->phone = htmlspecialchars(preg_replace("/\s+/", " ", $request->phone));
+        $committee->designation = htmlspecialchars(preg_replace("/\s+/", " ", $request->designation));
+        $committee->fb = htmlspecialchars(preg_replace("/\s+/", " ", $request->fb));
+        $committee->twitter = htmlspecialchars(preg_replace("/\s+/", " ", $request->twitter));
+        $committee->linkedin = htmlspecialchars(preg_replace("/\s+/", " ", $request->linkedin));
 
         // image upload
-        if($adhocmember->image == null) {
+        if($committee->image == null) {
             if($request->hasFile('image')) {
                 $image      = $request->file('image');
                 $filename   = str_replace(' ','',$request->name).time() .'.' . $image->getClientOriginalExtension();
-                $location   = public_path('/images/committee/adhoc/'. $filename);
+                $location   = public_path('/images/committee /'. $filename);
                 Image::make($image)->resize(400, 400)->save($location);
-                $adhocmember->image = $filename;
+                $committee->image = $filename;
             }
         } else {
             if($request->hasFile('image')) {
-                $image_path = public_path('images/committee/adhoc/'. $adhocmember->image);
+                $image_path = public_path('images/committee /'. $committee->image);
                 if(File::exists($image_path)) {
                     File::delete($image_path);
                 }
                 $image      = $request->file('image');
                 $filename   = str_replace(' ','',$request->name).time() .'.' . $image->getClientOriginalExtension();
-                $location   = public_path('/images/committee/adhoc/'. $filename);
+                $location   = public_path('/images/committee /'. $filename);
                 Image::make($image)->resize(400, 400)->save($location);
-                $adhocmember->image = $filename;
+                $committee->image = $filename;
             }
         }
+        $committee->serial = $request->serial;
+        $committee->committee_type = $request->committee_type;
             
-        $adhocmember->save();
+        $committee->save();
         
         Session::flash('success', 'Updated Successfully!');
         return redirect()->route('dashboard.committee');
@@ -137,12 +137,12 @@ class DashboardController extends Controller
 
     public function deleteCommittee($id)
     {
-        $adhocmember = Adhocmember::find($id);
-        $image_path = public_path('images/committee/adhoc/'. $adhocmember->image);
+        $committee = Committee::find($id);
+        $image_path = public_path('images/committee /'. $committee->image);
         if(File::exists($image_path)) {
             File::delete($image_path);
         }
-        $adhocmember->delete();
+        $committee->delete();
 
         Session::flash('success', 'Deleted Successfully!');
         return redirect()->route('dashboard.committee');
@@ -208,12 +208,12 @@ class DashboardController extends Controller
 
     public function deleteApplication($id)
     {
-        // $adhocmember = Adhocmember::find($id);
-        // $image_path = public_path('images/committee/adhoc/'. $adhocmember->image);
+        // $committee = committee::find($id);
+        // $image_path = public_path('images/committee/adhoc/'. $committee->image);
         // if(File::exists($image_path)) {
         //     File::delete($image_path);
         // }
-        // $adhocmember->delete();
+        // $committee->delete();
 
         // Session::flash('success', 'Deleted Successfully!');
         // return redirect()->route('dashboard.committee');

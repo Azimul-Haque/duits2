@@ -124,7 +124,7 @@
                                 </div>
                             </div>
                             <div class="col-md-4">
-                              <img src="{{ asset('images/user.png')}}" id='img-upload' style="height: 120px; width: auto; padding: 5px;" />
+                              <img src="{{ asset('images/user.png')}}" id='img-upload' style="height: 80px; width: auto; padding: 5px;" />
                             </div>
                           </div>
                         </div>

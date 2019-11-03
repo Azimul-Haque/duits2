@@ -12,6 +12,8 @@ return array(
     'CreateApplicationsTable' => $baseDir . '/database/migrations/2019_11_04_014829_create_applications_table.php',
     'CreateBlogsTable' => $baseDir . '/database/migrations/2018_10_25_113938_create_blogs_table.php',
     'CreateCategoriesTable' => $baseDir . '/database/migrations/2018_10_25_114844_create_categories_table.php',
+    'CreateCommitteesTable' => $baseDir . '/database/migrations/2019_11_04_043940_create_committees_table.php',
+    'CreateCommitteetypesTable' => $baseDir . '/database/migrations/2019_11_04_045520_create_committeetypes_table.php',
     'CreateLikesTable' => $baseDir . '/database/migrations/2018_10_26_095608_create_likes_table.php',
     'CreateNoticesTable' => $baseDir . '/database/migrations/2019_11_04_035746_create_notices_table.php',
     'CreatePasswordResetsTable' => $baseDir . '/database/migrations/2014_10_12_100000_create_password_resets_table.php',

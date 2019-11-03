@@ -55,9 +55,9 @@
                                         <td>{{ $application->amount }}/-</td>
                                         <td>
                                             @if($application->payment_status == 0)
-                                                <span style="color: red;"><i class="fa fa-exclamation-triangle" aria-hidden="true"></i> Not Paid</span>
+                                                <span style="color: red;"><i class="fa fa-exclamation-triangle" style="color: red;"></i> Not Paid</span>
                                             @elseif($application->payment_status == 1)
-                                                <span style="color: green;"><i class="fa fa-check" aria-hidden="true"></i> Paid</span>
+                                                <span style="color: green;"><i class="fa fa-check" style="color: green;"></i> Paid</span>
                                             @endif
                                         </td>
                                     </tr>
@@ -82,7 +82,7 @@
                                         'desc' => 'Registration Fee',
                                         'opt_a' => $application->registration_id,
                                         'opt_b' => $application->amount
-                                    ], $application->amount, '<i class="fa fa-money"></i> Pay Through AamarPay', 'btn btn-sm btn-success') !!}
+                                    ], $application->amount, '<i class="fa fa-money white-text"></i> Pay Through AamarPay', 'btn btn-sm btn-success') !!}
                                 </div>
                             </center>
                         @elseif($application->payment_status == 1)
@@ -90,11 +90,12 @@
                                 <h3>Download the Registration Receipt</h3>
                                 <div style="border: 2px solid #ddd; margin: 25px; max-width: 400px;">
                                     <span style="word-wrap: break-word;">Transaction ID: {{ $application->trxid }}</span><br/>
-                                    <a href="{{ route('application.printreceipt', $application->registration_id) }}" class="btn btn-success" target="_blank"><i class="fa fa-print"></i> Print Registration Receipt</a>
+                                    <a href="{{ route('application.printreceipt', $application->registration_id) }}" class="btn btn-success" target="_blank"><i class="fa fa-print white-text"></i> Print Registration Receipt</a>
                                 </div>
                             </center>
                         @endif
                         @else
+                        <br/><br/>
                         <h3 class="text-center">No Team Found! Search Again.</h3>
                         <br/><br/>
                     @endif

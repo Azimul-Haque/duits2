@@ -51,7 +51,7 @@
                     </div>
                   
                     <div class="form-group">
-                        <label>Attachment (.doc, .docx, .ppt, .pptx, .pdf, .jpg, .png)</label>
+                        <label>Attachment (.doc, .docx, .ppt, .pptx, .pdf, .jpg, .png, .txt)</label>
                         <div class="input-group">
                             <span class="input-group-btn">
                                 <span class="btn btn-default btn-file">
@@ -155,7 +155,7 @@
                 {!! Form::text('name', null, array('class' => 'form-control', 'placeholder' => 'Write Notice Title', 'required')) !!}
               </div>
               <div class="form-group">
-                  <label>Attachment (.doc, .docx, .ppt, .pptx, .pdf, .jpg, .png)</label>
+                  <label>Attachment (.doc, .docx, .ppt, .pptx, .pdf, .jpg, .png, .txt)</label>
                   <div class="input-group">
                       <span class="input-group-btn">
                           <span class="btn btn-default btn-file">

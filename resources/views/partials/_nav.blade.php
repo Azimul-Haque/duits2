@@ -35,12 +35,11 @@
                             <a href="#committee_dropdown" class="dropdown-toggle collapsed" data-toggle="collapse" data-parent="#accordion" data-hover="dropdown">Committee ▽
                             </a>
                             <ul id="committee_dropdown" class="dropdown-menu panel-collapse collapse" role="menu">
+                                @foreach($committeetypes as $committeetype)
                                 <li>
-                                    <a href="{{ route('index.adhoc') }}"><i class="icon-strategy i-plain"></i> Ad Hoc Committee</a>
+                                    <a href="{{ route('index.committee', $committeetype->id) }}"><i class="icon-strategy i-plain"></i> {{ $committeetype->name }}</a>
                                 </li>
-                                <li>
-                                    <a href="{{ route('index.executive') }}"><i class="icon-strategy i-plain"></i> Executive Committee</a>
-                                </li>
+                                @endforeach
                             </ul>
                         </li>
 

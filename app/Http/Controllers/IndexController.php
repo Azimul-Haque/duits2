@@ -11,6 +11,8 @@ use App\Category;
 use App\Adhocmember;
 use App\Application;
 use App\Notice;
+use App\Committee;
+use App\Committeetype;
 
 use Carbon\Carbon;
 use DB;
@@ -25,6 +27,7 @@ class IndexController extends Controller
 {
     public function __construct()
     {
+        parent::__construct();
         $this->middleware('guest')->only('getLogin');
         $this->middleware('auth')->only('getProfile');
     }
@@ -290,6 +293,14 @@ class IndexController extends Controller
     {
         $application = Application::where('registration_id', $registration_id)->first();
         return view('index.application.printreceipt')->withApplication($application);
+    }
+
+    public function getCommittee($committeetype_id)
+    {
+        $committees = Committee::where('committeetype_id', $committeetype_id)
+                               ->orderBy('serial', 'asc')
+                               ->get();
+        return view('index.committee')->withCommittees($committees);
     }
 
     public function getNotice()

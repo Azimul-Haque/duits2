@@ -26,6 +26,7 @@ class DashboardController extends Controller
      */
     public function __construct()
     {
+        parent::__construct();
         $this->middleware('auth');
         $this->middleware('admin');
     }
@@ -42,12 +43,8 @@ class DashboardController extends Controller
 
     public function getCommittee()
     {
-        $committeetypes = Committeetype::all();
-
         $committees = Committee::orderBy('id', 'desc')->get();
-        return view('dashboard.committee')
-                        ->withCommitteetypes($committeetypes)
-                        ->withCommittees($committees);
+        return view('dashboard.committee')->withCommittees($committees);
     }
 
     public function storeCommittee(Request $request)

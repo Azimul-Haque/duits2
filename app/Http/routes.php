@@ -20,6 +20,7 @@ Route::get('/', ['as'=>'index.index','uses'=>'IndexController@index']);
 Route::get('/journey', ['as'=>'index.journey','uses'=>'IndexController@getJourney']);
 Route::get('/constitution', ['as'=>'index.constitution','uses'=>'IndexController@getConstitution']);
 Route::get('/faq', ['as'=>'index.faq','uses'=>'IndexController@getFaq']);
+Route::get('/committee/{committeetype_id}', ['as'=>'index.committee','uses'=>'IndexController@getCommittee']);
 Route::get('/adhoc', ['as'=>'index.adhoc','uses'=>'IndexController@getAdhoc']);
 Route::get('/executive', ['as'=>'index.executive','uses'=>'IndexController@getExecutive']);
 Route::get('/news', ['as'=>'index.news','uses'=>'IndexController@getNews']);

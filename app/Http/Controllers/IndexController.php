@@ -31,13 +31,15 @@ class IndexController extends Controller
 
     public function index()
     {
+        $notices = Notice::orderBy('id', 'desc')->get()->take(4);
         $blogs = Blog::orderBy('id', 'DESC')->get()->take(3);
         $alumnis = User::where('payment_status', 1)
                        ->where('role', 'alumni')->count();
 
         return view('index.index')
                     ->withBlogs($blogs)
-                    ->withAlumnis($alumnis);
+                    ->withAlumnis($alumnis)
+                    ->withNotices($notices);
     }
 
     public function getJourney()

@@ -31,6 +31,14 @@
             background-position:center;
             margin:-100px 0 0 -100px;
         }
+        .box-notice {
+            min-height: 200px !important;
+            padding: 10px;
+            background: #b2dfdb;
+            box-shadow: rgb(0, 0, 0) 0px 5px 5px -5px;
+            /* box-shadow: 0 4px 8px 0 rgba(17, 17, 17, 0.5); */
+            border-bottom: 0px none;
+        }
     </style>
 @endsection
 
@@ -218,43 +226,45 @@
             </div>
         </div>
     </section>
-    <section style="padding: 13px 0;">
-        <div class="container margin-five wow fadeInUp">
+    <section class="padding-four">
+        <div class="container">
             <div class="row">
-                <!-- features item -->
-                <div class="col-md-4 col-sm-6 sm-margin-bottom-ten xs-text-center">
-                    <h3>Latest News</h3>
-                    <span class="title-small text-uppercase font-weight-700 black-text letter-spacing-1 margin-seven display-block">We're ready
-                        <br> to start now</span>
-                    <p class="margin-ten no-margin-top width-90 xs-center-col xs-display-block">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the text.</p>
-                    <a href="#" class="highlight-link text-uppercase white-text">Read More
-                        <i class="fa fa-long-arrow-right extra-small-icon white-text"></i>
-                    </a>
+                @php
+                    $noticewaitduration = 1200;
+                @endphp
+                @foreach($notices as $notice)
+                    <div class="col-md-3 col-sm-6 sm-margin-bottom-ten xs-text-center wow fadeInLeft" data-wow-duration="{{ $noticewaitduration }}ms">
+                        <div class="box-notice">
+                            <h3 class="font-weight-700 black-text margin-seven display-block">
+                                @if(strlen($notice->name) > 70)
+                                    {{ limit_text($notice->name, 70) }}
+                                @else
+                                    {{ $notice->name }}
+                                @endif
+                                
+                            </h3>
+                            <span class="text-small">
+                                <i class="fa fa-bullhorn"></i> {{ date('F d, Y', strtotime($notice->created_at)) }}
+                            </span>
+                            <p class="margin-ten no-margin-top width-90 xs-center-col xs-display-block"></p>
+                            <a href="{{ asset('files/'. $notice->attachment) }}" class="highlight-link text-uppercase white-text" style="position: absolute; bottom: 10px;" download="">Download File
+                                <i class="fa fa-long-arrow-down extra-small-icon white-text"></i>
+                            </a>
+                        </div>
+                    </div>
+                    @php
+                        $noticewaitduration = $noticewaitduration - 300;
+                    @endphp
+                @endforeach
+            </div>
+            <div class="row">
+                <div class="col-md-12 margin-two">
+                    <center>
+                        <a href="{{ route('index.notice') }}" class="highlight-link text-uppercase white-text">See More
+                            <i class="fa fa-long-arrow-right extra-small-icon white-text"></i>
+                        </a>
+                    </center>
                 </div>
-                <!-- end features item -->
-                <!-- features item -->
-                <div class="col-md-4 col-sm-6 sm-margin-bottom-ten xs-text-center">
-                    <h3>Latest Event</h3>
-                    <span class="title-small text-uppercase font-weight-700 black-text letter-spacing-1 margin-seven display-block">Always on time
-                        <br> call support</span>
-                    <p class="margin-ten no-margin-top width-90 xs-center-col xs-display-block">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the text.</p>
-                    <a href="#" class="highlight-link text-uppercase white-text">Read More
-                        <i class="fa fa-long-arrow-right extra-small-icon white-text"></i>
-                    </a>
-                </div>
-                <!-- end features item -->
-                <!-- features item -->
-                <div class="col-md-4 col-sm-6 xs-margin-bottom-ten xs-text-center">
-                    <h3>Latest Notice</h3>
-                    <span class="title-small text-uppercase font-weight-700 black-text letter-spacing-1 margin-seven display-block">We Deliver the
-                        <br> highest quality</span>
-                    <p class="margin-ten no-margin-top width-90 xs-center-col xs-display-block">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the text.</p>
-                    <a href="#" class="highlight-link text-uppercase white-text">Read More
-                        <i class="fa fa-long-arrow-right extra-small-icon white-text"></i>
-                    </a>
-                </div>
-                <!-- end features item -->
-
             </div>
         </div>
     </section>

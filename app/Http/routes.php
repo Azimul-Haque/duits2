@@ -36,6 +36,7 @@ Route::post('/member/application/store', ['as'=>'index.storeapplication','uses'=
 Route::get('/application', ['as'=>'index.application','uses'=>'IndexController@getApplication']);
 Route::post('/application/store', ['as'=>'application.store','uses'=>'IndexController@storeITFestApplication']);
 Route::get('/application/payorcheck/{registration_id}', ['as'=>'application.payorcheck','uses'=>'IndexController@getPayorCheck']);
+Route::get('/application/application/{registration_id}', ['as'=>'application.printreceipt','uses'=>'IndexController@getPrintReceipt']);
 
 Route::post('payment/success', 'PaymentController@paymentSuccessOrFailed')->name('payment.success');
 Route::post('payment/failed', 'PaymentController@paymentSuccessOrFailed')->name('payment.failed');

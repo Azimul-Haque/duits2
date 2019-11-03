@@ -283,6 +283,12 @@ class IndexController extends Controller
         return view('index.application.payorcheck')->withApplication($application);
     }
 
+    public function getPrintReceipt($registration_id)
+    {
+        $application = Application::where('registration_id', $registration_id)->first();
+        return view('index.application.printreceipt')->withApplication($application);
+    }
+
     // clear configs, routes and serve
     public function clear()
     {

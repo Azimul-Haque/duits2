@@ -228,7 +228,7 @@
                     </li> --}}
                     <li class="{{ Request::is('dashboard/applications') ? 'active' : '' }}">
                         <a href="{{ route('dashboard.applications') }}">
-                            <i class="fa fa-fw fa-plus"></i>
+                            <i class="fa fa-fw fa-trophy"></i>
                             <span>IT Fest Applications</span>
                         </a>
                     </li>

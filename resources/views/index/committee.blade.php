@@ -50,7 +50,7 @@
                             </span>
                             <div class="person-social no-margin-bottom">
                                 <a href="{{ $committee->fb }}"><i class="fa fa-facebook"></i></a>
-                                <a href="{{ $committee->twitter }}"><i class="fa fa-twitter"></i></a>S
+                                <a href="{{ $committee->twitter }}"><i class="fa fa-twitter"></i></a>
                                 <a href="{{ $committee->linkedin }}"><i class="fa fa-linkedin"></i></a>
                             </div>
                             <div class="thin-separator-line bg-black"></div>

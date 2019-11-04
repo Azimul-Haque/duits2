@@ -80,7 +80,7 @@ class DashboardController extends Controller
         // image upload
         if($request->hasFile('image')) {
             $image      = $request->file('image');
-            $filename   = str_replace(' ','',$request->name).time() .'.' . $image->getClientOriginalExtension();
+            $filename   = random_string(6) .time() .'.' . $image->getClientOriginalExtension();
             $location   = public_path('/images/committee/'. $filename);
             Image::make($image)->resize(400, 400)->save($location);
             $committee->image = $filename;
@@ -120,7 +120,7 @@ class DashboardController extends Controller
         if($committee->image == null) {
             if($request->hasFile('image')) {
                 $image      = $request->file('image');
-                $filename   = str_replace(' ','',$request->name).time() .'.' . $image->getClientOriginalExtension();
+                $filename   = random_string(6) .time() .'.' . $image->getClientOriginalExtension();
                 $location   = public_path('/images/committee/'. $filename);
                 Image::make($image)->resize(400, 400)->save($location);
                 $committee->image = $filename;

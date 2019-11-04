@@ -19,6 +19,7 @@ class CreateCommitteesTable extends Migration
             $table->string('email');
             $table->string('phone');
             $table->string('designation');
+            $table->string('institution');
             $table->string('fb')->nullable();
             $table->string('twitter')->nullable();
             $table->string('linkedin')->nullable();

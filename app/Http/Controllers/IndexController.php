@@ -265,7 +265,7 @@ class IndexController extends Controller
         $application->registration_id = $event[0]. random_string(6);
         
         // amounts to register
-        $amounts=array("1"=>"1500","2"=>"2000","3"=>"200","4"=>"2000","5"=>"300","6"=>"500","7"=>"2000");
+        $amounts=array("1"=>"1500","2"=>"1500","3"=>"1500","4"=>"1000","5"=>"1500","6"=>"300","7"=>"500","8"=>"2000");
         if($amounts[$event[0]]) {
             $application->amount = $amounts[$event[0]];
         }

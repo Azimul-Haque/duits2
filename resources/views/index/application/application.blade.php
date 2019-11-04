@@ -36,12 +36,14 @@
                               <select class="form-control" name="event" required>
                                   <option value="" selected="" disabled="">Select Event Name</option>
                                   <option value="1,Apps in Life">Apps in Life</option>
-                                  <option value="2,IT Project Showcasing">IT Project Showcasing</option>
-                                  <option value="3,IT Noesis Quiz">IT Noesis Quiz</option>
-                                  {{-- <option value="4,Counter Strike Global Offensive">Counter Strike Global Offensive</option> --}}
-                                  <option value="5,Gaming Contest (NFS Most Wanted)">Gaming Contest (NFS Most Wanted)</option>
-                                  <option value="6,Gaming Contest (FIFA-18)">Gaming Contest (FIFA-18)</option>
-                                  <option value="7,Brainstorming: IT based business idea Contest">Brainstorming: IT based business idea Contest</option>
+                                  <option value="2,Robo Project Showcasing">Robo Project Showcasing</option>
+                                  <option value="3,IT Project Showcasing">IT Project Showcasing</option>
+                                  <option value="4,Idea Contest">Idea Contest</option>
+                                  <option value="5,Hackathon">Hackathon</option>
+                                  <option value="" disabled="">──────────</option>
+                                  <option value="6,Gaming Contest (NFS Most Wanted)">Gaming Contest (NFS Most Wanted)</option>
+                                  <option value="7,Gaming Contest (FIFA-19)">Gaming Contest (FIFA-19)</option>
+                                  <option value="8,Gaming Contes (Counter-Strike: Global Offensive)">Gaming Contes (Counter-Strike: Global Offensive)</option>
                               </select>
                           </div>
                         </div>
@@ -135,6 +137,12 @@
                 </div>
               </div>
               <div class="col-md-4">
+                <div class="login-box">
+                  <center>
+                    <h2>CHECK YOUR REGISTRATION STATUS</h2><br/>
+                  </center>
+                  <a href="{{ asset('files/') }}"></a>
+                </div>
                 <div class="login-box">
                   <center>
                     <h2>Check Your Registration Status</h2><br/>

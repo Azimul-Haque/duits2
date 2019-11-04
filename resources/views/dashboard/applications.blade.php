@@ -8,15 +8,17 @@
 
 @section('content_header')
     <h1>
-      Applications
+      Applications (Total <b>{{ $applications->count() }}</b> Applications)
       <div class="pull-right">
+        <a class="btn btn-primary" href="{{ route('dashboard.applications.pdf') }}"><i class="fa fa-fw fa-download" aria-hidden="true"></i> Download List</a>
         <a class="btn btn-success" href="{{ route('index.application') }}" target="_blank"><i class="fa fa-fw fa-plus" aria-hidden="true"></i> Register New Participant</a>
       </div>
     </h1>
 @stop
 
 @section('content')
-    <table class="table">
+  <div class="table-responsive">
+    <table class="table table-condensed">
       <thead>
         <tr>
           <th>Team</th>
@@ -28,6 +30,7 @@
           <th>Contact</th>
           <th>Payment Status</th>
           <th>Image</th>
+          <th>Action</th>
         </tr>
       </thead>
       <tbody>
@@ -43,83 +46,21 @@
           <td>{{ payment_status($application->payment_status) }}</small></td>
           <td>
             @if($application->image != null)
-            <img src="{{ asset('images/users/'.$application->image)}}" style="height: 40px; width: auto;" />
+            <img src="{{ asset('images/registrations/'.$application->image)}}" style="height: 40px; width: auto;" />
             @else
             <img src="{{ asset('images/user.png')}}" style="height: 40px; width: auto;" />
             @endif
           </td>
           <td>
-            <button class="btn btn-sm btn-primary" data-toggle="modal" data-target="#approveMemberModal{{ $application->id }}" data-backdrop="static" title="Approve Application"><i class="fa fa-check"></i></button>
-            <!-- Approve Application Modal -->
-            <!-- Approve Application Modal -->
-            <div class="modal fade" id="approveMemberModal{{ $application->id }}" role="dialog">
-              <div class="modal-dialog modal-md">
-                <div class="modal-content">
-                  <div class="modal-header modal-header-success">
-                    <button type="button" class="close" data-dismiss="modal">&times;</button>
-                    <h4 class="modal-title">Approve Application</h4>
-                  </div>
-                  <div class="modal-body">
-                    {!! Form::model($application, ['route' => ['dashboard.approveapplication', $application->id], 'method' => 'PATCH', 'class' => 'form-default', 'enctype' => 'multipart/form-data']) !!}
-                        Confirm approve this application of <b>{{ $application->name }}</b>?<br/>
-                        <div class="row">
-                          <div class="col-md-6">
-                            <div class="form-group no-margin-bottom">
-                                <label for="amount">Amount</label>
-                                <input type="text" name="amount" id="amount" class="form-control" required="">
-                            </div>
-                          </div>
-                          <div class="col-md-6">
-                            <div class="form-group no-margin-bottom">
-                                <label for="trxid">Transaction ID (Optional)</label>
-                                <input type="text" name="trxid" id="trxid" class="form-control"> 
-                            </div>
-                          </div>
-                        </div>
-                  </div>
-                  <div class="modal-footer">
-                        {!! Form::submit('Approve', array('class' => 'btn btn-success')) !!}
-                        <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
-                  </div>
-                  {!! Form::close() !!}
-                </div>
-              </div>
-            </div>
-            <!-- Approve Application Modal -->
-            <!-- Approve Application Modal -->
-
-            <button class="btn btn-sm btn-danger" data-toggle="modal" data-target="#deleteApplicationModal{{ $application->id }}" data-backdrop="static" title="Delete Application"><i class="fa fa-trash-o"></i></button>
-            <!-- Delete Application Modal -->
-            <!-- Delete Application Modal -->
-            <div class="modal fade" id="deleteApplicationModal{{ $application->id }}" role="dialog">
-              <div class="modal-dialog modal-md">
-                <div class="modal-content">
-                  <div class="modal-header modal-header-danger">
-                    <button type="button" class="close" data-dismiss="modal">&times;</button>
-                    <h4 class="modal-title">Delete Application</h4>
-                  </div>
-                  <div class="modal-body">
-                    Confirm Delete the application of <b>{{ $application->name }}</b>
-                  </div>
-                  <div class="modal-footer">
-                    {!! Form::model($application, ['route' => ['dashboard.deleteapplication', $application->id], 'method' => 'DELETE', 'class' => 'form-default', 'enctype' => 'multipart/form-data']) !!}
-                        {!! Form::submit('Delete', array('class' => 'btn btn-danger')) !!}
-                        <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
-                    {!! Form::close() !!}
-                  </div>
-                </div>
-              </div>
-            </div>
-            <!-- Delete Application Modal -->
-            <!-- Delete Application Modal -->
+            @if($application->payment_status == 1)
+            <a href="{{ route('application.printreceipt', $application->registration_id) }}" class="btn btn-sm btn-primary" title="Print Receipt" target="_blank"><i class="fa fa-print"></i></a>
+            @endif
           </td>
         </tr>
         @endforeach
       </tbody>
     </table>
-
-
-    
+  </div>
 @stop
 
 @section('js')

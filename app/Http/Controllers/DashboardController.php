@@ -13,6 +13,7 @@ use App\Notice;
 use App\Album;
 use App\Albumphoto;
 use App\Application;
+use PDF;
 
 use DB;
 use Auth;
@@ -187,25 +188,34 @@ class DashboardController extends Controller
 
     public function getApplications()
     {
-        $applications = Application::orderBy('id', 'desv')->get();
+        $applications = Application::orderBy('id', 'desv')->paginate(10);
         return view('dashboard.applications')->withApplications($applications);
+    }
+
+    public function getApplicationsPDF()
+    {
+        $applications = Application::orderBy('id', 'desv')->get();
+        
+        $pdf = PDF::loadView('dashboard.pdfapplications', ['applications' => $applications], [] ,['mode' => 'utf-8', 'format' => 'A4-L']);
+        $fileName = 'IT_Fest_Applications.pdf';
+        return $pdf->stream($fileName);
     }
 
     public function approveApplication(Request $request, $id)
     {
-        $this->validate($request,array(
-            'amount'    => 'required',
-            'trxid'     => 'sometimes'
-        ));
+        // $this->validate($request,array(
+        //     'amount'    => 'required',
+        //     'trxid'     => 'sometimes'
+        // ));
 
-        $application = User::findOrFail($id);
-        $application->payment_status = 1;
-        $application->amount = $request->amount;
-        $application->trxid = $request->trxid;
-        $application->save();
+        // $application = User::findOrFail($id);
+        // $application->payment_status = 1;
+        // $application->amount = $request->amount;
+        // $application->trxid = $request->trxid;
+        // $application->save();
 
-        Session::flash('success', 'Approved Successfully!');
-        return redirect()->route('dashboard.applications');
+        // Session::flash('success', 'Approved Successfully!');
+        // return redirect()->route('dashboard.applications');
     }
 
     public function deleteApplication($id)

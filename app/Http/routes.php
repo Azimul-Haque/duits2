@@ -76,6 +76,9 @@ Route::get('/dashboard/blogs', ['as'=>'dashboard.blogs','uses'=>'DashboardContro
 Route::get('/dashboard/members', ['as'=>'dashboard.members','uses'=>'DashboardController@getMembers']);
 Route::delete('/dashboard/deletemember/{id}', ['as'=>'dashboard.deletemember','uses'=>'DashboardController@deleteMember']);
 Route::get('/dashboard/applications', ['as'=>'dashboard.applications','uses'=>'DashboardController@getApplications']);
+Route::get('/dashboard/applications/pdf', ['as'=>'dashboard.applications.pdf','uses'=>'DashboardController@getApplicationsPDF']);
+
+// eita member add er jonno kora, change hobe
 Route::patch('/dashboard/applications/{id}/approve', ['as'=>'dashboard.approveapplication','uses'=>'DashboardController@approveApplication']);
 Route::delete('/dashboard/application/{id}', ['as'=>'dashboard.deleteapplication','uses'=>'DashboardController@deleteApplication']);
 

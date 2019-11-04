@@ -129,7 +129,10 @@
                             </div>
                           </div>
                           <div class="col-md-6">
-
+                            <div class="form-group">
+                              {!! Form::label('institution', 'Institution (Optional)') !!}
+                              {!! Form::text('institution', null, array('class' => 'form-control', 'placeholder' => 'Institution')) !!}
+                            </div>
                           </div>
                         </div>
                         <div class="row">
@@ -324,7 +327,10 @@
                     </div>
                   </div>
                   <div class="col-md-6">
-
+                    <div class="form-group">
+                      {!! Form::label('institution', 'Institution (Optional)') !!}
+                      {!! Form::text('institution', null, array('class' => 'form-control', 'placeholder' => 'Institution')) !!}
+                    </div>
                   </div>
                 </div>
                 <div class="row">

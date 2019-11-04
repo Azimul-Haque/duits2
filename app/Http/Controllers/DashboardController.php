@@ -58,13 +58,14 @@ class DashboardController extends Controller
         $this->validate($request,array(
             'name'                      => 'required|max:255',
             'email'                     => 'sometimes|email',
-            'phone'                     => 'sometimes|numeric',
+            'phone'                     => 'sometimes',
             'designation'               => 'required|max:255',
             'fb'                        => 'sometimes|max:255',
             'twitter'                   => 'sometimes|max:255',
             'linkedin'                  => 'sometimes|max:255',
             'committeetype_id'          => 'required',
             'serial'                    => 'required',
+            'institution'               => 'sometimes',
             'image'                     => 'sometimes|image|max:400'
         ));
 
@@ -86,6 +87,7 @@ class DashboardController extends Controller
             $committee->image = $filename;
         }
         $committee->serial = $request->serial;
+        $committee->institution = $request->institution;
         $committee->committeetype_id = $request->committeetype_id;
         $committee->save();
         
@@ -97,13 +99,14 @@ class DashboardController extends Controller
         $this->validate($request,array(
             'name'                      => 'required|max:255',
             'email'                     => 'sometimes|email',
-            'phone'                     => 'sometimes|numeric',
+            'phone'                     => 'sometimes',
             'designation'               => 'required|max:255',
             'fb'                        => 'sometimes|max:255',
             'twitter'                   => 'sometimes|max:255',
             'linkedin'                  => 'sometimes|max:255',
             'committeetype_id'          => 'required',
             'serial'                    => 'required',
+            'institution'               => 'sometimes',
             'image'                     => 'sometimes|image|max:400'
         ));
 
@@ -139,6 +142,7 @@ class DashboardController extends Controller
             }
         }
         $committee->serial = $request->serial;
+        $committee->institution = $request->institution;
         $committee->committeetype_id = $request->committeetype_id;
             
         $committee->save();
@@ -173,7 +177,7 @@ class DashboardController extends Controller
     public function getMembers()
     {
         $members = User::where('payment_status', 1)
-                            ->where('role', 'alumni')
+                            ->where('role', 'admin')
                             ->get();
         return view('dashboard.members')->withMembers($members);
     }

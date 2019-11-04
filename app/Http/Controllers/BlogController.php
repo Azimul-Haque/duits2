@@ -25,7 +25,7 @@ class BlogController extends Controller {
     public function index()
     {
         $categories = Category::all();
-        $populars = Blog::orderBy('likes', 'desc')->get()->take(4);
+        $populars = Blog::orderBy('likes', 'desc')->get()->take(5);
         $archives = DB::table('blogs')
                         ->select("created_at", DB::raw('count(*) as total'))
                         ->groupBy(DB::raw("DATE_FORMAT(created_at, '%Y-%m')"))

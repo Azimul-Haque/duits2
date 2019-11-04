@@ -95,7 +95,7 @@
               <div class="row">
                 @foreach($album->albumphotoes as $albumphoto)
                 <div class="col-md-4">
-                  <div class="delete-img-box">
+                  <div class="delete-img-box" style="margin-bottom: 10px;">
                       <img src="{{ asset('images/gallery/'. $albumphoto->image) }}" alt="Album Image" class="img-responsive">
                       <a href="#" class="btn btn-sm btn-danger" title="Delete Photo" data-toggle="modal" data-target="#deleteAlbumPhoto{{ $albumphoto->id }}" data-backdrop="static"><i class="fa fa-trash"></i></a>
                       <!-- Delete Photo Modal -->

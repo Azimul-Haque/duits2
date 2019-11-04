@@ -49,7 +49,7 @@ class DashboardController extends Controller
 
     public function getCommittee()
     {
-        $committees = Committee::orderBy('id', 'asc')->paginate(10);
+        $committees = Committee::orderBy('id', 'desc')->paginate(10);
         return view('dashboard.committee')->withCommittees($committees);
     }
 

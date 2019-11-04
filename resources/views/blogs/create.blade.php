@@ -42,7 +42,7 @@
                         <div class="row margin-three">
                           <div class="col-md-8">
                               <div class="form-group no-margin-bottom">
-                                  <label><strong>Featured Image (750 X 430 &amp; 300Kb Max): (Optional)</strong></label>
+                                  <label><strong>Featured Image (600 X 315 &amp; 300Kb Max): (Optional)</strong></label>
                                   <input type="file" id="image" name="featured_image">
                               </div>
                           </div>

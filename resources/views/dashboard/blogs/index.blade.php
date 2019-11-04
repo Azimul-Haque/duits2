@@ -33,7 +33,7 @@
                 <td><a href="{{ route('blog.single', $blog->slug) }}" target="_blank">{{ $blog->title }}</a></td>
                 <td>{{ $blog->user->name }}</td>
                 <td>{{ $blog->category->name }}</td>
-                <td>{{ $blog->created_at }}</td>
+                <td>{{ date('F d, Y h:i A', strtotime($blog->created_at)) }}</td>
                 <td>
                     <button class="btn btn-success btn-sm" title="Edit"><i class="fa fa-pencil"></i></button>
                     <button class="btn btn-danger btn-sm" title="Delete"><i class="fa fa-trash"></i></button>

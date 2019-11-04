@@ -151,7 +151,7 @@
                                 <tr>
                                     <td><a href="{{ route('blog.single', $blog->slug) }}">{{ $blog->title }}</a></td>
                                     <td>{{ $blog->category->name }}</td>
-                                    <td>{{ $blog->created_at }}</td>
+                                    <td>{{ date('F d, Y h:i A', strtotime($blog->created_at)) }}</td>
                                     <td>
                                         <button class="btn highlight-button-dark btn-small btn-round margin-two"><i class="fa fa-pencil"></i></button>
                                         <button class="btn highlight-button-dark btn-small btn-round margin-two"><i class="fa fa-trash"></i></button>

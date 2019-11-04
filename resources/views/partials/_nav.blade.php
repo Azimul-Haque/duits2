@@ -79,7 +79,17 @@
                                     <a href="{{ route('index.profile', Auth::user()->unique_key) }}"><i class="icon-profile-male i-plain"></i> Profile</a>
                                 </li>
                                 <li>
-                                    <a href="{{ url(config('adminlte.logout_url', 'auth/logout')) }}"><i class="icon-key i-plain"></i> Logout</a>
+                                    @if(config('adminlte.logout_method') == 'GET' || !config('adminlte.logout_method') && version_compare(\Illuminate\Foundation\Application::VERSION, '5.3.0', '<'))
+                                        <a href="{{ url(config('adminlte.logout_url', 'auth/logout')) }}"><i class="icon-key i-plain"></i> Logout</a>
+                                    @else
+                                        <a href="#" onclick="event.preventDefault(); document.getElementById('logout-form').submit();" class="btn btn-default btn-flat"><i class="icon-key i-plain"></i> Logout</a>
+                                        <form id="logout-form" action="{{ url(config('adminlte.logout_url', 'auth/logout')) }}" method="POST" style="display: none;" class="btn btn-default btn-flat">
+                                            @if(config('adminlte.logout_method'))
+                                                {{ method_field(config('adminlte.logout_method')) }}
+                                            @endif
+                                            {{ csrf_field() }}
+                                        </form>
+                                    @endif
                                 </li>
                             </ul>
                         </li>

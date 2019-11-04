@@ -43,7 +43,7 @@
           <td><big><b>{{ $application->registration_id }}</b></big></td>
           <td>{{ $application->institution }}</td>
           <td>{{ $application->mobile }}<br/><small>{{ $application->email }}</small></td>
-          <td>{{ payment_status($application->payment_status) }}</small></td>
+          <td>{{ payment_status($application->payment_status) }}</td>
           <td>
             @if($application->image != null)
             <img src="{{ asset('images/registrations/'.$application->image)}}" style="height: 40px; width: auto;" />
@@ -60,6 +60,21 @@
         @endforeach
       </tbody>
     </table>
+  </div>
+  <div class="row">
+    <div class="col-md-4">
+      <div class="small-box bg-green">
+        <div class="inner">
+          <h3>53<sup style="font-size: 20px">%</sup></h3>
+
+          <p>Bounce Rate</p>
+        </div>
+        <div class="icon">
+          <i class="ion ion-stats-bars"></i>
+        </div>
+        <a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+      </div>
+    </div>
   </div>
 @stop
 

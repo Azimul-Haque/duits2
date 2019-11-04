@@ -185,8 +185,15 @@ class DashboardController extends Controller
 
     public function getApplications()
     {
+        $totalcollection = DB::table('applications')
+                             ->select(DB::raw('SUM(amount) as totalamount'))
+                             ->where('payment_status', 1)
+                             ->first();
         $applications = Application::orderBy('id', 'desv')->paginate(10);
-        return view('dashboard.applications')->withApplications($applications);
+
+        return view('dashboard.applications')
+                    ->withTotalcollection($totalcollection)
+                    ->withApplications($applications);
     }
 
     public function getApplicationsPDF()

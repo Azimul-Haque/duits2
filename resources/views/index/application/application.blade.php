@@ -1,6 +1,6 @@
 @extends('layouts.index')
 @section('title')
-    Member Application
+    Registration Form
 @endsection
 
 @section('css')

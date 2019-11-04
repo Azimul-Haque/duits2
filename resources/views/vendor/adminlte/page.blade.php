@@ -176,6 +176,12 @@
                             <span>IT Fest Applications</span>
                         </a>
                     </li>
+                    <li class="{{ Request::is('dashboard/blogs') ? 'active' : '' }}">
+                        <a href="{{ route('dashboard.blogs') }}">
+                            <i class="fa fa-fw fa-pencil"></i>
+                            <span>Blogs</span>
+                        </a>
+                    </li>
                     @endif
                 </ul>
                 <!-- /.sidebar-menu -->

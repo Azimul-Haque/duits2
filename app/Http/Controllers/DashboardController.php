@@ -13,6 +13,8 @@ use App\Notice;
 use App\Album;
 use App\Albumphoto;
 use App\Application;
+use App\Blog;
+use App\Category;
 use PDF;
 
 use DB;
@@ -164,11 +166,6 @@ class DashboardController extends Controller
     }
 
     public function getEvents()
-    {
-        return view('dashboard.index');
-    }
-
-    public function getBlogs()
     {
         return view('dashboard.index');
     }
@@ -435,5 +432,10 @@ class DashboardController extends Controller
         
         Session::flash('success', 'Deleted Successfully!');
         return redirect()->route('dashboard.editgallery', $albumphoto->album->id);
+    }
+
+    public function getBlogs()
+    {
+        return view('dashboard.gallery.create');
     }
 }

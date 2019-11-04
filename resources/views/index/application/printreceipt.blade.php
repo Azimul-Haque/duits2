@@ -49,7 +49,7 @@
       <center>
         <span>6<sup>th</sup> National</span><br/>
         <span style="font-size: 20px;"><b>DUITS Campus IT Fest 2019</b></span><br/>
-        <span>Date: 28<sup>th</sup> October &amp; 29<sup>th</sup> October 2018</span><br/>
+        <span>Date: 18<sup>th</sup> &amp; 19<sup>th</sup> November 2019</span><br/>
         <small>Jointly organized by</small><br/>
         <span><b>Dhaka University IT Society</b></span>
         <h3>PARTICIPANT'S COPY</h3>

@@ -140,7 +140,7 @@
                 <div class="login-box">
                   <center>
                     <h2>Call For Participation 2019</h2><br/>
-                    <a href="{{ asset('files/Call_For_Participation_2019.pdf') }}" class="btn highlight-button btn-bg btn-round margin-five no-margin-right"><i class="fa fa-download"></i> Download File</a>
+                    <a href="{{ asset('files/Call_For_Participation_2019.pdf') }}" class="btn highlight-button btn-bg btn-round margin-five no-margin-right" download=""><i class="fa fa-download"></i> Download File</a>
                   </center>
                 </div><br/>
                 <div class="login-box">

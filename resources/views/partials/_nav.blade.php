@@ -25,7 +25,7 @@
             </div>
             <!-- toggle navigation end -->
             <!-- main menu -->
-            <div class="col-md-10 no-padding-right accordion-menu text-right">
+            <div class="col-md-9 no-padding-right accordion-menu text-right">
                 <div class="navbar-collapse collapse">
                     <ul id="accordion" class="nav navbar-nav navbar-right panel-group">
                         <li>
@@ -50,7 +50,7 @@
                             <a href="{{ route('index.notice') }}">Notice</a>
                         </li>
                         <li>
-                            <a href="{{ route('blogs.index') }}">Blog & Research</a>
+                            <a href="{{ route('blogs.index') }}">Blog</a>
                         </li>
                         <li>
                             <a href="{{ route('index.contact') }}">Contact</a>

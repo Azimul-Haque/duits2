@@ -443,6 +443,7 @@ class DashboardController extends Controller
 
     public function getBlogs()
     {
-        return view('dashboard.gallery.create');
+        $blogs = Blog::orderBy('id', 'desc')->paginate(10);
+        return view('dashboard.blogs.index')->withBlogs($blogs);
     }
 }

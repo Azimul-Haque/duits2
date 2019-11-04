@@ -60,19 +60,19 @@
         @endforeach
       </tbody>
     </table>
-  </div>
+  </div><br/>
   <div class="row">
-    <div class="col-md-4">
+    <div class="col-md-3">
       <div class="small-box bg-green">
         <div class="inner">
-          <h3>53<sup style="font-size: 20px">%</sup></h3>
+          <h3>{{ $totalcollection->totalamount }}<sup style="font-size: 20px">৳</sup></h3>
 
-          <p>Bounce Rate</p>
+          <p>Total Collection</p>
         </div>
         <div class="icon">
-          <i class="ion ion-stats-bars"></i>
+          <i class="fa fa-line-chart"></i>
         </div>
-        <a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+        <a href="#!" class="small-box-footer"></a>
       </div>
     </div>
   </div>

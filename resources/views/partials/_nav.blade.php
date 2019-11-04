@@ -44,7 +44,7 @@
                         </li>
 
                         <li>
-                            <a href="{{ route('index.gallery') }}">Gallery</a>
+                            <a href="{{ route('index.gallery') }}">Photo Gallery</a>
                         </li>
                         <li>
                             <a href="{{ route('index.notice') }}">Notice</a>
@@ -53,7 +53,7 @@
                             <a href="{{ route('blogs.index') }}">Blog & Research</a>
                         </li>
                         <li>
-                            <a href="{{ route('index.contact') }}">Contact Us</a>
+                            <a href="{{ route('index.contact') }}">Contact</a>
                         </li>
                         <li>
                             <a href="{{ route('index.application') }}" title="6th DUITS Campus IT Fest">6th IT Fest</a>

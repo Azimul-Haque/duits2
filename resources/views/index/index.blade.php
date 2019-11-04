@@ -276,28 +276,28 @@
                 <!-- counter item -->
                 <div class="col-md-3 col-sm-6 bottom-margin text-center counter-section wow fadeInUp sm-margin-bottom-ten" data-wow-duration="300ms">
                     <i class="icon-happy medium-icon"></i>
-                    <span class="timer counter-number white-text main-font font-weight-600" data-to="" data-speed="7000"></span>
+                    <span class="timer counter-number white-text main-font font-weight-600" data-to="{{ $appinlife }}" data-speed="2000"></span>
                     <span class="counter-title light-gray-text">Apps in Life</span>
                 </div>
                 <!-- end counter item -->
                 <!-- counter item -->
                 <div class="col-md-3 col-sm-6 bottom-margin text-center counter-section wow fadeInUp sm-margin-bottom-ten" data-wow-duration="600ms">
                     <i class="icon-gears medium-icon"></i>
-                    <span class="timer counter-number white-text main-font font-weight-600" data-to="20" data-speed="7000"></span>
+                    <span class="timer counter-number white-text main-font font-weight-600" data-to="{{ $roboproject }}" data-speed="2000"></span>
                     <span class="counter-title light-gray-text">Robo Project Showcasing</span>
                 </div>
                 <!-- end counter item -->
                 <!-- counter item -->
                 <div class="col-md-3 col-sm-6 bottom-margin-small text-center counter-section wow fadeInUp xs-margin-bottom-ten" data-wow-duration="900ms">
                     <i class="icon-lightbulb medium-icon"></i>
-                    <span class="timer counter-number white-text main-font font-weight-600" data-to="20" data-speed="7000"></span>
+                    <span class="timer counter-number white-text main-font font-weight-600" data-to="{{ $itproject }}" data-speed="2000"></span>
                     <span class="counter-title light-gray-text">IT Project Showcasing</span>
                 </div>
                 <!-- end counter item -->
                 <!-- counter item -->
                 <div class="col-md-3 col-sm-6 text-center counter-section wow fadeInUp" data-wow-duration="1200ms">
                     <i class="icon-strategy medium-icon"></i>
-                    <span class="timer counter-number white-text main-font font-weight-600" data-to="5" data-speed="7000"></span>
+                    <span class="timer counter-number white-text main-font font-weight-600" data-to="{{ $gamingcontest }}" data-speed="2000"></span>
                     <span class="counter-title light-gray-text">Gaming Contest</span>
                 </div>
                 <!-- end counter item -->

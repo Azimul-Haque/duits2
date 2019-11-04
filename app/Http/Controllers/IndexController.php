@@ -41,13 +41,19 @@ class IndexController extends Controller
         $appinlife = Application::where('event_id', 1)->count();
         $roboproject = Application::where('event_id', 2)->count();
         $itproject = Application::where('event_id', 3)->count();
-        $gamingcontest = Application::where('event_id', 2)->count();
+        $gamingcontest = Application::where('event_id', 6)
+                                    ->orWhere('event_id', 7)
+                                    ->orWhere('event_id', 8)
+                                    ->count();
 
 
         return view('index.index')
                     ->withBlogs($blogs)
-                    ->withAlumnis($alumnis)
-                    ->withNotices($notices);
+                    ->withNotices($notices)
+                    ->withAppinlife($appinlife)
+                    ->withRoboproject($roboproject)
+                    ->withItproject($itproject)
+                    ->withGamingcontest($gamingcontest);
     }
 
     public function getJourney()

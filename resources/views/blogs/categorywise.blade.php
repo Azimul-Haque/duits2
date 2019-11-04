@@ -4,31 +4,28 @@
 @endsection
 
 @section('css')
-
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/stylesheet.css') }}">
 @endsection
 
 @section('content')
-    <!-- head section -->
-    <section class="content-top-margin page-title page-title-small bg-gray">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-8 col-sm-12 wow fadeInUp" data-wow-duration="300ms">
-                    <!-- page title -->
-                    <h1 class="black-text">{{ $name }}...</h1>
-                    <!-- end page title -->
-                </div>
-                <div class="col-md-4 col-sm-12 breadcrumb text-uppercase wow fadeInUp xs-display-none" data-wow-duration="600ms">
-                    <!-- breadcrumb -->
-                    <ul>
-                        <li><a href="{{ route('index.index') }}">Home</a></li>
-                        <li><a href="{{ route('blogs.index') }}">Blog</a></li>
-                    </ul>
-                    <!-- end breadcrumb -->
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- end head section -->
+    <section class="content-top-margin wow fadeInUp bg-gray">
+          <div class="container">
+              <div class="row">
+                  <!-- section title -->
+                  <div class="col-md-6 col-sm-6 xs-margin-bottom-four">
+                      <span class="text-large letter-spacing-2 black-text font-weight-600 text-uppercase agency-title">
+                        Blogs | Category
+                      </span>
+                  </div>
+                  <!-- end section title -->
+                  <!-- section highlight text -->
+                  <div class="col-md-6 col-sm-6 text-right xs-text-left">
+                      <span class="text-extra-large font-weight-400"></span>
+                  </div>
+                  <!-- end section highlight text -->
+              </div>
+          </div>
+      </section>
 
     <!-- content section -->
     <section class="wow fadeIn no-margin-top">

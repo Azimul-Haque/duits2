@@ -13,6 +13,7 @@ use App\Application;
 use App\Notice;
 use App\Committee;
 use App\Committeetype;
+use App\Album;
 
 use Carbon\Carbon;
 use DB;
@@ -79,11 +80,6 @@ class IndexController extends Controller
     public function getEvents()
     {
         return view('index.events');
-    }
-
-    public function getGallery()
-    {
-        return view('index.gallery');
     }
 
     public function getMembers()
@@ -311,6 +307,19 @@ class IndexController extends Controller
     {
         $notices = Notice::orderBy('id', 'desc')->paginate(6);
         return view('index.notice')->withNotices($notices);
+    }
+
+    public function getGallery()
+    {
+        $albums = Album::orderBy('id', 'desc')->get();
+        return view('index.gallery')->withAlbums($albums);
+    }
+
+    public function getSingleGalleryAlbum($id)
+    {
+        $album = Album::where('id', $id)->get()->first();
+
+        return view('index.singlegallery')->withAlbum($album);
     }
 
     // clear configs, routes and serve

@@ -36,11 +36,11 @@
                     <p class="text-med black-text letter-spacing-1 margin-ten no-margin-bottom text-uppercase font-weight-600 xs-margin-top-five">Head Office</p>
                     <div class="row">
                         <div class="col-md-6">
-                            <p><i class="fa fa-map-marker black-text"></i> IIT, University of Dhaka</p>
+                            <p><i class="fa fa-map-marker black-text"></i> Room No-208, TSC 1st Floor, University of Dhaka</p>
                         </div>
                         <div class="col-md-6 xs-text-center">
-                            <p class="black-text no-margin-bottom"><strong><i class="fa fa-phone black-text"></i></strong> <a href="tel:+8801515297658">+88 01515297658</a></p>
-                            <p class="black-text"><strong><i class="fa fa-envelope black-text"></i></strong> <a href="mailto:info@iitdualumni.com">info@iitdualumni.com</a></p>
+                            <p class="black-text no-margin-bottom"><strong><i class="fa fa-phone black-text"></i></strong> 01519-201101, 01519-201102</p>
+                            <p class="black-text"><strong><i class="fa fa-envelope black-text"></i></strong> <a href="mailto:duits.official@gmail.com">duits.official@gmail.com</a></p>
                         </div>
                     </div>
                 </div>
@@ -73,7 +73,7 @@
         <div class="container-fuild">
             <div class="row no-margin">
                 <div id="canvas1" class="col-md-12 col-sm-12 no-padding contact-map map">
-                    <iframe id="map_canvas1" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d14610.052956266321!2d90.3983461!3d23.7290706!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xfde166eb920114d4!2sInstitute+of+Information+Technology!5e0!3m2!1sen!2sbd!4v1557415545548!5m2!1sen!2sbd"></iframe>
+                    <iframe id="map_canvas1" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6142.6228918635215!2d90.39375815576751!3d23.732204180161588!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755b8e99b9de929%3A0x7250f88da2943ad4!2sDhaka%20University%20IT%20Society!5e0!3m2!1sen!2sbd!4v1572825837559!5m2!1sen!2sbd"></iframe>
                 </div>
             </div>
         </div>

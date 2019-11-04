@@ -388,6 +388,8 @@ class ComposerStaticInit5ba844acaeab7533148c65467b83a279
         'ArithmeticError' => __DIR__ . '/..' . '/symfony/polyfill-php70/Resources/stubs/ArithmeticError.php',
         'AssertionError' => __DIR__ . '/..' . '/symfony/polyfill-php70/Resources/stubs/AssertionError.php',
         'CreateAdhocmembersTable' => __DIR__ . '/../..' . '/database/migrations/2018_10_28_051530_create_adhocmembers_table.php',
+        'CreateAlbumphotosTable' => __DIR__ . '/../..' . '/database/migrations/2019_11_04_060821_create_albumphotos_table.php',
+        'CreateAlbumsTable' => __DIR__ . '/../..' . '/database/migrations/2019_11_04_060653_create_albums_table.php',
         'CreateApplicationsTable' => __DIR__ . '/../..' . '/database/migrations/2019_11_04_014829_create_applications_table.php',
         'CreateBlogsTable' => __DIR__ . '/../..' . '/database/migrations/2018_10_25_113938_create_blogs_table.php',
         'CreateCategoriesTable' => __DIR__ . '/../..' . '/database/migrations/2018_10_25_114844_create_categories_table.php',

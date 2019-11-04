@@ -10,6 +10,11 @@ use Session;
 
 class PaymentController extends Controller
 {
+    public function __construct()
+    {
+        parent::__construct();
+    }
+    
     public function paymentSuccessOrFailed(Request $request)
     {
         $registration_id = $request->get('opt_a');

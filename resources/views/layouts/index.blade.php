@@ -80,20 +80,20 @@
                     <!-- phone -->
                     <div class="col-md-4 col-sm-4 text-center">
                         <i class="icon-phone small-icon black-text"></i>
-                        <h6 class="black-text margin-two no-margin-bottom"><a href="tel:+8801515297658">+88 01515297658</a></h6>
+                        <h6 class="black-text margin-two no-margin-bottom"><a href="tel:+8801515297658">01519-201101, 01519-201102</a></h6>
                     </div>
                     <!-- end phone -->
                     <!-- address -->
                     <div class="col-md-4 col-sm-4 text-center">
                         <i class="icon-map-pin small-icon black-text"></i>
-                        <h6 class="black-text margin-two no-margin-bottom">IIT, University of Dhaka</h6>
+                        <h6 class="black-text margin-two no-margin-bottom">Room No-208, TSC 1st Floor, University of Dhaka</h6>
                     </div>
                     <!-- end address -->
                     <!-- email -->
                     <div class="col-md-4 col-sm-4 text-center">
                         <i class="icon-envelope small-icon black-text"></i>
                         <h6 class="margin-two no-margin-bottom">
-                            <a href="mailto:info@iitdualumni.com" class="black-text">info@iitdualumni.com</a>
+                            <a href="mailto:duits.official@gmail.com" class="black-text">duits.official@gmail.com</a>
                         </h6>
                     </div>
                     <!-- end email -->
@@ -107,26 +107,11 @@
                     <h5>About Us</h5>
                     <!-- end headline -->
                     <!-- text -->
-                    <p class="footer-text">IIT Alumni Association was established in the year 201* with a view to .... ... ...</p>
+                    <p class="footer-text">DUITS / IT ENABLED CAMPUS FOR BETTER EDUCATION</p>
                     <!-- end text -->
                 </div>
                 <div class="col-md-2 col-sm-3 col-xs-4 footer-link2 col-md-offset-3">
-                    <!-- headline -->
-                    <h5>About</h5>
-                    <!-- end headline -->
-                    <!-- link -->
-                    <ul>
-                        <li>
-                            <a href="{{ route('index.journey') }}">Journey</a>
-                        </li>
-                        <li>
-                            <a href="{{ route('index.constitution') }}">Constitution</a>
-                        </li>
-                        <li>
-                            <a href="{{ route('index.faq') }}">FAQ</a>
-                        </li>
-                    </ul>
-                    <!-- end link -->
+                    
                 </div>
                 <div class="col-md-2 col-sm-3 col-xs-4  footer-link3">
                     <!-- headline -->
@@ -135,10 +120,10 @@
                     <!-- link -->
                     <ul>
                         <li>
-                            <a href="{{ route('index.news') }}">News</a>
+                            <a href="{{ route('index.index') }}">Home</a>
                         </li>
                         <li>
-                            <a href="{{ route('index.events') }}">Events</a>
+                            <a href="{{ route('index.notice') }}">Notice</a>
                         </li>
                         <li>
                             <a href="{{ route('index.gallery') }}">Gallery</a>
@@ -156,10 +141,10 @@
                             <a href="{{ route('index.application') }}">Apply</a>
                         </li>
                         <li>
-                            <a href="{{ route('index.adhoc') }}">Ad Hoc Committee</a>
+                            <a href="{{ route('blogs.index') }}">Blog</a>
                         </li>
                         <li>
-                            <a href="{{ route('index.members') }}">Members</a>
+                            <a href="{{ route('index.contact') }}">Contact Us</a>
                         </li>
                     </ul>
                     <!-- end link -->
@@ -171,32 +156,26 @@
                     <!-- link -->
                     <ul class="list-inline footer-link text-uppercase">
                         <li>
-                            <a href="{{ route('blogs.index') }}">Blog</a>
+                            <a href="https://du.ac.bd/">University of Dhaka</a>
                         </li>
                         <li>
-                            <a href="{{ route('index.news') }}">News</a>
+                            <a href="https://jobs.du.ac.bd/">Jobs</a>
                         </li>
                         <li>
-                            <a href="{{ route('index.events') }}">Events</a>
-                        </li>
-                        <li>
-                            <a href="{{ route('index.contact') }}">Contact</a>
+                            <a href="https://duaa-bd.org/">Alumni Association</a>
                         </li>
                     </ul>
                     <!-- end link -->
                 </div>
                 <div class="col-md-6 col-sm-12 footer-social text-right sm-text-center">
                     <!-- social media link -->
-                    <a target="_blank" href="https://www.facebook.com/">
+                    <a target="_blank" href="https://www.facebook.com/Dhaka.University.IT.Society.DUITS/">
                         <i class="fa fa-facebook"></i>
                     </a>
                     <a target="_blank" href="https://twitter.com/">
                         <i class="fa fa-twitter"></i>
                     </a>
-                    <a target="_blank" href="https://plus.google.com/">
-                        <i class="fa fa-google-plus"></i>
-                    </a>
-                    <a target="_blank" href="https://www.youtube.com/">
+                    <a target="_blank" href="https://www.youtube.com/channel/UCnIKQP4RcrpmNxsZyQUEm-A/featured?view_as=subscriber">
                         <i class="fa fa-youtube"></i>
                     </a>
                     <a target="_blank" href="https://www.linkedin.com/">
@@ -211,7 +190,8 @@
                 <div class="row margin-three">
                     <!-- copyright -->
                     <div class="col-md-6 col-sm-6 col-xs-12 copyright text-left letter-spacing-1 xs-text-center xs-margin-bottom-one">
-                        &copy; {{ date('Y') }} Soft360 Ltd.
+                        &copy; {{ date('Y') }} DUITS. All rights reserved. <br/>
+                        Developed by <a href="http://loencebd.com/" style="color: #888888;">Loence Bangladesh</a>
                     </div>
                     <!-- end copyright -->
                     <!-- logo -->

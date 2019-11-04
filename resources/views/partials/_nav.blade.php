@@ -44,7 +44,7 @@
                         </li>
 
                         <li>
-                            <a href="{{ route('index.members') }}">Gallery</a>
+                            <a href="{{ route('index.gallery') }}">Gallery</a>
                         </li>
                         <li>
                             <a href="{{ route('index.notice') }}">Notice</a>

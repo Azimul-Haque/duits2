@@ -10,6 +10,8 @@ use App\Committee;
 use App\Committeetype;
 use App\User;
 use App\Notice;
+use App\Album;
+use App\Albumphoto;
 
 use DB;
 use Auth;
@@ -295,5 +297,139 @@ class DashboardController extends Controller
         
         Session::flash('success', 'Deleted Successfully!');
         return redirect()->route('dashboard.notice');
+    }
+
+    public function getGallery()
+    {
+        $albums = Album::orderBy('id', 'desc')->paginate(10);
+        return view('dashboard.gallery.index')->withAlbums($albums);
+    }
+
+    public function getCreateGallery()
+    {
+        return view('dashboard.gallery.create');
+    }
+
+    public function storeGalleryAlbum(Request $request)
+    {
+        $this->validate($request,array(
+            'name'          =>   'required',
+            'description'   =>   'sometimes',
+            'thumbnail'     =>   'required|image|max:500',
+            'image1'        =>   'sometimes|image|max:500',
+            'image2'        =>   'sometimes|image|max:500',
+            'image3'        =>   'sometimes|image|max:500',
+            'caption1'      =>   'sometimes',
+            'caption2'      =>   'sometimes',
+            'caption3'      =>   'sometimes'
+
+        ));
+
+        $album = new Album;
+        $album->name = $request->name;
+        $album->description = $request->description;
+
+        // thumbnail upload
+        if($request->hasFile('thumbnail')) {
+            $thumbnail      = $request->file('thumbnail');
+            $filename   = 'thumbnail_' . time() .'.' . $thumbnail->getClientOriginalExtension();
+            $location   = public_path('/images/gallery/'. $filename);
+            Image::make($thumbnail)->resize(1000, 625)->save($location);
+            $album->thumbnail = $filename;
+        }
+        
+        $album->save();
+
+        // photo (s) upload
+        for($i = 1; $i <= 3; $i++) {
+            if($request->hasFile('image'.$i)) {
+                $image      = $request->file('image'.$i);
+                $filename   = 'photo_'. $i . time() .'.' . $image->getClientOriginalExtension();
+                $location   = public_path('/images/gallery/'. $filename);
+                Image::make($image)->resize(1000, null, function ($constraint) {
+                                        $constraint->aspectRatio();
+                                        $constraint->upsize();
+                                    })->save($location);
+                $albumphoto = new Albumphoto;
+                $albumphoto->album_id = $album->id;
+                $albumphoto->image = $filename;
+                $albumphoto->caption = $request->input('caption'.$i);
+                $albumphoto->save();
+            }
+        }
+        
+        Session::flash('success', 'Album has been created successfully!');
+        return redirect()->route('dashboard.gallery');
+    }
+
+    public function getEditGalleryAlbum($id) {
+        $album = Album::find($id);
+        return view('dashboard.gallery.edit')->withAlbum($album);
+    }
+
+    public function updateGalleryAlbum(Request $request, $id) {
+        $this->validate($request,array(
+            'name'          =>   'required',
+            'description'   =>   'required',
+            'image'         =>   'sometimes|image|max:500',
+            'caption'       =>   'sometimes'
+        ));
+
+        $album = Album::find($id);
+        $album->name =$request->name;
+        $album->description =$request->description;
+        $album->save();
+
+        if($request->hasFile('image')) {
+            $image      = $request->file('image');
+            $filename   = 'photo_'. time() .'.' . $image->getClientOriginalExtension();
+            $location   = public_path('/images/gallery/'. $filename);
+            Image::make($image)->resize(1000, null, function ($constraint) {
+                                    $constraint->aspectRatio();
+                                    $constraint->upsize();
+                                })->save($location);
+            $albumphoto = new Albumphoto;
+            $albumphoto->album_id = $album->id;
+            $albumphoto->image = $filename;
+            $albumphoto->caption = $request->caption;
+            $albumphoto->save();
+        }
+
+        Session::flash('success', 'Uploaded successfully!');
+        return redirect()->route('dashboard.editgallery', $id);
+    }
+
+    public function deleteAlbum($id)
+    {
+        $album = Album::find($id);
+        $thumbnail_path = public_path('images/gallery/'. $album->thumbnail);
+        if(File::exists($thumbnail_path)) {
+            File::delete($thumbnail_path);
+        }
+        if($album->albumphotoes->count() > 0) {
+            foreach ($album->albumphotoes as $albumphoto) {
+                $image_path = public_path('images/gallery/'. $albumphoto->image);
+                if(File::exists($image_path)) {
+                    File::delete($image_path);
+                }
+            }
+        }
+        $album->delete();
+
+        Session::flash('success', 'Deleted Successfully!');
+        return redirect()->route('dashboard.gallery');
+    }
+
+    public function deleteSinglePhoto($id)
+    {
+        $albumphoto = Albumphoto::find($id);
+        $image_path = public_path('images/gallery/'. $albumphoto->image);
+        if(File::exists($image_path)) {
+            File::delete($image_path);
+        }
+        $albumphoto->delete();
+        
+        Session::flash('success', 'Deleted Successfully!');
+        return redirect()->route('dashboard.editgallery', $albumphoto->album->id);
     }
 }

@@ -1,6 +1,6 @@
 @extends('layouts.index')
 @section('title')
-    CVCS | Gallery
+    Gallery
 @endsection
 
 @section('css')
@@ -14,11 +14,11 @@
             <div class="row">
                 <div class="col-md-12 col-sm-12 text-center wow fadeInUp">
                     <!-- page title -->
-                    <h1 class="black-text">গ্যালারি</h1>
+                    <h1 class="black-text">Gallery</h1>
                     <!-- end page title -->
                     <div class="separator-line bg-yellow no-margin-top margin-four"></div>
                     <!-- page title tagline -->
-                    <span class="black-text xs-display-none">সিভিসিএস-এর স্থিরচিত্র সংকলন</span>
+                    <span class="black-text xs-display-none">DUITS Albums</span>
                     <!-- end title tagline -->
                 </div>
             </div>
@@ -48,7 +48,7 @@
                                 <p class="light-gray-text text-uppercase margin-seven text-med">
                                   {{ $album->description }}
                                 </p>
-                                <a href="{{ route('index.gallery.single', $album->id) }}" class="btn-small-white-background btn margin-ten no-margin-bottom">ছবিগুলো দেখুন!</a>
+                                <a href="{{ route('index.gallery.single', $album->id) }}" class="btn-small-white-background btn margin-ten no-margin-bottom">See Photos!</a>
                             </figcaption>
                         </figure>
                     </div>

@@ -1,6 +1,6 @@
 @extends('adminlte::page')
 
-@section('title', 'CVCS | Gallery | Create Album')
+@section('title', 'Gallery | Create Album')
 
 @section('css')
 

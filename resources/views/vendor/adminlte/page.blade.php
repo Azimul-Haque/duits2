@@ -164,6 +164,12 @@
                             <span>Notice</span>
                         </a>
                     </li>
+                    <li class="{{ Request::is('dashboard/gallery') ? 'active' : '' }}">
+                        <a href="{{ route('dashboard.gallery') }}">
+                            <i class="fa fa-fw fa-bell"></i>
+                            <span>Notice</span>
+                        </a>
+                    </li>
 {{--                     <li class="{{ Request::is('dashboard/members') ? 'active' : '' }}">
                         <a href="{{ route('dashboard.members') }}">
                             <i class="fa fa-fw fa-users"></i>

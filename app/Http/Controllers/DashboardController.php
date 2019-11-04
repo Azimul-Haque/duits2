@@ -166,11 +166,6 @@ class DashboardController extends Controller
         return view('dashboard.index');
     }
 
-    public function getGallery()
-    {
-        return view('dashboard.index');
-    }
-
     public function getBlogs()
     {
         return view('dashboard.index');

@@ -197,8 +197,8 @@ class DashboardController extends Controller
         $applications = Application::orderBy('id', 'desv')->get();
         
         $pdf = PDF::loadView('dashboard.pdfapplications', ['applications' => $applications], [] ,['mode' => 'utf-8', 'format' => 'A4-L']);
-        $fileName = 'IT_Fest_Applications.pdf';
-        return $pdf->stream($fileName);
+        $fileName = 'IT_Fest_Participants_List.pdf';
+        return $pdf->download($fileName);
     }
 
     public function approveApplication(Request $request, $id)

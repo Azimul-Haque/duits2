@@ -87,8 +87,8 @@
             <td>{{ $application->address }}</td>
           </tr>
           <tr>
-            <th width="50%">Amount Paid:</th>
-            <td>{{ $application->amount }}/-</td>
+            <th width="50%">Amount:</th>
+            <td>৳ {{ $application->amount }}, {{ payment_status($application->payment_status) }}</td>
           </tr>
           <tr>
             <th width="50%">Transaction Id:</th>

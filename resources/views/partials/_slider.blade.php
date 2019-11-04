@@ -2,7 +2,7 @@
 <section id="slider" class="no-padding">
     <div id="owl-demo" class="owl-carousel owl-theme light-pagination square-pagination dark-pagination-without-next-prev-arrow main-slider">
         <!-- slider item -->
-        <div class="item owl-bg-img" style="background-image:url({{ public_path('/images/slider/1.JPG')  }});">
+        <div class="item owl-bg-img" style="background-image:url({{ asset('/images/slider/1.JPG')  }});">
             <div class="opacity-full bg-dark-gray-slider"></div>
             <div class="container full-screen position-relative">
                 <div class="slider-typography text-center">
@@ -18,7 +18,7 @@
         </div>
         <!-- end slider item -->
         <!-- slider item -->
-        <div class="item owl-bg-img" style="background-image:url({{ public_path('/images/slider/2.JPG')  }});">
+        <div class="item owl-bg-img" style="background-image:url({{ asset('/images/slider/2.JPG')  }});">
             <div class="opacity-full bg-dark-gray-slider"></div>
             <div class="container full-screen position-relative">
                 <div class="slider-typography text-center">
@@ -34,7 +34,7 @@
         </div>
         <!-- end slider item -->
         <!-- slider item -->
-        <div class="item owl-bg-img" style="background-image:url({{ public_path('/images/slider/3.JPG')  }});">
+        <div class="item owl-bg-img" style="background-image:url({{ asset('/images/slider/3.JPG')  }});">
             <div class="opacity-full bg-dark-gray-slider"></div>
             <div class="container full-screen position-relative">
                 <div class="slider-typography text-center">
@@ -50,7 +50,7 @@
         </div>
         <!-- end slider item -->
         <!-- slider item -->
-        <div class="item owl-bg-img" style="background-image:url({{ public_path('/images/slider/4.JPG')  }});">
+        <div class="item owl-bg-img" style="background-image:url({{ asset('/images/slider/4.JPG')  }});">
             <div class="opacity-full bg-dark-gray-slider"></div>
             <div class="container full-screen position-relative">
                 <div class="slider-typography text-center">

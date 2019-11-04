@@ -132,24 +132,24 @@
                           </div>
                         </div>
                       </div>
-                      <button class="btn highlight-button-dark btn-bg btn-round margin-five no-margin-right" type="submit">Next</button>
+                      <button class="btn highlight-button-dark btn-bg btn-round margin-five no-margin-right" type="submit"><i class="fa fa-arrow-right"></i> Next</button>
                   </form>
                 </div>
               </div>
               <div class="col-md-4">
                 <div class="login-box">
                   <center>
-                    <h2>CHECK YOUR REGISTRATION STATUS</h2><br/>
+                    <h2>Call For Participation 2019</h2><br/>
+                    <a href="{{ asset('files/Call_For_Participation_2019.pdf') }}" class="btn highlight-button btn-bg btn-round margin-five no-margin-right"><i class="fa fa-download"></i> Download File</a>
                   </center>
-                  <a href="{{ asset('files/') }}"></a>
-                </div>
+                </div><br/>
                 <div class="login-box">
                   <center>
                     <h2>Check Your Registration Status</h2><br/>
                   </center>
                   <input type="text" class="form-control" placeholder="Your Registration ID" id="id_to_check">
                   <center>
-                    <button class="btn highlight-button-dark btn-bg btn-round margin-five" id="btn_check" type="button">Check Status</button>
+                    <button class="btn highlight-button-dark btn-bg btn-round margin-five" id="btn_check" type="button"><i class="fa fa-search"></i> Check Status</button>
                   </center>
                 </div>
               </div>

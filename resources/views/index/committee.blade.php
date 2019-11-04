@@ -49,9 +49,13 @@
                                 {{ $committee->designation }}
                             </span>
                             <div class="person-social no-margin-bottom">
-                                <a href="{{ $committee->fb }}"><i class="fa fa-facebook"></i></a>
-                                <a href="{{ $committee->twitter }}"><i class="fa fa-twitter"></i></a>
-                                <a href="{{ $committee->linkedin }}"><i class="fa fa-linkedin"></i></a>
+                                @if($committee->committeetype_id == 1)
+                                  {{ $committee->institution }}
+                                @else
+                                  <a href="{{ $committee->fb }}"><i class="fa fa-facebook"></i></a>
+                                  <a href="{{ $committee->twitter }}"><i class="fa fa-twitter"></i></a>
+                                  <a href="{{ $committee->linkedin }}"><i class="fa fa-linkedin"></i></a>
+                                @endif
                             </div>
                             <div class="thin-separator-line bg-black"></div>
                         </div>

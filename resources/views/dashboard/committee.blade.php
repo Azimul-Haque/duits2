@@ -34,7 +34,12 @@
         <tr>
           <td>{{ $committee->name }}</td>
           <td>{{ $committee->phone }}<br/><small>{{ $committee->email }}</small></td>
-          <td>{{ $committee->designation }}</td>
+          <td>
+            {{ $committee->designation }}
+            @if($committee->committeetype_id == 1)
+              <br/>{{ $committee->institution }}
+            @endif
+          </td>
           <td>{{ $committee->committeetype->name }}</td>
           <td>{{ $committee->serial }}</td>
           <td>
@@ -233,6 +238,10 @@
         @endforeach
       </tbody>
     </table>
+
+    <div>
+      {{ $committees->links() }}
+    </div>
 
 
     <!-- Add Member Modal -->

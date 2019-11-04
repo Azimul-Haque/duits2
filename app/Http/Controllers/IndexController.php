@@ -37,8 +37,12 @@ class IndexController extends Controller
     {
         $notices = Notice::orderBy('id', 'desc')->get()->take(4);
         $blogs = Blog::orderBy('id', 'DESC')->get()->take(3);
-        $alumnis = User::where('payment_status', 1)
-                       ->where('role', 'alumni')->count();
+        
+        $appinlife = Application::where('event_id', 1)->count();
+        $roboproject = Application::where('event_id', 2)->count();
+        $itproject = Application::where('event_id', 3)->count();
+        $gamingcontest = Application::where('event_id', 2)->count();
+
 
         return view('index.index')
                     ->withBlogs($blogs)

@@ -275,30 +275,30 @@
             <div class="row">
                 <!-- counter item -->
                 <div class="col-md-3 col-sm-6 bottom-margin text-center counter-section wow fadeInUp sm-margin-bottom-ten" data-wow-duration="300ms">
-                    <i class="icon-heart medium-icon"></i>
-                    <span class="timer counter-number white-text main-font font-weight-600" data-to="{{ $alumnis }}" data-speed="7000"></span>
-                    <span class="counter-title light-gray-text">Alumnis</span>
+                    <i class="icon-happy medium-icon"></i>
+                    <span class="timer counter-number white-text main-font font-weight-600" data-to="" data-speed="7000"></span>
+                    <span class="counter-title light-gray-text">Apps in Life</span>
                 </div>
                 <!-- end counter item -->
                 <!-- counter item -->
                 <div class="col-md-3 col-sm-6 bottom-margin text-center counter-section wow fadeInUp sm-margin-bottom-ten" data-wow-duration="600ms">
-                    <i class="icon-happy medium-icon"></i>
+                    <i class="icon-gears medium-icon"></i>
                     <span class="timer counter-number white-text main-font font-weight-600" data-to="20" data-speed="7000"></span>
-                    <span class="counter-title light-gray-text">Batch</span>
+                    <span class="counter-title light-gray-text">Robo Project Showcasing</span>
                 </div>
                 <!-- end counter item -->
                 <!-- counter item -->
                 <div class="col-md-3 col-sm-6 bottom-margin-small text-center counter-section wow fadeInUp xs-margin-bottom-ten" data-wow-duration="900ms">
-                    <i class="icon-anchor medium-icon"></i>
+                    <i class="icon-lightbulb medium-icon"></i>
                     <span class="timer counter-number white-text main-font font-weight-600" data-to="20" data-speed="7000"></span>
-                    <span class="counter-title light-gray-text">Projects Completed</span>
+                    <span class="counter-title light-gray-text">IT Project Showcasing</span>
                 </div>
                 <!-- end counter item -->
                 <!-- counter item -->
                 <div class="col-md-3 col-sm-6 text-center counter-section wow fadeInUp" data-wow-duration="1200ms">
-                    <i class="icon-chat medium-icon"></i>
+                    <i class="icon-strategy medium-icon"></i>
                     <span class="timer counter-number white-text main-font font-weight-600" data-to="5" data-speed="7000"></span>
-                    <span class="counter-title light-gray-text">Events</span>
+                    <span class="counter-title light-gray-text">Gaming Contest</span>
                 </div>
                 <!-- end counter item -->
             </div>

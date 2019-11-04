@@ -22,7 +22,8 @@
     <section class="wow fadeIn">
         <div class="container">
             <div class="row">
-              <div class="col-md-8 login-box">
+              <div class="col-md-8">
+                <div class="login-box">
                   <form action="{{ route('application.store') }}" method="post" enctype='multipart/form-data' data-parsley-validate="">
                       {!! csrf_field() !!}
                       <center>
@@ -131,6 +132,7 @@
                       </div>
                       <button class="btn highlight-button-dark btn-bg btn-round margin-five no-margin-right" type="submit">Next</button>
                   </form>
+                </div>
               </div>
               <div class="col-md-4">
                 <div class="login-box">

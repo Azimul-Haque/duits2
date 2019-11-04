@@ -10,7 +10,7 @@
     <h1>
       Applications
       <div class="pull-right">
-        <a class="btn btn-success" href="{{ route('index.application') }}" target="_blank"><i class="fa fa-fw fa-plus" aria-hidden="true"></i> Add Member</a>
+        <a class="btn btn-success" href="{{ route('index.application') }}" target="_blank"><i class="fa fa-fw fa-plus" aria-hidden="true"></i> Register New Participant</a>
       </div>
     </h1>
 @stop
@@ -19,10 +19,11 @@
     <table class="table">
       <thead>
         <tr>
-          <th>Name</th>
-          <th>Email & Phone</th>
-          <th>Degree, Batch & Roll</th>
-          <th>Job & Designation</th>
+          <th>Team</th>
+          <th>Members</th>
+          <th>Event</th>
+          <th>Registration ID</th>
+          <th>Institution</th>
           <th>Photo</th>
           <th>Action</th>
         </tr>

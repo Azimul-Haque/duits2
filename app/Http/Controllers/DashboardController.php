@@ -12,6 +12,7 @@ use App\User;
 use App\Notice;
 use App\Album;
 use App\Albumphoto;
+use App\Application;
 
 use DB;
 use Auth;
@@ -186,9 +187,7 @@ class DashboardController extends Controller
 
     public function getApplications()
     {
-        $applications = User::where('payment_status', 0)
-                            ->where('role', 'alumni')
-                            ->get();
+        $applications = Application::orderBy('id', 'desv')->get();
         return view('dashboard.applications')->withApplications($applications);
     }
 

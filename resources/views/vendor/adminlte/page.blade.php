@@ -155,7 +155,7 @@
                     <li class="{{ Request::is('dashboard/committee') ? 'active' : '' }}">
                         <a href="{{ route('dashboard.committee') }}">
                             <i class="fa fa-fw fa-briefcase"></i>
-                            <span>Committee</span>
+                            <span>Committees</span>
                         </a>
                     </li>
                     <li class="{{ Request::is('dashboard/notice') ? 'active' : '' }}">
@@ -170,68 +170,6 @@
                             <span>Gallery</span>
                         </a>
                     </li>
-{{--                     <li class="{{ Request::is('dashboard/members') ? 'active' : '' }}">
-                        <a href="{{ route('dashboard.members') }}">
-                            <i class="fa fa-fw fa-users"></i>
-                            <span>People</span>
-                        </a>
-                    </li>
-                    <li class="{{ Request::is('dashboard/sliders') ? 'active' : '' }}">
-                        <a href="{{ route('dashboard.sliders') }}">
-                            <i class="fa fa-fw fa-list-alt"></i>
-                            <span>Sliders</span>
-                        </a>
-                    </li>
-                    <li class="{{ Request::is('dashboard/strategies') ? 'active' : '' }}">
-                        <a href="{{ route('dashboard.strategies') }}">
-                            <i class="fa fa-fw fa-briefcase"></i>
-                            <span>Strategies</span>
-                        </a>
-                    </li>
-                    <li class="{{ Request::is('dashboard/expertises') ? 'active' : '' }}">
-                        <a href="{{ route('dashboard.expertises') }}">
-                            <i class="fa fa-fw fa-flask"></i>
-                            <span>Research Expertises</span>
-                        </a>
-                    </li>
-                    <li class="{{ Request::is('dashboard/projects') ? 'active' : '' }}">
-                        <a href="{{ route('dashboard.projects') }}">
-                            <i class="fa fa-fw fa-cogs"></i>
-                            <span>Projects</span>
-                        </a>
-                    </li>
-                    <li class="{{ Request::is('dashboard/publications/pending') ? 'active' : '' }}">
-                        <a href="{{ route('dashboard.publications.pending') }}">
-                            <i class="fa fa-fw fa-hourglass-half"></i>
-                            <span>Pending Publications</span>
-                        </a>
-                    </li>
-                    <li class="{{ Request::is('dashboard/publications') ? 'active' : '' }}">
-                        <a href="{{ route('dashboard.publications') }}">
-                            <i class="fa fa-fw fa-book"></i>
-                            <span>Publications</span>
-                        </a>
-                    </li>
-                    <li class="{{ Request::is('dashboard/disasterdatas') ? 'active' : '' }}">
-                        <a href="{{ route('dashboard.disasterdatas') }}">
-                            <i class="fa fa-fw fa-tree"></i>
-                            <span>Disaster Data</span>
-                        </a>
-                    </li>
-                    @endif
-                    <li class="header">Personal Profile</li>
-                    <li class="{{ Request::is('dashboard/personal/profile') ? 'active' : '' }}">
-                        <a href="{{ route('dashboard.personal.profile') }}">
-                            <i class="fa fa-fw fa-user"></i>
-                            <span>Your Profile</span>
-                        </a>
-                    </li>
-                    <li class="{{ Request::is('dashboard/personal/publications') ? 'active' : '' }}">
-                        <a href="{{ route('dashboard.personal.pubs') }}">
-                            <i class="fa fa-fw fa-files-o"></i>
-                            <span>Your Publications</span>
-                        </a>
-                    </li> --}}
                     <li class="{{ Request::is('dashboard/applications') ? 'active' : '' }}">
                         <a href="{{ route('dashboard.applications') }}">
                             <i class="fa fa-fw fa-trophy"></i>

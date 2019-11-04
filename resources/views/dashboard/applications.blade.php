@@ -21,21 +21,26 @@
         <tr>
           <th>Team</th>
           <th>Members</th>
-          <th>Event</th>
+          <th>Event & Amount</th>
+          <th>TrxId</th>
           <th>Registration ID</th>
           <th>Institution</th>
-          <th>Photo</th>
-          <th>Action</th>
+          <th>Contact</th>
+          <th>Payment Status</th>
+          <th>Image</th>
         </tr>
       </thead>
       <tbody>
-        @php $addmodalflag = 0; $editmodalflag = 0; @endphp
         @foreach($applications as $application)
         <tr>
-          <td>{{ $application->name }}</td>
-          <td>{{ $application->email }}<br/>{{ $application->phone }}</td>
-          <td>{{ $application->degree }} {{ $application->batch }}, {{ $application->roll }}</td>
-          <td>{{ $application->designation }}<br/>{{ $application->current_job }}</td>
+          <td>{{ $application->team }}</td>
+          <td>{{ $application->member1 }}</td>
+          <td>{{ $application->event_name }}<br/>৳ {{ $application->amount }}</td>
+          <td>{{ $application->trxid }}</td>
+          <td><big><b>{{ $application->registration_id }}</b></big></td>
+          <td>{{ $application->institution }}</td>
+          <td>{{ $application->mobile }}<br/><small>{{ $application->email }}</small></td>
+          <td>{{ payment_status($application->payment_status) }}</small></td>
           <td>
             @if($application->image != null)
             <img src="{{ asset('images/users/'.$application->image)}}" style="height: 40px; width: auto;" />

@@ -32,14 +32,20 @@
             <div class="row">
                 <!-- office address -->
                 <div class="col-md-6 col-sm-6 xs-margin-bottom-ten">
-                    <div class="position-relative"><img src="{{ asset('images/contact2.jpg') }}" alt=""/><a class="highlight-button-dark btn btn-very-small view-map no-margin bg-black white-text" href="https://www.google.co.in/maps" target="_blank">See on Map</a></div>
+                    <div class="position-relative"><img src="{{ asset('images/contact2.jpg') }}" alt=""/><a class="highlight-button-dark btn btn-very-small view-map no-margin bg-black white-text" href="https://www.google.com/maps/place/Dhaka+University+IT+Society/@23.7313125,90.3926248,15.75z/data=!4m5!3m4!1s0x0:0x7250f88da2943ad4!8m2!3d23.7320628!4d90.3956824?hl=en" target="_blank">See on Map</a></div>
                     <p class="text-med black-text letter-spacing-1 margin-ten no-margin-bottom text-uppercase font-weight-600 xs-margin-top-five">Head Office</p>
                     <div class="row">
                         <div class="col-md-6">
-                            <p><i class="fa fa-map-marker black-text"></i> Room No-208, TSC 1st Floor, University of Dhaka</p>
+                            <p>
+                                <i class="fa fa-map-marker black-text"></i> 
+                                <a href="https://www.google.com/maps/place/Dhaka+University+IT+Society/@23.7313125,90.3926248,15.75z/data=!4m5!3m4!1s0x0:0x7250f88da2943ad4!8m2!3d23.7320628!4d90.3956824?hl=en" title="See on Google Map" target="_blank">Room No-208, TSC 1st Floor, University of Dhaka</a>
+                            </p>
                         </div>
                         <div class="col-md-6 xs-text-center">
-                            <p class="black-text no-margin-bottom"><strong><i class="fa fa-phone black-text"></i></strong> 01519-201101, 01519-201102</p>
+                            <p class="black-text no-margin-bottom">
+                                <i class="fa fa-phone black-text"></i> 
+                                <a href="tel:+8801519201101">01519-201101</a>, <a href="tel:+8801519201102">01519-201102</a>
+                            </p>
                             <p class="black-text"><strong><i class="fa fa-envelope black-text"></i></strong> <a href="mailto:duits.official@gmail.com">duits.official@gmail.com</a></p>
                         </div>
                     </div>

@@ -78,19 +78,19 @@
             <div class="container">
                 <div class="row margin-four">
                     <!-- phone -->
-                    <div class="col-md-4 col-sm-4 text-center">
+                    <div class="col-md-4 col-sm-4 text-center wow fadeInRight" data-wow-duration="600ms">
                         <i class="icon-phone small-icon black-text"></i>
                         <h6 class="black-text margin-two no-margin-bottom"><a href="tel:+8801519201101">01519-201101</a>, <a href="tel:+8801519201102">01519-201102</a></h6>
                     </div>
                     <!-- end phone -->
                     <!-- address -->
-                    <div class="col-md-4 col-sm-4 text-center">
+                    <div class="col-md-4 col-sm-4 text-center wow fadeInRight" data-wow-duration="900ms">
                         <i class="icon-map-pin small-icon black-text"></i>
-                        <h6 class="black-text margin-two no-margin-bottom">Room No-208, TSC 1st Floor, University of Dhaka</h6>
+                        <h6 class="black-text margin-two no-margin-bottom"><a href="https://www.google.com/maps/place/Dhaka+University+IT+Society/@23.7313125,90.3926248,15.75z/data=!4m5!3m4!1s0x0:0x7250f88da2943ad4!8m2!3d23.7320628!4d90.3956824?hl=en" title="See on Google Map" target="_blank">Room No-208, TSC 1st Floor, University of Dhaka</a></h6>
                     </div>
                     <!-- end address -->
                     <!-- email -->
-                    <div class="col-md-4 col-sm-4 text-center">
+                    <div class="col-md-4 col-sm-4 text-center wow fadeInRight" data-wow-duration="1200ms">
                         <i class="icon-envelope small-icon black-text"></i>
                         <h6 class="margin-two no-margin-bottom">
                             <a href="mailto:duits.official@gmail.com" class="black-text">duits.official@gmail.com</a>

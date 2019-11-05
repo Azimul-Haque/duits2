@@ -13,7 +13,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-8 col-sm-12 wow fadeInUp" data-wow-duration="300ms">
-                    <h1 class="black-text">6TH DUITS CAMPUS IT FEST 2019</h1>
+                    <h1 class="black-text">6<sup>th</sup> DUITS National Campus IT Fest</h1>
                 </div>
                 
             </div>

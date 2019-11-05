@@ -51,12 +51,17 @@
     <section class="no-padding-bottom wow fadeIn">
         <div class="container">
             <div class="row">
-                <div class="col-md-10 col-sm-10 text-center center-col">
+                <div class="col-md-10 col-sm-10 text-center center-col margin-five">
                     <span class="margin-five no-margin-top display-block letter-spacing-2">Established- 3<sup>rd</sup> February, 2012</span>
                     <h1>Dhaka University IT Society (DUITS)</h1>
-                    <p class="text-med width-90 center-col margin-seven no-margin-bottom">
-                        University of Dhaka hereby established an "Information Technology (IT) Society" to create a friendly and constructive generation based on technology. The name of the society is Dhaka University IT Society (DUITS), headed by Abdullah Al Imran, President; Arif Dewan, General Secretary. The Vice-Chancellor of University of Dhaka is the chief patron and Dr. AJM Shafiul Alam Bhuiyan, Professor, Television, Film & Photography is the Moderator of the Society. Our objective is to establish an IT friendly environment in campus as 21st century is called the "Century of Technology". Here, the organizers along with the members of DUITS have aimed to broaden the knowledge and usefulness of information Technology to the students for their affirmative growth in the future job market both in national and international perspective, which will be largely dominated by Information Technology in near future. Official inauguration of DUITS was in September, 2011. After a long & distinguished work of ad hoc committee, kick off ceremony of the elected officials was held on 3rd February, 2012 was a colorful inauguration ceremony in presence of Honorable Vice-chancellor of University of Dhaka. 
-                    </p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-7" style="font-size: 15px; line-height: 1.4; text-align: justify; text-justify: inter-word;">
+                    University of Dhaka hereby established an "Information Technology (IT) Society" to create a friendly and constructive generation based on technology. The name of the society is Dhaka University IT Society (DUITS), headed by Abdullah Al Imran, President; Arif Dewan, General Secretary. The Vice-Chancellor of University of Dhaka is the chief patron and Dr. AJM Shafiul Alam Bhuiyan, Professor, Television, Film & Photography is the Moderator of the Society. Our objective is to establish an IT friendly environment in campus as 21st century is called the "Century of Technology". Here, the organizers along with the members of DUITS have aimed to broaden the knowledge and usefulness of information Technology to the students for their affirmative growth in the future job market both in national and international perspective, which will be largely dominated by Information Technology in near future. Official inauguration of DUITS was in September, 2011. After a long & distinguished work of ad hoc committee, kick off ceremony of the elected officials was held on 3rd February, 2012 was a colourful inauguration ceremony in presence of Honorable Vice-chancellor of University of Dhaka. 
+                </div>
+                <div class="col-md-5 xs-margin-bottom-ten sm-margin-top-four">
+                    <img src="{{ asset('images/duits_about.jpg') }}" class="img-responsive xs-center-col xs-display-block">
                 </div>
             </div>
         </div>
@@ -83,7 +88,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-4 col-sm-6 xs-margin-bottom-ten">
-                    <img src="{{ asset('images/logo.png') }}" class="img-responsive xs-center-col xs-display-block" style="max-height: 250px; width: auto;">
+                    <img src="{{ asset('images/duits_activities.jpg') }}" class="img-responsive xs-center-col xs-display-block" style="max-height: 250px; width: auto;">
                 </div>
                 <div class="col-md-8 col-sm-6" style="font-size: 16px;">
                     <ul>
@@ -91,9 +96,10 @@
                         <li><i class="fa fa-pencil-square-o"></i> Inter Hall Quiz Contest.</li>
                         <li><i class="fa fa-pencil-square-o"></i> Roundtable: ‘Campus Wi-Fi: Limitations & Possibilities’</li>
                         <li><i class="fa fa-pencil-square-o"></i> Translator Career Development & Motivational Speech Session</li>
-                        <li><i class="fa fa-pencil-square-o"></i> Internal Presentation Contest Regular Discussion Program about various IT based topics</li>
+                        <li><i class="fa fa-pencil-square-o"></i> Internal Presentation Contest</li>
+                        <li><i class="fa fa-pencil-square-o"></i> Regular Discussion Program about various IT based topics</li>
                         <li><i class="fa fa-pencil-square-o"></i> Roundtable: ‘Online Media Management Act’</li>
-                        <li><i class="fa fa-pencil-square-o"></i> Workshop: Keep your windows safe, open source, Android & Smart Phone, DUITS Google Bangladesh, Contribution for Bangla in Google</li>
+                        <li><i class="fa fa-pencil-square-o"></i> Workshop: Keep your windows safe, open-source, Android & Smart Phone, DUITS Google Bangladesh, Contribution for Bangla in Google</li>
                         <li><i class="fa fa-pencil-square-o"></i> Participation in various national programs</li>
                     </ul>
                 </div>
@@ -124,6 +130,18 @@
                         <li><i class="fa fa-check"></i> Cyber Security Awareness for Woman Empowerment</li>
                         <li><i class="fa fa-check"></i> Round Table: ‘Campus wifi: Limitations and Possibilities’</li>
                         <li><i class="fa fa-check"></i> Robi Campus 3.5G Day</li>
+                    </ul>
+                </div>
+                <div class="col-md-4 col-sm-6 xs-margin-bottom-ten">
+                    <img src="{{ asset('images/duits_at_a_glance_1.jpg') }}" class="img-responsive xs-center-col xs-display-block" style="max-height: 250px; width: auto;">
+                </div>
+            </div><br/><br/>
+            <div class="row">
+                <div class="col-md-4 col-sm-6 xs-margin-bottom-ten">
+                    <img src="{{ asset('images/duits_at_a_glance_2.jpg') }}" class="img-responsive xs-center-col xs-display-block" style="max-height: 250px; width: auto;">
+                </div>
+                <div class="col-md-8 col-sm-6" style="font-size: 16px;">
+                    <ul>
                         <li><i class="fa fa-check"></i> Digital Start-up Conference</li>
                         <li><i class="fa fa-check"></i> Get together</li>
                         <li><i class="fa fa-check"></i> Gaming Contest</li>
@@ -133,9 +151,6 @@
                         <li><i class="fa fa-check"></i> IT Contest: Innovate and Win</li>
                         <li><i class="fa fa-check"></i> More than 400 meters area of TSC has been facilitated with full speed Wi-Fi with the help of ICT Division & University of Dhaka.</li>
                     </ul>
-                </div>
-                <div class="col-md-4 col-sm-6 xs-margin-bottom-ten">
-                    <img src="{{ asset('images/logo.png') }}" class="img-responsive xs-center-col xs-display-block" style="max-height: 250px; width: auto;">
                 </div>
             </div>
         </div>
@@ -154,16 +169,16 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-4 col-sm-6 xs-margin-bottom-ten">
-                    <img src="{{ asset('images/logo.png') }}" class="img-responsive xs-center-col xs-display-block" style="max-height: 250px; width: auto;">
+                    <img src="{{ asset('images/duits_achievement.jpg') }}" class="img-responsive xs-center-col xs-display-block" style="max-height: 250px; width: auto;">
                 </div>
                 <div class="col-md-8 col-sm-6" style="font-size: 16px;">
                     <ul>
                         <li><i class="fa fa-trophy"></i> One Student One Laptop</li>
                         <li><i class="fa fa-trophy"></i> National ICT Day</li>
                         <li><i class="fa fa-trophy"></i> Smart ID Card for Student</li>
-                        <li><i class="fa fa-trophy"></i> More than 400 meters area ofTSC has been facilitated with full speed Wi-Fi
+                        <li><i class="fa fa-trophy"></i> More than 400 meters area of TSC has been facilitated with full speed Wi-Fi
                             with the help of Ministry of ICT &amp; DU</li>
-                        <li><i class="fa fa-trophy"></i> Increase of University's central internet bandwith</li>
+                        <li><i class="fa fa-trophy"></i> Increase of University's central internet bandwidth</li>
                         <li><i class="fa fa-trophy"></i> Wi-Fi facilities have been strengthened around the campus after our roundtable
                             discussion and survey report</li>
                     </ul>
@@ -196,7 +211,7 @@
                     </ul>
                 </div>
                 <div class="col-md-4 col-sm-6 xs-margin-bottom-ten">
-                    <img src="{{ asset('images/logo.png') }}" class="img-responsive xs-center-col xs-display-block" style="max-height: 250px; width: auto;">
+                    <img src="{{ asset('images/duits_scope.jpg') }}" class="img-responsive xs-center-col xs-display-block" style="max-height: 250px; width: auto;">
                 </div>
             </div>
         </div>

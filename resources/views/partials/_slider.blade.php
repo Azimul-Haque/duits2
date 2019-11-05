@@ -29,7 +29,7 @@
                             {{-- <span class="slider-title-big6 white-text text-uppercase font-weight-700 letter-spacing-3">Leadership</span>
                             <span class="white-text text-small text-uppercase letter-spacing-10 margin-three no-margin-bottom display-block">we work hard - we play hard</span> --}}
                             <h1 class="white-text text-uppercase letter-spacing-2 margin-three no-margin-bottom display-block xs-letter-spacing-6">
-                                5th IT Fest Ianugaration
+                                5th IT Fest Inaugaration
                             </h1>
                         </div>
                     </div>

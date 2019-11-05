@@ -33,7 +33,7 @@
                         <div class="col-md-6">
                           <div class="form-group">
                               <label class="control-label">Event Name:</label>
-                              <select class="form-control" name="event" required>
+                              <select class="form-control" name="event" required style="font-family: 'Open Sans', sans-serif; font-size: 12px;">
                                   <option value="" selected="" disabled="">Select Event Name</option>
                                   <option value="1,Apps in Life">Apps in Life</option>
                                   <option value="2,Robo Project Showcasing">Robo Project Showcasing</option>

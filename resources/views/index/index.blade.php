@@ -52,7 +52,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-10 col-sm-10 text-center center-col">
-                    <span class="margin-five no-margin-top display-block letter-spacing-2">Established - 2011</span>
+                    <span class="margin-five no-margin-top display-block letter-spacing-2">Established- 3<sup>rd</sup> February, 2012</span>
                     <h1>Dhaka University IT Society (DUITS)</h1>
                     <p class="text-med width-90 center-col margin-seven no-margin-bottom">
                         University of Dhaka hereby established an "Information Technology (IT) Society" to create a friendly and constructive generation based on technology. The name of the society is Dhaka University IT Society (DUITS), headed by Abdullah Al Imran, President; Arif Dewan, General Secretary. The Vice-Chancellor of University of Dhaka is the chief patron and Dr. AJM Shafiul Alam Bhuiyan, Professor, Television, Film & Photography is the Moderator of the Society. Our objective is to establish an IT friendly environment in campus as 21st century is called the "Century of Technology". Here, the organizers along with the members of DUITS have aimed to broaden the knowledge and usefulness of information Technology to the students for their affirmative growth in the future job market both in national and international perspective, which will be largely dominated by Information Technology in near future. Official inauguration of DUITS was in September, 2011. After a long & distinguished work of ad hoc committee, kick off ceremony of the elected officials was held on 3rd February, 2012 was a colorful inauguration ceremony in presence of Honorable Vice-chancellor of University of Dhaka. 

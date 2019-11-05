@@ -11,14 +11,14 @@
                         <img alt="" src="{{ asset('images/logo.png') }}" class="logo" style="float: left;" />
                     @endif
                     @if(\Request::is('/'))
-                        <span style="float: left; font-size: 15px; font-weight: bold; margin-top: 7px; display: block; color: #ffffff;">Dhaka University<br/>IT Society (DUITS)</span>
+                        <span style="float: left; font-size: 18px; font-weight: bold; letter-spacing: -0.3px; margin-top: 10px; text-shadow: 2px 2px 2px rgba(0,0,0,0.30); display: block; color: #ffffff;">Dhaka University<br/>IT Society (DUITS)</span>
                     @else
-                        <span style="float: left; font-size: 15px; font-weight: bold; margin-top: 7px; display: block;">Dhaka University<br/>IT Society (DUITS)</span>
+                        <span style="float: left; font-size: 18px; font-weight: bold; letter-spacing: -0.3px; margin-top: 10px; text-shadow: 1px 1px 1px rgba(0,0,0,0.14); display: block;">Dhaka University<br/>IT Society (DUITS)</span>
                     @endif
                 </a>
                 <a class="logo-dark" href="{{ route('index.index') }}">
                     <img alt="" src="{{ asset('images/logo.png') }}" class="logo" style="float: left;" />
-                    <span style="float: left; font-size: 15px; font-weight: bold; margin-top: 7px; display: block;">Dhaka University<br/>IT Society (DUITS)</span>
+                    <span style="float: left; font-size: 18px; font-weight: bold; letter-spacing: -0.3px; margin-top: 10px; text-shadow: 1px 1px 1px rgba(0,0,0,0.14); display: block;">Dhaka University<br/>IT Society (DUITS)</span>
                 </a>
             </div>
             <div class="navbar-header col-sm-8 col-xs-2 pull-right">

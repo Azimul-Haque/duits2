@@ -3,16 +3,22 @@
     <div class="container">
         <div class="row">
             <!-- logo -->
-            <div class="col-md-2 pull-left">
+            <div class="col-md-3 pull-left">
                 <a class="logo-light" href="{{ route('index.index') }}">
                     @if(\Request::is('/'))
-                        <img alt="" src="{{ asset('images/logo-light.png') }}" class="logo" />
+                        <img alt="" src="{{ asset('images/logo-light.png') }}" class="logo" style="float: left;" />
                     @else
-                        <img alt="" src="{{ asset('images/logo.png') }}" class="logo" />
+                        <img alt="" src="{{ asset('images/logo.png') }}" class="logo" style="float: left;" />
+                    @endif
+                    @if(\Request::is('/'))
+                        <span style="float: left; font-size: 15px; font-weight: bold; margin-top: 7px; display: block; color: #ffffff;">Dhaka University<br/>IT Society (DUITS)</span>
+                    @else
+                        <span style="float: left; font-size: 15px; font-weight: bold; margin-top: 7px; display: block;">Dhaka University<br/>IT Society (DUITS)</span>
                     @endif
                 </a>
                 <a class="logo-dark" href="{{ route('index.index') }}">
-                    <img alt="" src="{{ asset('images/logo.png') }}" class="logo" />
+                    <img alt="" src="{{ asset('images/logo.png') }}" class="logo" style="float: left;" />
+                    <span style="float: left; font-size: 15px; font-weight: bold; margin-top: 7px; display: block;">Dhaka University<br/>IT Society (DUITS)</span>
                 </a>
             </div>
             <div class="navbar-header col-sm-8 col-xs-2 pull-right">

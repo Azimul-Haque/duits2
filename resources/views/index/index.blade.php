@@ -207,7 +207,9 @@
             <div class="row">
                 <!-- call to action -->
                 <div class="col-md-7 col-sm-12 text-center center-col">
-                    <p class="title-large text-uppercase letter-spacing-1 black-text font-weight-600 wow fadeIn">6th DUITS Campus IT Fest 2019</p>
+                    <p class="title-large letter-spacing-1 black-text font-weight-600 wow fadeIn">
+                        6<sup>th</sup> DUITS National Campus IT Fest
+                    </p>
                     <a href="{{ route('index.application') }}" class="highlight-button-black-border btn margin-six wow fadeInUp">Apply Now!</a>
                 </div>
                 <!-- end call to action -->

@@ -80,7 +80,7 @@
                     <!-- phone -->
                     <div class="col-md-4 col-sm-4 text-center">
                         <i class="icon-phone small-icon black-text"></i>
-                        <h6 class="black-text margin-two no-margin-bottom"><a href="tel:+8801515297658">01519-201101, 01519-201102</a></h6>
+                        <h6 class="black-text margin-two no-margin-bottom"><a href="tel:+8801519201101">01519-201101</a>, <a href="tel:+8801519201102">01519-201102</a></h6>
                     </div>
                     <!-- end phone -->
                     <!-- address -->
@@ -257,6 +257,17 @@
     <script type="text/javascript" src="{{ asset('vendor/hcode/js/main.js') }}"></script>
     @include('partials._messages')
     @yield('js')
+    <script type="text/javascript">
+        $(".owl-carousel").owlCarousel({
+            autoPlay: 5000,
+            items : 1, // THIS IS IMPORTANT
+            responsive : {
+                480 : { items : 1  }, // from zero to 480 screen width 4 items
+                768 : { items : 2  }, // from 480 screen widthto 768 6 items
+                1024 : { items : 3 } // from 768 screen width to 1024 8 items 
+            },
+      });
+    </script>
 </body>
 
 <!-- Mirrored from www.themezaa.com/html/h-code/portfolio-short-description.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 20 Sep 2018 20:27:12 GMT -->

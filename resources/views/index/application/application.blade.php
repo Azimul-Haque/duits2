@@ -1,6 +1,6 @@
 @extends('layouts.index')
 @section('title')
-    Registration Form
+    Registration Form | 6th DUITS National Campus IT Fest
 @endsection
 
 @section('css')

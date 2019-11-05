@@ -62,7 +62,7 @@
                             <a href="{{ route('index.contact') }}">Contact</a>
                         </li>
                         <li>
-                            <a href="{{ route('index.application') }}" title="6th DUITS Campus IT Fest">6th IT Fest</a>
+                            <a href="{{ route('index.application') }}" title="6th DUITS National Campus IT Fest">6th IT Fest</a>
                         </li>
                         @if(Auth::check())
                         <li class="dropdown panel simple-dropdown">

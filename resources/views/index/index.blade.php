@@ -36,8 +36,13 @@
             padding: 10px;
             background: #b2dfdb;
             box-shadow: rgb(0, 0, 0) 0px 5px 5px -5px;
-            /* box-shadow: 0 4px 8px 0 rgba(17, 17, 17, 0.5); */
             border-bottom: 0px none;
+        }
+        .img-shadow {
+            box-shadow: rgb(0, 0, 0) 0px 5px 5px -5px;
+        }
+        .box-notice:hover, .img-shadow:hover {
+            box-shadow: 0 4px 8px 0 rgba(17, 17, 17, 0.5);
         }
     </style>
 @endsection
@@ -57,11 +62,11 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-md-7" style="font-size: 15px; line-height: 1.4; text-align: justify; text-justify: inter-word;">
+                <div class="col-md-7 wow fadeInRight" data-wow-duration="900ms" style="font-size: 15px; line-height: 1.4; text-align: justify; text-justify: inter-word;">
                     University of Dhaka hereby established an "Information Technology (IT) Society" to create a friendly and constructive generation based on technology. The name of the society is Dhaka University IT Society (DUITS), headed by Abdullah Al Imran, President; Arif Dewan, General Secretary. The Vice-Chancellor of University of Dhaka is the chief patron and Dr. AJM Shafiul Alam Bhuiyan, Professor, Television, Film & Photography is the Moderator of the Society. Our objective is to establish an IT friendly environment in campus as 21st century is called the "Century of Technology". Here, the organizers along with the members of DUITS have aimed to broaden the knowledge and usefulness of information Technology to the students for their affirmative growth in the future job market both in national and international perspective, which will be largely dominated by Information Technology in near future. Official inauguration of DUITS was in September, 2011. After a long & distinguished work of ad hoc committee, kick off ceremony of the elected officials was held on 3rd February, 2012 was a colourful inauguration ceremony in presence of Honorable Vice-chancellor of University of Dhaka. 
                 </div>
-                <div class="col-md-5 xs-margin-bottom-ten sm-margin-top-four">
-                    <img src="{{ asset('images/duits_about.jpg') }}" class="img-responsive xs-center-col xs-display-block">
+                <div class="col-md-5 sm-margin-top-four wow fadeInLeft" data-wow-duration="900ms">
+                    <img src="{{ asset('images/duits_about.jpg') }}" class="img-responsive xs-center-col xs-display-block img-shadow">
                 </div>
             </div>
         </div>
@@ -87,10 +92,10 @@
     <section class="wow fadeIn">
         <div class="container">
             <div class="row">
-                <div class="col-md-4 col-sm-6 xs-margin-bottom-ten">
-                    <img src="{{ asset('images/duits_activities.jpg') }}" class="img-responsive xs-center-col xs-display-block" style="max-height: 250px; width: auto;">
+                <div class="col-md-5 col-sm-6 xs-margin-bottom-ten wow fadeInRight" data-wow-duration="900ms">
+                    <img src="{{ asset('images/duits_activities.jpg') }}" class="img-responsive xs-center-col xs-display-block img-shadow">
                 </div>
-                <div class="col-md-8 col-sm-6" style="font-size: 16px;">
+                <div class="col-md-7 col-sm-6 wow fadeInLeft" data-wow-duration="900ms" style="font-size: 16px;">
                     <ul>
                         <li><i class="fa fa-pencil-square-o"></i> E-adda about current issues.</li>
                         <li><i class="fa fa-pencil-square-o"></i> Inter Hall Quiz Contest.</li>
@@ -119,7 +124,7 @@
     <section class="wow fadeIn">
         <div class="container">
             <div class="row">
-                <div class="col-md-8 col-sm-6" style="font-size: 16px;">
+                <div class="col-md-7 col-sm-6 wow fadeInRight" data-wow-duration="900ms" style="font-size: 16px;">
                     <ul>
                         <li><i class="fa fa-check"></i> Basis Soft Expo</li>
                         <li><i class="fa fa-check"></i> ICT Career Camp</li>
@@ -132,15 +137,15 @@
                         <li><i class="fa fa-check"></i> Robi Campus 3.5G Day</li>
                     </ul>
                 </div>
-                <div class="col-md-4 col-sm-6 xs-margin-bottom-ten">
-                    <img src="{{ asset('images/duits_at_a_glance_1.jpg') }}" class="img-responsive xs-center-col xs-display-block" style="max-height: 250px; width: auto;">
+                <div class="col-md-5 col-sm-6 xs-margin-top-four wow fadeInLeft" data-wow-duration="900ms">
+                    <img src="{{ asset('images/duits_at_a_glance_1.jpg') }}" class="img-responsive xs-center-col xs-display-block img-shadow">
                 </div>
             </div><br/><br/>
             <div class="row">
-                <div class="col-md-4 col-sm-6 xs-margin-bottom-ten">
-                    <img src="{{ asset('images/duits_at_a_glance_2.jpg') }}" class="img-responsive xs-center-col xs-display-block" style="max-height: 250px; width: auto;">
+                <div class="col-md-5 col-sm-6 xs-margin-bottom-ten wow fadeInRight" data-wow-duration="900ms">
+                    <img src="{{ asset('images/duits_at_a_glance_2.jpg') }}" class="img-responsive xs-center-col xs-display-block img-shadow">
                 </div>
-                <div class="col-md-8 col-sm-6" style="font-size: 16px;">
+                <div class="col-md-7 col-sm-6 wow fadeInLeft" data-wow-duration="900ms" style="font-size: 16px;">
                     <ul>
                         <li><i class="fa fa-check"></i> Digital Start-up Conference</li>
                         <li><i class="fa fa-check"></i> Get together</li>
@@ -168,10 +173,10 @@
     <section class="wow fadeIn">
         <div class="container">
             <div class="row">
-                <div class="col-md-4 col-sm-6 xs-margin-bottom-ten">
-                    <img src="{{ asset('images/duits_achievement.jpg') }}" class="img-responsive xs-center-col xs-display-block" style="max-height: 250px; width: auto;">
+                <div class="col-md-5 col-sm-6 xs-margin-bottom-ten wow fadeInRight" data-wow-duration="900ms">
+                    <img src="{{ asset('images/duits_achievement.jpg') }}" class="img-responsive xs-center-col xs-display-block img-shadow">
                 </div>
-                <div class="col-md-8 col-sm-6" style="font-size: 16px;">
+                <div class="col-md-7 col-sm-6 wow fadeInLeft" data-wow-duration="900ms" style="font-size: 16px;">
                     <ul>
                         <li><i class="fa fa-trophy"></i> One Student One Laptop</li>
                         <li><i class="fa fa-trophy"></i> National ICT Day</li>
@@ -199,7 +204,7 @@
     <section class="wow fadeIn">
         <div class="container">
             <div class="row">
-                <div class="col-md-8 col-sm-6" style="font-size: 16px;">
+                <div class="col-md-7 col-sm-6 wow fadeInRight" data-wow-duration="900ms" style="font-size: 16px;">
                     <ul>
                         <li><i class="fa fa-lightbulb-o"></i> Expansion of One Student One Laptop program</li>
                         <li><i class="fa fa-lightbulb-o"></i> SAARC Campus IT Fest</li>
@@ -210,8 +215,8 @@
                         <li><i class="fa fa-lightbulb-o"></i> Basic computing for the 1st year students</li>
                     </ul>
                 </div>
-                <div class="col-md-4 col-sm-6 xs-margin-bottom-ten">
-                    <img src="{{ asset('images/duits_scope.jpg') }}" class="img-responsive xs-center-col xs-display-block" style="max-height: 250px; width: auto;">
+                <div class="col-md-5 col-sm-6 xs-margin-top-four wow fadeInLeft" data-wow-duration="900ms">
+                    <img src="{{ asset('images/duits_scope.jpg') }}" class="img-responsive xs-center-col xs-display-block img-shadow">
                 </div>
             </div>
         </div>
@@ -225,7 +230,7 @@
                     <p class="title-large letter-spacing-1 black-text font-weight-600 wow fadeIn">
                         6<sup>th</sup> DUITS National Campus IT Fest
                     </p>
-                    <a href="{{ route('index.application') }}" class="highlight-button-black-border btn margin-six wow fadeInUp">Apply Now!</a>
+                    <a href="{{ route('index.application') }}" class="highlight-button-black-border btn margin-six wow fadeInDown">Apply Now!</a>
                 </div>
                 <!-- end call to action -->
             </div>

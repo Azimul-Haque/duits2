@@ -5,6 +5,20 @@
 
 @section('css')
     <link rel="stylesheet" type="text/css" href="{{ asset('css/stylesheet.css') }}">
+    <style type="text/css">
+        .box-notice {
+            min-height: 200px !important;
+            padding: 10px;
+            background: #b2dfdb;
+            box-shadow: rgb(0, 0, 0) 0px 5px 5px -5px;
+            border-bottom: 0px none;
+            min-height: 250px !important; 
+            position: relative;
+        }
+        .box-notice:hover {
+            box-shadow: 0 4px 8px 0 rgba(17, 17, 17, 0.5);
+        }
+    </style>
 @endsection
 
 @section('content')
@@ -31,15 +45,17 @@
         <div class="container">
             <div class="row">
                 @foreach($notices as $notice)
-                    <div class="col-md-4 col-sm-6 sm-margin-bottom-ten xs-text-center" style="min-height: 250px !important;">
-                        <span class="title-small text-uppercase font-weight-700 black-text letter-spacing-1 margin-seven display-block">{{ $notice->name }}</span>
-                        <span class="text-large">
-                            {{ date('F d, Y', strtotime($notice->created_at)) }}
-                        </span>
-                        <p class="margin-ten no-margin-top width-90 xs-center-col xs-display-block"></p>
-                        <a href="{{ asset('files/'. $notice->attachment) }}" class="highlight-link text-uppercase white-text" style="position: absolute; bottom: 10px;" download="">Download File
-                            <i class="fa fa-long-arrow-down extra-small-icon white-text"></i>
-                        </a>
+                    <div class="col-md-4 col-sm-6 sm-margin-bottom-ten xs-text-center">
+                        <div class="box-notice">
+                            <span class="title-small text-uppercase font-weight-700 black-text letter-spacing-1 margin-seven display-block">{{ $notice->name }}</span>
+                            <span class="text-large">
+                                {{ date('F d, Y', strtotime($notice->created_at)) }}
+                            </span>
+                            <p class="margin-ten no-margin-top width-90 xs-center-col xs-display-block"></p>
+                            <a href="{{ asset('files/'. $notice->attachment) }}" class="highlight-link text-uppercase white-text" style="position: absolute; bottom: 10px; right: 10px;" download="">Download File
+                                <i class="fa fa-long-arrow-down extra-small-icon white-text"></i>
+                            </a>
+                        </div>
                     </div>
                 @endforeach
             </div>

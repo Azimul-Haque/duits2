@@ -44,7 +44,7 @@
                         <div class="col-md-6 xs-text-center">
                             <p class="black-text no-margin-bottom">
                                 <i class="fa fa-phone black-text"></i> 
-                                <a href="tel:+8801519201101">01519-201101</a>, <a href="tel:+8801519201102">01519-201102</a>
+                                <a href="tel:+8801519201101">+8801519-201101</a>, <a href="tel:+8801519201102">+8801519-201102</a>
                             </p>
                             <p class="black-text"><strong><i class="fa fa-envelope black-text"></i></strong> <a href="mailto:duits.official@gmail.com">duits.official@gmail.com</a></p>
                         </div>

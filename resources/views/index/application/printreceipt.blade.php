@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Receipt_{{ $application->registration_id }}</title>
+  <title>DUITS_IT_Fest_Participant_Receipt_{{ $application->registration_id }}</title>
   <link rel="stylesheet" href="{{ asset('vendor/hcode/css/bootstrap.css') }}" />
   <script type="text/javascript" src="{{ asset('vendor/hcode/js/jquery.min.js') }}"></script>
     <script type="text/javascript" src="{{ asset('vendor/hcode/js/bootstrap.js') }}"></script>

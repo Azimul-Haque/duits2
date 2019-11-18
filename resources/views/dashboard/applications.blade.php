@@ -44,7 +44,13 @@
           <td><big><b>{{ $application->registration_id }}</b></big></td>
           <td>{{ $application->institution }}</td>
           <td>{{ $application->mobile }}<br/><small>{{ $application->email }}</small></td>
-          <td>{{ payment_status($application->payment_status) }}</td>
+          <td>
+            @if($application->payment_status == 1)
+              <span class="badge badge-success">{{ payment_status($application->payment_status) }}</span>
+            @else
+
+            @endif
+          </td>
           <td>
             @if($application->image != null)
             <img src="{{ asset('images/registrations/'.$application->image)}}" style="height: 40px; width: auto;" />

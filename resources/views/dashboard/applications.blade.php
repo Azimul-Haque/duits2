@@ -3,7 +3,16 @@
 @section('title', 'Applications')
 
 @section('css')
-
+  <style type="text/css">
+    .badge-success {
+      background: #5CB85C;
+      color: #FFFFFF;
+    }
+    .badge-warning {
+      background: #F0AD4E;
+      color: #FFFFFF;
+    }
+  </style>
 @stop
 
 @section('content_header')
@@ -46,9 +55,9 @@
           <td>{{ $application->mobile }}<br/><small>{{ $application->email }}</small></td>
           <td>
             @if($application->payment_status == 1)
-              <span class="badge badge-success">{{ payment_status($application->payment_status) }}</span>
+              <span class="badge badge-success"><i class="fa fa-check-circle"></i> {{ payment_status($application->payment_status) }}</span>
             @else
-
+              <span class="badge badge-warning"><i class="fa fa-hourglass-start"></i> {{ payment_status($application->payment_status) }}</span>
             @endif
           </td>
           <td>

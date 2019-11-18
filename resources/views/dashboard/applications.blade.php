@@ -52,7 +52,7 @@
             <img src="{{ asset('images/user.png')}}" style="height: 40px; width: auto;" />
             @endif
           </td>
-          <td><small>{{ date('F d, Y h:i A', strtotime($application->created_at)) }}</small></td>
+          <td><small>{{ date('F d, Y', strtotime($application->created_at)) }}<br/>{{ date('h:i A', strtotime($application->created_at)) }} </small></td>
           <td>
             @if($application->payment_status == 1)
             <a href="{{ route('application.printreceipt', $application->registration_id) }}" class="btn btn-sm btn-primary" title="Print Receipt" target="_blank"><i class="fa fa-print"></i></a>

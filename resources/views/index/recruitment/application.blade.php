@@ -31,7 +31,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-4 col-sm-6 sm-margin-bottom-ten">
-                    test
+                    কাজ চলছে...
                 </div>
             </div>
         </div>

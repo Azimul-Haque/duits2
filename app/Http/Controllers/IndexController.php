@@ -332,6 +332,11 @@ class IndexController extends Controller
         return view('index.singlegallery')->withAlbum($album);
     }
 
+    public function getRecruitmentForm()
+    {
+        return 'কাজ চলছে';
+    }
+
     // clear configs, routes and serve
     public function clear()
     {

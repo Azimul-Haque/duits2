@@ -45,7 +45,7 @@ Route::post('payment/success', 'PaymentController@paymentSuccessOrFailed')->name
 Route::post('payment/failed', 'PaymentController@paymentSuccessOrFailed')->name('payment.failed');
 Route::post('payment/cancel', 'PaymentController@paymentSuccessOrFailed')->name('payment.cancel');
 
-Route::post('/ongoingactivities/recruitment', 'IndexController@getRecruitmentForm')->name('ongoingactivities.recruitment');
+Route::get('/ongoingactivities/recruitment', 'IndexController@getRecruitmentForm')->name('ongoingactivities.recruitment');
 // index routes
 // index routes
 

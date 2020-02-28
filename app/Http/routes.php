@@ -44,6 +44,8 @@ Route::get('/application/application/{registration_id}', ['as'=>'application.pri
 Route::post('payment/success', 'PaymentController@paymentSuccessOrFailed')->name('payment.success');
 Route::post('payment/failed', 'PaymentController@paymentSuccessOrFailed')->name('payment.failed');
 Route::post('payment/cancel', 'PaymentController@paymentSuccessOrFailed')->name('payment.cancel');
+
+Route::post('/ongoingactivities/recruitment', 'IndexController@getRecruitmentForm')->name('ongoingactivities.recruitment');
 // index routes
 // index routes
 

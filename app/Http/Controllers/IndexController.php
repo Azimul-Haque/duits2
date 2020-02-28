@@ -332,9 +332,9 @@ class IndexController extends Controller
         return view('index.singlegallery')->withAlbum($album);
     }
 
-    public function getRecruitmentForm()
+    public function getRecruitmentApplication()
     {
-        return view('index.recruitform');
+        return view('index.recruitment.application');
     }
 
     // clear configs, routes and serve

@@ -334,7 +334,7 @@ class IndexController extends Controller
 
     public function getRecruitmentForm()
     {
-        return 'কাজ চলছে';
+        return view('index.recruitform');
     }
 
     // clear configs, routes and serve

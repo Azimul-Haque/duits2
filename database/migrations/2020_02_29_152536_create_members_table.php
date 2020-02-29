@@ -28,9 +28,9 @@ class CreateMembersTable extends Migration
             $table->string('bloodgroup');
 
             $table->string('father');
-            $table->string('fcontact');
+            $table->string('fcontact')->nullable();
             $table->string('mother');
-            $table->string('mcontact');
+            $table->string('mcontact')->nullable();
 
             $table->string('ssc');
             $table->string('ssc_passing_year');
@@ -41,7 +41,6 @@ class CreateMembersTable extends Migration
             $table->string('hobby');
             $table->text('reason');
 
-            $table->string('socialnets');
             $table->string('blogs');
             $table->string('othersocieties');
 

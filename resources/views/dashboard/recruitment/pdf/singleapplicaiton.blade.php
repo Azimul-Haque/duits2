@@ -149,12 +149,12 @@
         <td><b>Hobby/ Interest:</b> {{ $application->hobby }}</td>
       </tr>
       <tr>
-        <td><b>Social Networks:</b> {{ $application->socialnets }}</td>
         <td><b>Frequently Visited Blogs:</b> {{ $application->blogs }}</td>
+        <td><b>Other DU Societies:</b> {{ $application->othersocieties }}</td>
       </tr>
       <tr>
-        <td><b>Other DU Societies:</b> {{ $application->othersocieties }}</td>
         <td><b>Reason to Join DUITS:</b> {{ $application->reason }}</td>
+        <td></td>
       </tr>
     </tbody>
   </table>

@@ -83,6 +83,7 @@
                                 </tfoot>
                             </table>
                         </div>
+                        <a href="{{ route('dashboard.recruitment.application.pdf', $application->id) }}" class="btn btn-small margin-three highlight-button xs-margin-bottom-five"><i class="fa fa-download"></i> Download Applicant's Copy</a>
                     @endif
                 </div>
             </div>

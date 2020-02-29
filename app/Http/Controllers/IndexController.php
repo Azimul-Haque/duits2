@@ -370,9 +370,9 @@ class IndexController extends Controller
             'trxid'                     => 'required|max:255'
         ));
 
-        $application = new Member();
+        $application = new Member;
         $application->name = htmlspecialchars(preg_replace("/\s+/", " ", ucwords($request->name)));
-        $application->dept = htmlspecialchars(preg_replace("/\s+/", " ", $request->dept);
+        $application->dept = htmlspecialchars(preg_replace("/\s+/", " ", $request->dept));
         $application->hall = $request->hall;
         $application->residency = $request->residency;
         $application->session = $request->session;
@@ -412,17 +412,22 @@ class IndexController extends Controller
         $application->status = 0;
 
         $lastapplication = Member::orderBy('member_id', 'desc')->first();
-        $application->member_id = date('Y') . str_pad(((int) $lastapplication->id + 1), 3, 0, STR_PAD_LEFT );;
+        if(!empty($lastapplication)) {
+            $application->member_id = date('Y') . str_pad(((int) $lastapplication->id + 1), 3, 0, STR_PAD_LEFT );
+        } else {
+            $application->member_id = date('Y') . '001';
+        }
+        
         $application->save();
         
         Session::flash('success', 'You have registered Successfully!');
-        return redirect()->route('ongoingactivities.recruitment.newapplicant', $unique_key);
+        return redirect()->route('ongoingactivities.recruitment.newapplicant', $application->member_id);
     }
 
     public function getNewApplicant($member_id)
     {
         $application = Member::where('member_id', $member_id)->first();
-        
+
         return view('index.recruitment.newapplicant')->withMpplication($application);
     }
 

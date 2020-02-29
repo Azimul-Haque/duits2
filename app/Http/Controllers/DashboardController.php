@@ -455,10 +455,10 @@ class DashboardController extends Controller
 
     public function getRecruitmentApplicationPDF()
     {
-        $applications = Application::orderBy('id', 'desc')->get();
+        $applications = Member::orderBy('id', 'desc')->get();
         
-        $pdf = PDF::loadView('dashboard.pdfapplications', ['applications' => $applications], [] ,['mode' => 'utf-8', 'format' => 'A4-L']);
-        $fileName = 'IT_Fest_Participants_List.pdf';
+        $pdf = PDF::loadView('dashboard.recruitment.allapplications', ['applications' => $applications], [] ,['mode' => 'utf-8', 'format' => 'A4-L']);
+        $fileName = 'DUITS_Members_List.pdf';
         return $pdf->download($fileName);
     }
 

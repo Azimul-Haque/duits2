@@ -99,7 +99,31 @@
             @endif
 
             <a href="{{ route('dashboard.recruitment.application.pdf', $application->id) }}" class="btn btn-sm btn-primary" title="Print Information" target="_blank"><i class="fa fa-print"></i></a>
-            <a href="{{ route('dashboard.recruitment.deleteapplication', $application->id) }}" class="btn btn-sm btn-danger" title="Delete Application" target="_blank"><i class="fa fa-trash"></i></a>
+            
+            <button class="btn btn-sm btn-danger" data-toggle="modal" data-target="#deleteModal{{ $application->id }}" data-backdrop="static" title="Delete Application"><i class="fa fa-trash"></i></button>
+            <!-- Approve Modal -->
+            <!-- Approve Modal -->
+            <div class="modal fade" id="deleteModal{{ $application->id }}" role="dialog">
+              <div class="modal-dialog modal-md">
+                <div class="modal-content">
+                  <div class="modal-header modal-header-danger">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title"><i class="fa fa-trash"></i> Delete Application</h4>
+                  </div>
+                  <div class="modal-body">
+                   Confirm delete this application of <big><b>{{ $application->name }}</b></big>?
+                  </div>
+                  <div class="modal-footer">
+                    {!! Form::model($application, ['route' => ['dashboard.recruitment.deleteapplication', $application->id], 'method' => 'DELETE', 'class' => 'form-default']) !!}
+                        {!! Form::submit('Delete', array('class' => 'btn btn-danger')) !!}
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                    {!! Form::close() !!}
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Approve Modal -->
+            <!-- Approve Modal -->
           </td>
         </tr>
         @endforeach

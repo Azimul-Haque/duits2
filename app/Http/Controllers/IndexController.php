@@ -385,48 +385,45 @@ class IndexController extends Controller
         $application->father = htmlspecialchars(preg_replace("/\s+/", " ", $request->father));
         $application->father = htmlspecialchars(preg_replace("/\s+/", " ", $request->father));
         $application->fcontact = htmlspecialchars(preg_replace("/\s+/", " ", $request->fcontact));
-        $application->fcontact = htmlspecialchars(preg_replace("/\s+/", " ", $request->fcontact));
-        
-        $application->degree = htmlspecialchars(preg_replace("/\s+/", " ", $request->degree));
-        $application->batch = htmlspecialchars(preg_replace("/\s+/", " ", $request->batch));
-        $application->roll = htmlspecialchars(preg_replace("/\s+/", " ", $request->roll));
-        $application->passing_year = htmlspecialchars(preg_replace("/\s+/", " ", $request->passing_year));
-        $application->current_job = htmlspecialchars(preg_replace("/\s+/", " ", $request->current_job));
-        $application->designation = htmlspecialchars(preg_replace("/\s+/", " ", $request->designation));
-        $application->address = htmlspecialchars(preg_replace("/\s+/", " ", $request->address));
-        $application->fb = htmlspecialchars(preg_replace("/\s+/", " ", $request->fb));
-        $application->twitter = htmlspecialchars(preg_replace("/\s+/", " ", $request->twitter));
-        $application->gplus = htmlspecialchars(preg_replace("/\s+/", " ", $request->gplus));
-        $application->linkedin = htmlspecialchars(preg_replace("/\s+/", " ", $request->linkedin));
+        $application->mother = htmlspecialchars(preg_replace("/\s+/", " ", $request->mother));
+        $application->mcontact = htmlspecialchars(preg_replace("/\s+/", " ", $request->mcontact));
+        $application->ssc = htmlspecialchars(preg_replace("/\s+/", " ", $request->ssc));
+        $application->ssc_passing_year = htmlspecialchars(preg_replace("/\s+/", " ", $request->ssc_passing_year));
+        $application->hsc = htmlspecialchars(preg_replace("/\s+/", " ", $request->hsc));
+        $application->hsc_passing_year = htmlspecialchars(preg_replace("/\s+/", " ", $request->hsc_passing_year));
+        $application->cocurricular = htmlspecialchars(preg_replace("/\s+/", " ", $request->cocurricular));
+        $application->hobby = htmlspecialchars(preg_replace("/\s+/", " ", $request->hobby));
+        $application->reason = htmlspecialchars(preg_replace("/\s+/", " ", $request->reason));
+        $application->socialnets = htmlspecialchars(preg_replace("/\s+/", " ", $request->socialnets));
+        $application->blogs = htmlspecialchars(preg_replace("/\s+/", " ", $request->blogs));
+        $application->othersocieties = htmlspecialchars(preg_replace("/\s+/", " ", $request->othersocieties));
 
         // image upload
         if($request->hasFile('image')) {
             $image      = $request->file('image');
             $filename   = str_replace(' ','',$request->name).time() .'.' . $image->getClientOriginalExtension();
-            $location   = public_path('/images/users/'. $filename);
+            $location   = public_path('/images/members/'. $filename);
             Image::make($image)->resize(250, 250)->save($location);
             $application->image = $filename;
         }
-        $application->password = Hash::make($request->password);
+        
+        $application->payment_method = $request->payment_method;
+        $application->trxid = htmlspecialchars(preg_replace("/\s+/", " ", $request->trxid));
+        $application->status = 0;
 
-        $application->role = 'alumni';
-        $application->payment_status = 0;
-
-        // amount will be set dynamically
-        // $application->amount = null;
-        // $application->trxid = null;
-
-        // generate unique_key
-        $unique_key_length = 100;
-        $pool = '0123456789abcdefghijklmnopqrstuvwxyz0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
-        $unique_key = substr(str_shuffle(str_repeat($pool, 100)), 0, $unique_key_length);
-        // generate unique_key
-        $application->unique_key = $unique_key;
+        $lastapplication = Member::orderBy('member_id', 'desc')->first();
+        $application->member_id = date('Y') . str_pad(((int) $lastapplication->id + 1), 3, 0, STR_PAD_LEFT );;
         $application->save();
         
         Session::flash('success', 'You have registered Successfully!');
-        Auth::login($application);
-        return redirect()->route('index.profile', $unique_key);
+        return redirect()->route('ongoingactivities.recruitment.newapplicant', $unique_key);
+    }
+
+    public function getNewApplicant($member_id)
+    {
+        $application = Member::where('member_id', $member_id)->first();
+        
+        return view('index.recruitment.newapplicant')->withMpplication($application);
     }
 
     // clear configs, routes and serve

@@ -1,4 +1,3 @@
-<!-- navigation panel -->
 <nav class="navbar navbar-default navbar-fixed-top nav-transparent overlay-nav sticky-nav nav-border-bottom @if(\Request::is('/')) nav-white @endif" role="navigation">
     <div class="container">
         <div class="row">
@@ -61,8 +60,17 @@
                         <li>
                             <a href="{{ route('index.contact') }}">Contact</a>
                         </li>
-                        <li>
-                            <a href="{{ route('index.application') }}" title="6th DUITS National Campus IT Fest">6th IT Fest</a>
+                        <li class="dropdown panel simple-dropdown">
+                            <a href="#committee_dropdown" class="dropdown-toggle collapsed" data-toggle="collapse" data-parent="#accordion" data-hover="dropdown">Activities ▽
+                            </a>
+                            <ul id="committee_dropdown" class="dropdown-menu panel-collapse collapse" role="menu">
+                                <li>
+                                    <a href="{{ route('ongoingactivities.recruitment') }}" title="Recruitment Application">Membership</a>
+                                </li>
+                                <li>
+                                    <a href="{{ route('index.application') }}" title="6th DUITS National Campus IT Fest">6th IT Fest</a>
+                                </li>
+                            </ul>
                         </li>
                         @if(Auth::check())
                         <li class="dropdown panel simple-dropdown">
@@ -112,4 +120,3 @@
         </div>
     </div>
 </nav>
-<!--end navigation panel -->

@@ -250,7 +250,7 @@
                         <div class="col-md-12">
                           <div class="form-group">
                               <label class="control-label">Why do you want to be a member of DUITS (Within 50 words)</label>
-                              <textarea class="form-control" placeholder="Write Your College Name" name="reason" value="{{ old('reason') }}" required=""></textarea>
+                              <textarea class="form-control" placeholder="Why do you want to be a member of DUITS" name="reason" value="{{ old('reason') }}" required=""></textarea>
                           </div>
                         </div>
                         <div class="col-md-4">

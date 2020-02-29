@@ -61,7 +61,7 @@
                             <a href="{{ route('index.contact') }}">Contact</a>
                         </li>
                         <li class="dropdown panel simple-dropdown">
-                            <a href="#activities_dropdown" class="dropdown-toggle collapsed" data-toggle="collapse" data-parent="#accordion" data-hover="dropdown">Activities ▽
+                            <a href="#activities_dropdown" class="dropdown-toggle collapsed" data-toggle="collapse" data-parent="#accordion" data-hover="dropdown">Ongoing Activities ▽
                             </a>
                             <ul id="activities_dropdown" class="dropdown-menu panel-collapse collapse" role="menu">
                                 <li>

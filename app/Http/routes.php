@@ -99,6 +99,11 @@ Route::put('/dashboard/{id}/gallery/update', ['as'=>'dashboard.updategallery','u
 Route::delete('/dashboard/gallery/{id}', ['as'=>'dashboard.deletealbum','uses'=>'DashboardController@deleteAlbum']);
 Route::delete('/dashboard/gallery/album/single/{id}/delete', ['as'=>'dashboard.deletesinglephoto','uses'=>'DashboardController@deleteSinglePhoto']);
 
+Route::get('/dashboard/recruitment/applications', ['as'=>'dashboard.recruitment.applications','uses'=>'DashboardController@getRecruitmentApplications']);
+Route::get('/dashboard/recruitment/applications/pdf', ['as'=>'dashboard.recruitment.applications.pdf','uses'=>'DashboardController@getRecruitmentApplicationPDF']);
+Route::patch('/dashboard/recruitment/applications/{id}/approve', ['as'=>'dashboard.recruitment.approveapplication','uses'=>'DashboardController@approveRecruitmentApplication']);
+Route::delete('/dashboard/recruitment/application/{id}', ['as'=>'dashboard.recruitment.deleteapplication','uses'=>'DashboardController@deleteRecruitmentApplication']);
+
 Route::get('/dashboard/blogs', ['as'=>'dashboard.blogs','uses'=>'DashboardController@getBlogs']);
 // dashboard routes
 // dashboard routes

@@ -179,6 +179,12 @@
                             <span>Gallery</span>
                         </a>
                     </li>
+                    <li class="{{ Request::is('dashboard/recruitment/applications') ? 'active' : '' }}">
+                        <a href="{{ route('dashboard.recruitment.applications') }}">
+                            <i class="fa fa-fw fa-user"></i>
+                            <span>Recruitment Applications</span>
+                        </a>
+                    </li>
                     <li class="{{ Request::is('dashboard/applications') ? 'active' : '' }}">
                         <a href="{{ route('dashboard.applications') }}">
                             <i class="fa fa-fw fa-trophy"></i>

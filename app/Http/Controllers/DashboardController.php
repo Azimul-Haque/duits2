@@ -193,7 +193,7 @@ class DashboardController extends Controller
                              ->select(DB::raw('SUM(amount) as totalamount'))
                              ->where('payment_status', 1)
                              ->first();
-        $applications = Application::orderBy('id', 'desv')->paginate(10);
+        $applications = Application::orderBy('id', 'desc')->paginate(10);
 
         return view('dashboard.applications')
                     ->withTotalcollection($totalcollection)
@@ -202,7 +202,7 @@ class DashboardController extends Controller
 
     public function getApplicationsPDF()
     {
-        $applications = Application::orderBy('id', 'desv')->get();
+        $applications = Application::orderBy('id', 'desc')->get();
         
         $pdf = PDF::loadView('dashboard.pdfapplications', ['applications' => $applications], [] ,['mode' => 'utf-8', 'format' => 'A4-L']);
         $fileName = 'IT_Fest_Participants_List.pdf';
@@ -443,6 +443,54 @@ class DashboardController extends Controller
         
         Session::flash('success', 'Deleted Successfully!');
         return redirect()->route('dashboard.editgallery', $albumphoto->album->id);
+    }
+
+    public function getRecruitmentApplications()
+    {
+        $applications = Member::orderBy('id', 'desc')->paginate(10);
+
+        return view('dashboard.applications')
+                    ->withTotalcollection($totalcollection)
+                    ->withApplications($applications);
+    }
+
+    public function getRecruitmentApplicationPDF()
+    {
+        $applications = Application::orderBy('id', 'desc')->get();
+        
+        $pdf = PDF::loadView('dashboard.pdfapplications', ['applications' => $applications], [] ,['mode' => 'utf-8', 'format' => 'A4-L']);
+        $fileName = 'IT_Fest_Participants_List.pdf';
+        return $pdf->download($fileName);
+    }
+
+    public function approveRecruitmentApplication(Request $request, $id)
+    {
+        // $this->validate($request,array(
+        //     'amount'    => 'required',
+        //     'trxid'     => 'sometimes'
+        // ));
+
+        // $application = User::findOrFail($id);
+        // $application->payment_status = 1;
+        // $application->amount = $request->amount;
+        // $application->trxid = $request->trxid;
+        // $application->save();
+
+        // Session::flash('success', 'Approved Successfully!');
+        // return redirect()->route('dashboard.applications');
+    }
+
+    public function deleteRecruitmentApplication($id)
+    {
+        // $committee = committee::find($id);
+        // $image_path = public_path('images/committee/adhoc/'. $committee->image);
+        // if(File::exists($image_path)) {
+        //     File::delete($image_path);
+        // }
+        // $committee->delete();
+
+        // Session::flash('success', 'Deleted Successfully!');
+        // return redirect()->route('dashboard.committee');
     }
 
     public function getBlogs()

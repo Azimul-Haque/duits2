@@ -32,34 +32,53 @@
                       <div class="row">
                         <div class="col-md-6">
                           <div class="form-group">
-                              <label class="control-label">হলের নাম</label>
-                              <select class="form-control single-select-custom" id="hall_id1" name="hall_id">
-                                <option value="অমর একুশে হল">অমর একুশে হল</option>
-                                <option value="বঙ্গমাতা শেখ ফজিলাতুন্নেছা মুজিব হল">বঙ্গমাতা শেখ ফজিলাতুন্নেছা মুজিব হল</option>
-                                <option value="16">বাংলাদেশ কুয়েত মৈত্রী হল</option>
-                                <option value="22">বিজয় একাত্তর হল</option>
-                                <option value="3">ড. মুহম্মদ শহীদুল্লাহ হল</option>
-                                <option value="4">ফজলুল হক মুসলিম হল</option>
-                                <option value="9">হাজী মুহম্মদ মুহসীন হল</option>
-                                <option value="1">জগন্নাথ হল</option>
-                                <option value="14">জাতির জনক বঙ্গবন্ধু শেখ মুজিবুর রহমান হল</option>
-                                <option value="11">কবি জসীম উদদীন হল</option>
-                                <option value="21">কবি সুফিয়া কামাল হল</option>
-                                <option value="15"> মুক্তিযোদ্ধা জিয়াউর রহমান হল</option>
-                                <option value="6">রোকেয়া হল</option>
-                                <option value="2">সলিমুল্লাহ মুসলিম হল</option>
-                                <option value="5">শহীদ সার্জেন্ট জহুরুল হক হল</option>
-                                <option value="10">শামসুন নাহার হল</option>
-                                <option value="12">স্যার এ এফ রহমান হল</option>
-                                <option value="8">সূর্যসেন হল</option>
-                                <option value="8">আন্তর্জাতিক হল</option>
+                              <label class="control-label">Name</label>
+                              <input type="text" class="form-control" placeholder="Write your name" name="name" value="{{ old('name') }}">
+                          </div>
+                        </div>
+                        <div class="col-md-6">
+                          <div class="form-group">
+                              <label class="control-label">Department</label>
+                              <input type="text" class="form-control" placeholder="Department (i.e Economics, Software Engineering)" name="dept" value="{{ old('dept') }}">
+                          </div>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-md-6">
+                          <div class="form-group">
+                              <label class="control-label">Hall</label>
+                              <select class="form-control" id="hall" name="hall">
+                                <option value="" selected="" disabled="">Select Hall</option>
+                                <option value="Amar Ekushey Hall">Amar Ekushey Hall</option>
+                                <option value="Bangamata Sheikh Fazilatunnesa Mujib Hall">Bangamata Sheikh Fazilatunnesa Mujib Hall</option>
+                                <option value="Bangladesh-Kuwait Friendship Hall">Bangladesh-Kuwait Friendship Hall</option>
+                                <option value="Bijoy Ekattor Hall">Bijoy Ekattor Hall</option>
+                                <option value="Dr. Muhammad Shahidullah Hall">Dr. Muhammad Shahidullah Hall</option>
+                                <option value="Fazlul Huq Muslim Hall">Fazlul Huq Muslim Hall</option>
+                                <option value="Haji Muhammad Mohsin Hall">Haji Muhammad Mohsin Hall</option>
+                                <option value="Jagannath Hall">Jagannath Hall</option>
+                                <option value="Bangabandhu Sheikh Mujibur Rahman Hall">Bangabandhu Sheikh Mujibur Rahman Hall</option>
+                                <option value="Kobi Jasimuddin Hall">Kobi Jasimuddin Hall</option>
+                                <option value="Kabi Sufia Kamal Hall">Kabi Sufia Kamal Hall</option>
+                                <option value="Muktijoddha Ziaur Rahman Hall">Muktijoddha Ziaur Rahman Hall</option>
+                                <option value="Ruqayyah Hall">Ruqayyah Hall</option>
+                                <option value="Salimullah Muslim Hall">Salimullah Muslim Hall</option>
+                                <option value="Shaheed Sergeant Zahurul Haque Hall">Shaheed Sergeant Zahurul Haque Hall</option>
+                                <option value="Shamsun Nahar Hall">Shamsun Nahar Hall</option>
+                                <option value="Sir A F Rahman Hall">Sir A F Rahman Hall</option>
+                                <option value="Masterda Surja Sen Hall">Masterda Surja Sen Hall</option>
+                                <option value="Sir P.J. Hartog International Hall">Sir P.J. Hartog International Hall</option>
                             </select>
                           </div>
                         </div>
                         <div class="col-md-6">
                           <div class="form-group">
-                              <label class="control-label">Participant's Name/ Team</label>
-                              <input type="text" class="form-control" placeholder="" required name="team" value="{{ old('team') }}">
+                              <label class="control-label">Residency</label>
+                              <select class="form-control" id="residency" name="residency">
+                                <option value="" selected="" disabled="">Select Residency</option>
+                                <option value="1">Resident</option>
+                                <option value="0">Non-resident</option>
+                            </select>
                           </div>
                         </div>
                       </div>
@@ -67,7 +86,6 @@
                         <div class="col-md-6">
                           <div class="form-group">
                               <label class="control-label">Member 1 Name (if any):</label>
-                              
                               <input type="text" class="form-control" placeholder="" name="member1" value="{{ old('member1') }}">
                           </div>
                         </div>

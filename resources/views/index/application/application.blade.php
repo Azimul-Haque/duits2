@@ -58,7 +58,6 @@
                         <div class="col-md-6">
                           <div class="form-group">
                               <label class="control-label">Member 1 Name (if any):</label>
-                              
                               <input type="text" class="form-control" placeholder="" name="member1" value="{{ old('member1') }}">
                           </div>
                         </div>

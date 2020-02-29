@@ -14,6 +14,7 @@ use App\Notice;
 use App\Committee;
 use App\Committeetype;
 use App\Album;
+use App\Member;
 
 use Carbon\Carbon;
 use DB;
@@ -345,7 +346,6 @@ class IndexController extends Controller
             'hall'                      => 'required|max:255',
             'residency'                 => 'required',
             'session'                   => 'required',
-            'session'                   => 'required',
             'email'                     => 'required|email',
             'contact1'                  => 'required|numeric',
             'contact2'                  => 'required|numeric',
@@ -370,12 +370,23 @@ class IndexController extends Controller
             'trxid'                     => 'required|max:255'
         ));
 
-        $application = new User();
+        $application = new Member();
         $application->name = htmlspecialchars(preg_replace("/\s+/", " ", ucwords($request->name)));
+        $application->dept = htmlspecialchars(preg_replace("/\s+/", " ", $request->dept);
+        $application->hall = $request->hall;
+        $application->residency = $request->residency;
+        $application->session = $request->session;
         $application->email = htmlspecialchars(preg_replace("/\s+/", " ", $request->email));
-        $application->phone = htmlspecialchars(preg_replace("/\s+/", " ", $request->phone));
+        $application->contact1 = htmlspecialchars(preg_replace("/\s+/", " ", $request->contact1));
+        $application->contact2 = htmlspecialchars(preg_replace("/\s+/", " ", $request->contact2));
         $dob = htmlspecialchars(preg_replace("/\s+/", " ", $request->dob));
         $application->dob = new Carbon($dob);
+        $application->bloodgroup = $request->bloodgroup;
+        $application->father = htmlspecialchars(preg_replace("/\s+/", " ", $request->father));
+        $application->father = htmlspecialchars(preg_replace("/\s+/", " ", $request->father));
+        $application->fcontact = htmlspecialchars(preg_replace("/\s+/", " ", $request->fcontact));
+        $application->fcontact = htmlspecialchars(preg_replace("/\s+/", " ", $request->fcontact));
+        
         $application->degree = htmlspecialchars(preg_replace("/\s+/", " ", $request->degree));
         $application->batch = htmlspecialchars(preg_replace("/\s+/", " ", $request->batch));
         $application->roll = htmlspecialchars(preg_replace("/\s+/", " ", $request->roll));

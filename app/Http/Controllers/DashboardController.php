@@ -457,7 +457,7 @@ class DashboardController extends Controller
     {
         $applications = Member::orderBy('id', 'desc')->get();
         
-        $pdf = PDF::loadView('dashboard.recruitment.allapplications', ['applications' => $applications], [] ,['mode' => 'utf-8', 'format' => 'A4-L']);
+        $pdf = PDF::loadView('dashboard.recruitment.pdf.allapplications', ['applications' => $applications], [] ,['mode' => 'utf-8', 'format' => 'A4-L']);
         $fileName = 'DUITS_Members_List.pdf';
         return $pdf->download($fileName);
     }

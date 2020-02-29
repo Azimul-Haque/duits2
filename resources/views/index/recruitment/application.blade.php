@@ -6,6 +6,7 @@
 @section('css')
   <link rel="stylesheet" type="text/css" href="{{ asset('css/stylesheet.css') }}">
   {!!Html::style('css/parsley.css')!!}
+  <link rel="stylesheet" type="text/css" href="{{ asset('css/DateTimePicker.css') }}">
 @stop
 
 @section('content')
@@ -122,7 +123,7 @@
                         <div class="col-md-6">
                           <div class="form-group">
                               <label class="control-label">Date of Birth</label>
-                              <input type="text" class="form-control" placeholder="Date of Birth" id="dob" name="dob" value="{{ old('dob') }}" required>
+                              <input type="text" class="form-control" placeholder="Date of Birth" id="dob" name="dob" data-field="date" value="{{ old('dob') }}" autocomplete="off" required>
                           </div>
                         </div>
                         <div class="col-md-6">
@@ -190,11 +191,22 @@
               </div>
             </div>
         </div>
+        <div id="dtBox"></div>
     </section>
 @endsection
 
 @section('js')
   {!!Html::script('js/parsley.min.js')!!}
+  <script type="text/javascript" src="{{ asset('js/DateTimePicker.min.js') }}"></script>
+  <script type="text/javascript">
+        $(document).ready(function() {
+          $("#dtBox").DateTimePicker({
+              mode:"date",
+              dateFormat: "dd-MM-yyyy",
+              titleContentDate: 'Select Your Date of Birth'
+          });
+        });
+  </script>
   <script type="text/javascript">
   var _URL = window.URL || window.webkitURL;
   $(document).ready( function() {

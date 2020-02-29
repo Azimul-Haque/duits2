@@ -151,7 +151,7 @@
                         <div class="col-md-4">
                           <div class="form-group">
                               <label class="control-label">Date of Birth *</label>
-                              <input type="text" class="form-control" placeholder="Date of Birth" id="dob" name="dob" data-field="date" value="{{ old('dob') }}" autocomplete="off" required>
+                              <input type="text" class="form-control" placeholder="Date of Birth" name="dob" data-field="date" value="{{ old('dob') }}" autocomplete="off" required>
                           </div>
                         </div>
                       </div>
@@ -298,8 +298,8 @@
               </div>
             </div>
         </div>
-        <div id="dtBox"></div>
     </section>
+    <div id="dtBox"></div>
 @endsection
 
 @section('js')

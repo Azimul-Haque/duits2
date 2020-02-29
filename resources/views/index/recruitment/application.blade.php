@@ -7,6 +7,30 @@
   <link rel="stylesheet" type="text/css" href="{{ asset('css/stylesheet.css') }}">
   {!!Html::style('css/parsley.css')!!}
   <link rel="stylesheet" type="text/css" href="{{ asset('css/DateTimePicker.css') }}">
+  <style type="text/css">
+      .separator {
+          display: flex;
+          align-items: center;
+          text-align: center;
+          margin-top: 15px;
+          font-weight: bold;
+          font-size: 15px;
+      }
+      .separator::before, .separator::after {
+          content: '';
+          flex: 1;
+          border-bottom: 1px solid #ddd;
+      }
+      .separator::before {
+          margin-right: .60em;
+      }
+      .separator::after {
+          margin-left: .60em;
+      }
+      textarea {
+        height: 100px !important;
+      }
+  </style>
 @stop
 
 @section('content')
@@ -25,11 +49,13 @@
             <div class="row">
               <div class="col-md-12">
                 <div class="login-box">
-                  <form action="{{ route('application.store') }}" method="post" enctype='multipart/form-data' data-parsley-validate="">
+                  <form action="{{ route('ongoingactivities.recruitment.store') }}" method="post" enctype='multipart/form-data' data-parsley-validate="">
                       {!! csrf_field() !!}
                       <center>
                         <h2>Registration Form</h2><br/>
                       </center>
+
+                      <div class="separator">Personal Information</div>
                       <div class="row">
                         <div class="col-md-4">
                           <div class="form-group">
@@ -40,7 +66,7 @@
                         <div class="col-md-4">
                           <div class="form-group">
                               <label class="control-label">Department</label>
-                              <input type="text" class="form-control" placeholder="Department (i.e Economics, Software Engineering)" name="dept" value="{{ old('dept') }}" required="">
+                              <input type="text" class="form-control" placeholder="Department (i.e. Facebook, InstagramEconomics, Software Engineering)" name="dept" value="{{ old('dept') }}" required="">
                           </div>
                         </div>
                         <div class="col-md-4">
@@ -140,60 +166,136 @@
                         </div>
                         <div class="col-md-4">
                           <div class="form-group no-margin-bottom">
-                              <label><strong>Photo (300 X 300 &amp; 200Kb Max):</strong></label>
+                              <label>Photo (300 X 300 &amp; 200Kb Max)</label>
                               <input type="file" id="image" name="image" required="">
                           </div>
                         </div>
                         <div class="col-md-4">
-                          <img src="{{ asset('images/user.png')}}" id='img-upload' style="height: 80px; width: 80px; " />
+                          <center>
+                              <img src="{{ asset('images/user.png')}}" id='img-upload' style="height: 80px; width: 80px;"/>
+                          </center>
                         </div>
                       </div>
 
+                      <div class="separator">Contact Information</div>
+                      <div class="row">
+                        <div class="col-md-3">
+                          <div class="form-group">
+                              <label class="control-label">Father</label>
+                              <input type="text" class="form-control" placeholder="Write Your Father's Name" name="father" value="{{ old('father') }}" required>
+                          </div>
+                        </div>
+                        <div class="col-md-3">
+                          <div class="form-group">
+                              <label class="control-label">Contact No of Father</label>
+                              <input type="text" class="form-control" placeholder="Father's Contact No" name="fcontact" value="{{ old('fcontact') }}" pattern="\d*" maxlength="11" required>
+                          </div>
+                        </div>
+                        <div class="col-md-3">
+                          <div class="form-group">
+                              <label class="control-label">Mother</label>
+                              <input type="text" class="form-control" placeholder="Write Your Mother's Name" name="mother" value="{{ old('mother') }}" required>
+                          </div>
+                        </div>
+                        <div class="col-md-3">
+                          <div class="form-group">
+                              <label class="control-label">Contact No of Mother</label>
+                              <input type="text" class="form-control" placeholder="Mother's Contact No" name="mcontact" value="{{ old('mcontact') }}" pattern="\d*" maxlength="11" required>
+                          </div>
+                        </div>
+                      </div>
 
+                      <div class="separator">Educational Information</div>
                       <div class="row">
-                        <div class="col-md-6">
+                        <div class="col-md-3">
                           <div class="form-group">
-                              <label class="control-label">Email Address</label>
-                              <input type="email" class="form-control" placeholder="" required name="email" value="{{ old('email') }}">
+                              <label class="control-label">SSC (School Name)</label>
+                              <input type="text" class="form-control" placeholder="Write Your School Name" name="ssc" value="{{ old('ssc') }}" required="">
                           </div>
                         </div>
-                        <div class="col-md-6">
+                        <div class="col-md-3">
                           <div class="form-group">
-                              <label class="control-label">Mobile No: (11 digit number)</label>
-                              <input type="text" class="form-control" placeholder="" required name="mobile" value="{{ old('mobile') }}" pattern="\d*" maxlength="11">
+                              <label class="control-label">SSC Passing Year</label>
+                              <input type="text" class="form-control" placeholder="SSC Passing Year" name="ssc_passing_year" value="{{ old('ssc_passing_year') }}" required="">
+                          </div>
+                        </div>
+                        <div class="col-md-3">
+                          <div class="form-group">
+                              <label class="control-label">HSC (School Name)</label>
+                              <input type="text" class="form-control" placeholder="Write Your College Name" name="hsc" value="{{ old('hsc') }}" required="">
+                          </div>
+                        </div>
+                        <div class="col-md-3">
+                          <div class="form-group">
+                              <label class="control-label">HSC Passing Year</label>
+                              <input type="text" class="form-control" placeholder="HSC Passing Year" name="hsc_passing_year" value="{{ old('hsc_passing_year') }}" required="">
                           </div>
                         </div>
                       </div>
+
+                      <div class="separator">Extra-Curricular</div>
                       <div class="row">
                         <div class="col-md-6">
                           <div class="form-group">
-                              <label class="control-label">Emergency Contact No: (11 digit number)</label>
-                              <input type="text" class="form-control" placeholder="" required name="emergencycontact" value="{{ old('emergencycontact') }}" pattern="\d*" maxlength="11">
+                              <label class="control-label">Co-curricular Activities</label>
+                              <input type="text" class="form-control" placeholder="Write Your Co-curricular Activities" name="cocurricular" value="{{ old('cocurricular') }}" required="">
                           </div>
                         </div>
-                        
+                        <div class="col-md-6">
+                          <div class="form-group">
+                              <label class="control-label">Hobbies</label>
+                              <input type="text" class="form-control" placeholder="Write Your Hobbies" name="hobby" value="{{ old('hobby') }}" required="">
+                          </div>
+                        </div>
+                        <div class="col-md-12">
+                          <div class="form-group">
+                              <label class="control-label">Why do you want to be a member of DUITS (Within 50 words)</label>
+                              <textarea class="form-control" placeholder="Write Your College Name" name="reason" value="{{ old('reason') }}" required=""></textarea>
+                          </div>
+                        </div>
+                        <div class="col-md-4">
+                          <div class="form-group">
+                              <label class="control-label">Social Network Use</label>
+                              <input type="text" class="form-control" placeholder="Social Networks (i.e. Facebook, Instagram)" name="socialnets" value="{{ old('socialnets') }}" required="">
+                          </div>
+                        </div>
+                        <div class="col-md-4">
+                          <div class="form-group">
+                              <label class="control-label">Blogs You Visits Usually</label>
+                              <input type="text" class="form-control" placeholder="Blogs You Visits Usually" name="blogs" value="{{ old('blogs') }}" required="">
+                          </div>
+                        </div>
+                        <div class="col-md-4">
+                          <div class="form-group">
+                              <label class="control-label">Member of Other Societies of DU</label>
+                              <input type="text" class="form-control" placeholder="i.e. DUPS, DUFS, DUCS" name="othersocieties" value="{{ old('othersocieties') }}" required="">
+                          </div>
+                        </div>
                       </div>
+
+                      <div class="separator">Payment</div>
+                      <div class="row">
+                        <div class="col-md-4">
+                          <label class="control-label">Payment Method</label>
+                          <select class="form-control" id="payment_method" name="payment_method" required="">
+                              <option value="" selected="" disabled="">Select Payment Method</option>
+                              <option value="bKash">bKash</option>
+                              <option value="DBBL Rocket">DBBL Rocket</option>
+                          </select>
+                          <span id="payment_text"></span>
+                        </div>
+                        <div class="col-md-4">
+                          <div class="form-group">
+                              <label class="control-label">TrxID <span id="payment_label_text"></span></label>
+                              <input type="text" class="form-control" placeholder="TrxID" name="trxid" value="{{ old('trxid') }}" required="">
+                          </div>
+                        </div>
+                      </div>
+
                       <button class="btn highlight-button-dark btn-bg btn-round margin-five no-margin-right" type="submit"><i class="fa fa-arrow-right"></i> Next</button>
                   </form>
                 </div>
               </div>
-              {{-- <div class="col-md-4">
-                <div class="login-box">
-                  <center>
-                    <h2>Call For Participation 2019</h2><br/>
-                    <a href="{{ asset('files/Call_For_Participation_2019.pdf') }}" class="btn highlight-button btn-bg btn-round margin-five no-margin-right" download=""><i class="fa fa-download"></i> Download File</a>
-                  </center>
-                </div><br/>
-                <div class="login-box">
-                  <center>
-                    <h2>Check Your Registration Status</h2><br/>
-                  </center>
-                  <input type="text" class="form-control" placeholder="Your Registration ID" id="id_to_check">
-                  <center>
-                    <button class="btn highlight-button-dark btn-bg btn-round margin-five" id="btn_check" type="button"><i class="fa fa-search"></i> Check Status</button>
-                  </center>
-                </div>
-              </div> --}}
             </div>
         </div>
         <div id="dtBox"></div>
@@ -204,13 +306,23 @@
   {!!Html::script('js/parsley.min.js')!!}
   <script type="text/javascript" src="{{ asset('js/DateTimePicker.min.js') }}"></script>
   <script type="text/javascript">
-        $(document).ready(function() {
-          $("#dtBox").DateTimePicker({
-              mode:"date",
-              dateFormat: "dd-MM-yyyy",
-              titleContentDate: 'Select Your Date of Birth'
-          });
-        });
+    $(document).ready(function() {
+      $("#dtBox").DateTimePicker({
+          mode:"date",
+          dateFormat: "dd-MM-yyyy",
+          titleContentDate: 'Select Your Date of Birth'
+      });
+    });
+
+    $('#payment_method').change(function() {
+        if($('#payment_method').val() == 'bKash') {
+            $('#payment_text').html('<big><b>Send BDT 100 to 017**** bKash personal no and write the TrxID in the next field</b></big>');
+            $('#payment_label_text').text('of bKash');
+        } else if($('#payment_method').val() == 'DBBL Rocket') {
+            $('#payment_text').html('<big><b>Send BDT 100 to 017**** rocket no and write the TrxID in the next field</b></big>');
+            $('#payment_label_text').text('of DBBL Rocket');
+        }
+    });
   </script>
   <script type="text/javascript">
   var _URL = window.URL || window.webkitURL;

@@ -337,6 +337,87 @@ class IndexController extends Controller
         return view('index.recruitment.application');
     }
 
+    public function storeRecruitmentApplication(Request $request)
+    {
+        $this->validate($request,array(
+            'name'                      => 'required|max:255',
+            'dept'                      => 'required|max:255',
+            'hall'                      => 'required|max:255',
+            'residency'                 => 'required',
+            'session'                   => 'required',
+            'session'                   => 'required',
+            'email'                     => 'required|email',
+            'contact1'                  => 'required|numeric',
+            'contact2'                  => 'required|numeric',
+            'dob'                       => 'required',
+            'bloodgroup'                => 'required',
+            'father'                    => 'required|max:255',
+            'fcontact'                  => 'required|numeric',
+            'mother'                    => 'required|max:255',
+            'mcontact'                  => 'required|numeric',
+            'ssc'                       => 'required|max:255',
+            'ssc_passing_year'          => 'required|max:255',
+            'hsc'                       => 'required|max:255',
+            'hsc_passing_year'          => 'required|max:255',
+            'cocurricular'              => 'required|max:255',
+            'hobby'                     => 'required|max:255',
+            'reason'                    => 'required',
+            'socialnets'                => 'required|max:255',
+            'blogs'                     => 'required|max:255',
+            'othersocieties'            => 'required|max:255',
+            'image'                     => 'required|image|max:200',
+            'payment_method'            => 'required|max:255',
+            'trxid'                     => 'required|max:255'
+        ));
+
+        $application = new User();
+        $application->name = htmlspecialchars(preg_replace("/\s+/", " ", ucwords($request->name)));
+        $application->email = htmlspecialchars(preg_replace("/\s+/", " ", $request->email));
+        $application->phone = htmlspecialchars(preg_replace("/\s+/", " ", $request->phone));
+        $dob = htmlspecialchars(preg_replace("/\s+/", " ", $request->dob));
+        $application->dob = new Carbon($dob);
+        $application->degree = htmlspecialchars(preg_replace("/\s+/", " ", $request->degree));
+        $application->batch = htmlspecialchars(preg_replace("/\s+/", " ", $request->batch));
+        $application->roll = htmlspecialchars(preg_replace("/\s+/", " ", $request->roll));
+        $application->passing_year = htmlspecialchars(preg_replace("/\s+/", " ", $request->passing_year));
+        $application->current_job = htmlspecialchars(preg_replace("/\s+/", " ", $request->current_job));
+        $application->designation = htmlspecialchars(preg_replace("/\s+/", " ", $request->designation));
+        $application->address = htmlspecialchars(preg_replace("/\s+/", " ", $request->address));
+        $application->fb = htmlspecialchars(preg_replace("/\s+/", " ", $request->fb));
+        $application->twitter = htmlspecialchars(preg_replace("/\s+/", " ", $request->twitter));
+        $application->gplus = htmlspecialchars(preg_replace("/\s+/", " ", $request->gplus));
+        $application->linkedin = htmlspecialchars(preg_replace("/\s+/", " ", $request->linkedin));
+
+        // image upload
+        if($request->hasFile('image')) {
+            $image      = $request->file('image');
+            $filename   = str_replace(' ','',$request->name).time() .'.' . $image->getClientOriginalExtension();
+            $location   = public_path('/images/users/'. $filename);
+            Image::make($image)->resize(250, 250)->save($location);
+            $application->image = $filename;
+        }
+        $application->password = Hash::make($request->password);
+
+        $application->role = 'alumni';
+        $application->payment_status = 0;
+
+        // amount will be set dynamically
+        // $application->amount = null;
+        // $application->trxid = null;
+
+        // generate unique_key
+        $unique_key_length = 100;
+        $pool = '0123456789abcdefghijklmnopqrstuvwxyz0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
+        $unique_key = substr(str_shuffle(str_repeat($pool, 100)), 0, $unique_key_length);
+        // generate unique_key
+        $application->unique_key = $unique_key;
+        $application->save();
+        
+        Session::flash('success', 'You have registered Successfully!');
+        Auth::login($application);
+        return redirect()->route('index.profile', $unique_key);
+    }
+
     // clear configs, routes and serve
     public function clear()
     {

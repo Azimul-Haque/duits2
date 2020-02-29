@@ -66,7 +66,7 @@
                         <div class="col-md-4">
                           <div class="form-group">
                               <label class="control-label">Department</label>
-                              <input type="text" class="form-control" placeholder="Department (i.e. Facebook, InstagramEconomics, Software Engineering)" name="dept" value="{{ old('dept') }}" required="">
+                              <input type="text" class="form-control" placeholder="Department (i.e. Economics, Software Engineering)" name="dept" value="{{ old('dept') }}" required="">
                           </div>
                         </div>
                         <div class="col-md-4">

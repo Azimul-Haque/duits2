@@ -468,7 +468,7 @@ class DashboardController extends Controller
         
         $pdf = PDF::loadView('dashboard.recruitment.pdf.singleapplicaiton', ['application' => $application]);
         $fileName = 'DUITS_Member_' . $application->member_id . '.pdf';
-        return $pdf->stream($fileName);
+        return $pdf->download($fileName);
     }
 
     public function approveRecruitmentApplication(Request $request, $id)

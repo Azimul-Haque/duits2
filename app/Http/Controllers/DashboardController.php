@@ -483,15 +483,15 @@ class DashboardController extends Controller
 
     public function deleteRecruitmentApplication($id)
     {
-        $committee = committee::find($id);
-        $image_path = public_path('images/committee/adhoc/'. $committee->image);
+        $application = Member::find($id);
+        $image_path = public_path('images/members/'. $application->image);
         if(File::exists($image_path)) {
             File::delete($image_path);
         }
-        $committee->delete();
+        $application->delete();
 
         Session::flash('success', 'Deleted Successfully!');
-        return redirect()->route('dashboard.committee');
+        return redirect()->route('dashboard.recruitment.applications');
     }
 
     public function getBlogs()

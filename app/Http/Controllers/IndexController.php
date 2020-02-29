@@ -362,7 +362,7 @@ class IndexController extends Controller
             'cocurricular'              => 'required|max:255',
             'hobby'                     => 'required|max:255',
             'reason'                    => 'required',
-            'blogs'                     => 'required|max:255',
+            'blogs'                     => 'sometimes|max:255',
             'othersocieties'            => 'sometimes|max:255',
             'image'                     => 'required|image|max:200',
             'payment_method'            => 'required|max:255',

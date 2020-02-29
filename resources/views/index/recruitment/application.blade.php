@@ -53,25 +53,26 @@
                       {!! csrf_field() !!}
                       <center>
                         <h2>Registration Form</h2><br/>
+                        <small>* Means Mandatory Field</small>
                       </center>
 
                       <div class="separator">Personal Information</div>
                       <div class="row">
                         <div class="col-md-4">
                           <div class="form-group">
-                              <label class="control-label">Name</label>
+                              <label class="control-label">Name *</label>
                               <input type="text" class="form-control" placeholder="Write Your Name" name="name" value="{{ old('name') }}" required="">
                           </div>
                         </div>
                         <div class="col-md-4">
                           <div class="form-group">
-                              <label class="control-label">Department</label>
+                              <label class="control-label">Department *</label>
                               <input type="text" class="form-control" placeholder="Department (i.e. Economics, Software Engineering)" name="dept" value="{{ old('dept') }}" required="">
                           </div>
                         </div>
                         <div class="col-md-4">
                           <div class="form-group">
-                            <label class="control-label">Hall</label>
+                            <label class="control-label">Hall *</label>
                             <select class="form-control" id="hall" name="hall" required="">
                                 <option value="" selected="" disabled="">Select Hall</option>
                                 <option value="Amar Ekushey Hall">Amar Ekushey Hall</option>
@@ -105,7 +106,7 @@
                       <div class="row">
                         <div class="col-md-4">
                           <div class="form-group">
-                            <label class="control-label">Residency</label>
+                            <label class="control-label">Residency *</label>
                             <select class="form-control" id="residency" name="residency" required="">
                                 <option value="" selected="" disabled="">Select Residency</option>
                                 <option value="1">Resident</option>
@@ -115,7 +116,7 @@
                         </div>
                         <div class="col-md-4">
                             <div class="form-group">
-                              <label class="control-label">Session</label>
+                              <label class="control-label">Session *</label>
                               <select class="form-control" id="session" name="session" required="">
                                   <option value="" selected="" disabled="">Select Session</option>
                                   @php
@@ -129,7 +130,7 @@
                         </div>
                         <div class="col-md-4">
                           <div class="form-group">
-                              <label class="control-label">Email Address</label>
+                              <label class="control-label">Email Address *</label>
                               <input type="email" class="form-control" placeholder="Write Email Address" name="email" value="{{ old('email') }}" required="">
                           </div>
                         </div>
@@ -137,26 +138,26 @@
                       <div class="row">
                         <div class="col-md-4">
                           <div class="form-group">
-                              <label class="control-label">Contact No (11 digit number)</label>
+                              <label class="control-label">Contact No (11 digit number) *</label>
                               <input type="text" class="form-control" placeholder="Write Your Contact No" name="contact1" value="{{ old('contact1') }}" required>
                           </div>
                         </div>
                         <div class="col-md-4">
                           <div class="form-group">
-                              <label class="control-label">Alternative Contact No (11 digit number)</label>
+                              <label class="control-label">Alternative Contact No (11 digit number) *</label>
                               <input type="text" class="form-control" placeholder="Write an Alternative Contact No" name="contact2" value="{{ old('contact2') }}" required>
                           </div>
                         </div>
                         <div class="col-md-4">
                           <div class="form-group">
-                              <label class="control-label">Date of Birth</label>
+                              <label class="control-label">Date of Birth *</label>
                               <input type="text" class="form-control" placeholder="Date of Birth" id="dob" name="dob" data-field="date" value="{{ old('dob') }}" autocomplete="off" required>
                           </div>
                         </div>
                       </div>
                       <div class="row">
                         <div class="col-md-4">
-                          <label class="control-label">Blood Group</label>
+                          <label class="control-label">Blood Group *</label>
                           <select class="form-control" id="bloodgroup" name="bloodgroup" required="">
                               <option value="" selected="" disabled="">Select Blood Group</option>
                               <option value="A+">A+</option>
@@ -171,7 +172,7 @@
                         </div>
                         <div class="col-md-4">
                           <div class="form-group no-margin-bottom">
-                              <label>Photo (300 X 300 &amp; 200Kb Max)</label>
+                              <label>Photo (300 X 300 &amp; 200Kb Max) *</label>
                               <input type="file" id="image" name="image" required="">
                           </div>
                         </div>
@@ -186,25 +187,25 @@
                       <div class="row">
                         <div class="col-md-3">
                           <div class="form-group">
-                              <label class="control-label">Father</label>
+                              <label class="control-label">Father *</label>
                               <input type="text" class="form-control" placeholder="Write Your Father's Name" name="father" value="{{ old('father') }}" required>
                           </div>
                         </div>
                         <div class="col-md-3">
                           <div class="form-group">
-                              <label class="control-label">Contact No of Father</label>
+                              <label class="control-label">Contact No of Father (Optional)</label>
                               <input type="text" class="form-control" placeholder="Father's Contact No" name="fcontact" value="{{ old('fcontact') }}" pattern="\d*" maxlength="11">
                           </div>
                         </div>
                         <div class="col-md-3">
                           <div class="form-group">
-                              <label class="control-label">Mother</label>
+                              <label class="control-label">Mother *</label>
                               <input type="text" class="form-control" placeholder="Write Your Mother's Name" name="mother" value="{{ old('mother') }}" required>
                           </div>
                         </div>
                         <div class="col-md-3">
                           <div class="form-group">
-                              <label class="control-label">Contact No of Mother</label>
+                              <label class="control-label">Contact No of Mother (Optional)</label>
                               <input type="text" class="form-control" placeholder="Mother's Contact No" name="mcontact" value="{{ old('mcontact') }}" pattern="\d*" maxlength="11">
                           </div>
                         </div>
@@ -214,25 +215,25 @@
                       <div class="row">
                         <div class="col-md-3">
                           <div class="form-group">
-                              <label class="control-label">SSC (School Name)</label>
+                              <label class="control-label">SSC (School Name) *</label>
                               <input type="text" class="form-control" placeholder="Write Your School Name" name="ssc" value="{{ old('ssc') }}" required="">
                           </div>
                         </div>
                         <div class="col-md-3">
                           <div class="form-group">
-                              <label class="control-label">SSC Passing Year</label>
+                              <label class="control-label">SSC Passing Year *</label>
                               <input type="text" class="form-control" placeholder="SSC Passing Year" name="ssc_passing_year" value="{{ old('ssc_passing_year') }}" required="">
                           </div>
                         </div>
                         <div class="col-md-3">
                           <div class="form-group">
-                              <label class="control-label">HSC (College Name)</label>
+                              <label class="control-label">HSC (College Name) *</label>
                               <input type="text" class="form-control" placeholder="Write Your College Name" name="hsc" value="{{ old('hsc') }}" required="">
                           </div>
                         </div>
                         <div class="col-md-3">
                           <div class="form-group">
-                              <label class="control-label">HSC Passing Year</label>
+                              <label class="control-label">HSC Passing Year *</label>
                               <input type="text" class="form-control" placeholder="HSC Passing Year" name="hsc_passing_year" value="{{ old('hsc_passing_year') }}" required="">
                           </div>
                         </div>
@@ -242,32 +243,32 @@
                       <div class="row">
                         <div class="col-md-6">
                           <div class="form-group">
-                              <label class="control-label">Co-curricular Activities</label>
+                              <label class="control-label">Co-curricular Activities *</label>
                               <input type="text" class="form-control" placeholder="Write Your Co-curricular Activities" name="cocurricular" value="{{ old('cocurricular') }}" required="">
                           </div>
                         </div>
                         <div class="col-md-6">
                           <div class="form-group">
-                              <label class="control-label">Hobbies</label>
+                              <label class="control-label">Hobbies *</label>
                               <input type="text" class="form-control" placeholder="Write Your Hobbies" name="hobby" value="{{ old('hobby') }}" required="">
                           </div>
                         </div>
                         <div class="col-md-12">
                           <div class="form-group">
-                              <label class="control-label">Why do you want to be a member of DUITS (Within 50 words)</label>
+                              <label class="control-label">Why do you want to be a member of DUITS (Within 50 words) *</label>
                               <textarea class="form-control" placeholder="Why do you want to be a member of DUITS" name="reason" value="{{ old('reason') }}" required=""></textarea>
                           </div>
                         </div>
                         <div class="col-md-6">
                           <div class="form-group">
-                              <label class="control-label">Blogs You Visits Usually</label>
-                              <input type="text" class="form-control" placeholder="Blogs You Visits Usually" name="blogs" value="{{ old('blogs') }}" required="">
+                              <label class="control-label">Blogs You Visits Usually (Optional)</label>
+                              <input type="text" class="form-control" placeholder="Blogs You Visits Usually" name="blogs" value="{{ old('blogs') }}">
                           </div>
                         </div>
                         <div class="col-md-6">
                           <div class="form-group">
-                              <label class="control-label">Member of Other Societies of DU</label>
-                              <input type="text" class="form-control" placeholder="i.e. DUPS, DUFS, DUCS" name="othersocieties" value="{{ old('othersocieties') }}" required="">
+                              <label class="control-label">Member of Other Societies of DU (Optional))</label>
+                              <input type="text" class="form-control" placeholder="i.e. DUPS, DUFS, DUCS" name="othersocieties" value="{{ old('othersocieties') }}">
                           </div>
                         </div>
                       </div>
@@ -275,7 +276,7 @@
                       <div class="separator">Payment</div>
                       <div class="row">
                         <div class="col-md-4">
-                          <label class="control-label">Payment Method</label>
+                          <label class="control-label">Payment Method *</label>
                           <select class="form-control" id="payment_method" name="payment_method" required="">
                               <option value="" selected="" disabled="">Select Payment Method</option>
                               <option value="bKash">bKash</option>
@@ -285,7 +286,7 @@
                         </div>
                         <div class="col-md-4">
                           <div class="form-group">
-                              <label class="control-label">TrxID <span id="payment_label_text"></span></label>
+                              <label class="control-label">TrxID <span id="payment_label_text"></span> *</label>
                               <input type="text" class="form-control" placeholder="TrxID" name="trxid" value="{{ old('trxid') }}" required="">
                           </div>
                         </div>
@@ -315,10 +316,10 @@
 
     $('#payment_method').change(function() {
         if($('#payment_method').val() == 'bKash') {
-            $('#payment_text').html('<big><b>Send BDT 100 to 017**** bKash personal no and write the TrxID in the next field</b></big>');
+            $('#payment_text').html('<big><b>Send BDT 100 to <big>01521450527</big> bKash personal no and write the TrxID in the next field</b></big>');
             $('#payment_label_text').text('of bKash');
         } else if($('#payment_method').val() == 'DBBL Rocket') {
-            $('#payment_text').html('<big><b>Send BDT 100 to 017**** rocket no and write the TrxID in the next field</b></big>');
+            $('#payment_text').html('<big><b>Send BDT 100 to <big>015214505271</big> rocket no and write the TrxID in the next field</b></big>');
             $('#payment_label_text').text('of DBBL Rocket');
         }
     });

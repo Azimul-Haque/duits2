@@ -34,7 +34,6 @@
           <th>Application ID</th>
           <th>DU Data</th>
           <th>Contact</th>
-          <th>Date of Birth</th>
           <th>Co-curricular</th>
           <th>Hobby</th>
           <th>Other DU Societies</th>
@@ -42,7 +41,7 @@
           <th>Payment</th>
           <th>Status</th>
           <th>Photo</th>
-          <th>Action</th>
+          <th width="10%">Action</th>
         </tr>
       </thead>
       <tbody>
@@ -50,13 +49,12 @@
         <tr>
           <td>{{ $application->name }}</td>
           <td><big><b>{{ $application->member_id }}</b></big></td>
-          <td>{{ $application->dept }}<br/>{{ $application->hall }}</td>
-          <td>{{ $application->contact1 }}, {{ $application->contact1 }}<br/>{{ $application->email }}</td>
-          <td>{{ date('F d, Y', strtotime($application->dob)) }}</td>
-          <td>{{ $application->cocurricular }}</td>
-          <td>{{ $application->hobby }}</td>
-          <td>{{ $application->othersocieties }}</td>
-          <td>{{ $application->reason }}</td>
+          <td><small>{{ $application->dept }},<br/>{{ $application->hall }}</small></td>
+          <td><small>{{ $application->contact1 }}, {{ $application->contact1 }},<br/>{{ $application->email }}</small></td>
+          <td><small>{{ $application->cocurricular }}</small></td>
+          <td><small>{{ $application->hobby }}</small></td>
+          <td><small>{{ $application->othersocieties }}</small></td>
+          <td><small>{{ $application->reason }}</small></td>
           <td>{{ $application->payment_method }}<br/>{{ $application->trxid }}</td>
           <td>
             @if($application->status == 1)
@@ -67,16 +65,41 @@
           </td>
           <td>
             @if($application->image != null && file_exists(public_path('images/members/' . $application->image)))
-            <img src="{{ asset('images/registrations/'.$application->image)}}" style="height: 40px; width: auto;" />
+            <img src="{{ asset('images/members/'.$application->image)}}" style="height: 40px; width: auto;" />
             @else
             <img src="{{ asset('images/user.png')}}" style="height: 40px; width: auto;" />
             @endif
           </td>
-          <td><small>{{ date('F d, Y', strtotime($application->created_at)) }}<br/>{{ date('h:i A', strtotime($application->created_at)) }} </small></td>
           <td>
-            @if($application->payment_status == 1)
-            <a href="{{ route('application.printreceipt', $application->registration_id) }}" class="btn btn-sm btn-primary" title="Print Receipt" target="_blank"><i class="fa fa-print"></i></a>
+            @if($application->status == 0)
+            <button class="btn btn-sm btn-success" data-toggle="modal" data-target="#approveModal" data-backdrop="static" title="Approve Application"><i class="fa fa-check"></i></button>
+            <!-- Approve Modal -->
+            <!-- Approve Modal -->
+            <div class="modal fade" id="approveModal" role="dialog">
+              <div class="modal-dialog modal-md">
+                <div class="modal-content">
+                  <div class="modal-header modal-header-success">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title"><i class="fa fa-exclamation-triangle"></i> Approve Application</h4>
+                  </div>
+                  <div class="modal-body">
+                   Confirm approve this application of <big><b>{{ $application->name }}</b></big>?
+                  </div>
+                  <div class="modal-footer">
+                    {!! Form::model($application, ['route' => ['dashboard.recruitment.approveapplication', $application->id], 'method' => 'PATCH', 'class' => 'form-default']) !!}
+                        {!! Form::submit('Submit', array('class' => 'btn btn-success')) !!}
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                    {!! Form::close() !!}
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Approve Modal -->
+            <!-- Approve Modal -->
             @endif
+
+            <a href="{{ route('dashboard.recruitment.application.pdf', $application->id) }}" class="btn btn-sm btn-primary" title="Print Information" target="_blank"><i class="fa fa-print"></i></a>
+            <a href="{{ route('dashboard.recruitment.deleteapplication', $application->id) }}" class="btn btn-sm btn-danger" title="Delete Application" target="_blank"><i class="fa fa-trash"></i></a>
           </td>
         </tr>
         @endforeach

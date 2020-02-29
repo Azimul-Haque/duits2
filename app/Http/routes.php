@@ -102,6 +102,7 @@ Route::delete('/dashboard/gallery/album/single/{id}/delete', ['as'=>'dashboard.d
 Route::get('/dashboard/recruitment/applications', ['as'=>'dashboard.recruitment.applications','uses'=>'DashboardController@getRecruitmentApplications']);
 Route::get('/dashboard/recruitment/applications/pdf', ['as'=>'dashboard.recruitment.applications.pdf','uses'=>'DashboardController@getRecruitmentApplicationPDF']);
 Route::patch('/dashboard/recruitment/applications/{id}/approve', ['as'=>'dashboard.recruitment.approveapplication','uses'=>'DashboardController@approveRecruitmentApplication']);
+Route::get('/dashboard/recruitment/application/pdf/{id}', ['as'=>'dashboard.recruitment.application.pdf','uses'=>'DashboardController@getRecruitmentApplicationSiglePDF']);
 Route::delete('/dashboard/recruitment/application/{id}', ['as'=>'dashboard.recruitment.deleteapplication','uses'=>'DashboardController@deleteRecruitmentApplication']);
 
 Route::get('/dashboard/blogs', ['as'=>'dashboard.blogs','uses'=>'DashboardController@getBlogs']);

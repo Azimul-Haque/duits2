@@ -41,8 +41,7 @@
                                 <thead>
                                     <tr>
                                         <th>Application ID</th>
-                                        <th>Dept</th>
-                                        <th>Hall</th>
+                                        <th>DU Data</th>
                                         <th>Contact</th>
                                         <th>Payment</th>
                                         <th>Membership Status</th>
@@ -52,10 +51,9 @@
                                 <tbody>
                                     <tr>
                                         <td><big><b>{{ $application->member_id }}</b></big></td>
-                                        <td>{{ $application->dept }}</td>
-                                        <td>{{ $application->hall }}</td>
+                                        <td>{{ $application->dept }},<br/>{{ $application->hall }}</td>
                                         <td>
-                                            {{ $application->contact1 }}, {{ $application->contact2 }}<br/>
+                                            {{ $application->contact1 }}, {{ $application->contact2 }},<br/>
                                             {{ $application->email }}
                                         </td>
                                         <td>
@@ -70,7 +68,7 @@
                                             @endif
                                         </td>
                                         <td width="13%">
-                                            @if(file_exists(public_path('images/members/' . $application->image)))
+                                            @if($application->image != null && file_exists(public_path('images/members/' . $application->image)))
                                                 <img src="{{ asset('images/members/' . $application->image)}}" style="height: 80px; width: 80px;"/>
                                             @else
                                                 <img src="{{ asset('images/user.png')}}" style="height: 80px; width: 80px;"/>

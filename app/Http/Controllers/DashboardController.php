@@ -15,8 +15,9 @@ use App\Albumphoto;
 use App\Application;
 use App\Blog;
 use App\Category;
-use PDF;
+use App\Member;
 
+use PDF;
 use DB;
 use Auth;
 use Image;
@@ -449,9 +450,7 @@ class DashboardController extends Controller
     {
         $applications = Member::orderBy('id', 'desc')->paginate(10);
 
-        return view('dashboard.applications')
-                    ->withTotalcollection($totalcollection)
-                    ->withApplications($applications);
+        return view('dashboard.recruitment.applications')->withApplications($applications);
     }
 
     public function getRecruitmentApplicationPDF()

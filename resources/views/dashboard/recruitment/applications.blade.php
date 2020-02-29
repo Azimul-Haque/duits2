@@ -72,22 +72,22 @@
           </td>
           <td>
             @if($application->status == 0)
-            <button class="btn btn-sm btn-success" data-toggle="modal" data-target="#approveModal" data-backdrop="static" title="Approve Application"><i class="fa fa-check"></i></button>
+            <button class="btn btn-sm btn-success" data-toggle="modal" data-target="#approveModal{{ $application->id }}" data-backdrop="static" title="Approve Application"><i class="fa fa-check"></i></button>
             <!-- Approve Modal -->
             <!-- Approve Modal -->
-            <div class="modal fade" id="approveModal" role="dialog">
+            <div class="modal fade" id="approveModal{{ $application->id }}" role="dialog">
               <div class="modal-dialog modal-md">
                 <div class="modal-content">
                   <div class="modal-header modal-header-success">
                     <button type="button" class="close" data-dismiss="modal">&times;</button>
-                    <h4 class="modal-title"><i class="fa fa-exclamation-triangle"></i> Approve Application</h4>
+                    <h4 class="modal-title"><i class="fa fa-check"></i> Approve Application</h4>
                   </div>
                   <div class="modal-body">
                    Confirm approve this application of <big><b>{{ $application->name }}</b></big>?
                   </div>
                   <div class="modal-footer">
                     {!! Form::model($application, ['route' => ['dashboard.recruitment.approveapplication', $application->id], 'method' => 'PATCH', 'class' => 'form-default']) !!}
-                        {!! Form::submit('Submit', array('class' => 'btn btn-success')) !!}
+                        {!! Form::submit('Approve', array('class' => 'btn btn-success')) !!}
                         <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
                     {!! Form::close() !!}
                   </div>

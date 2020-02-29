@@ -473,19 +473,12 @@ class DashboardController extends Controller
 
     public function approveRecruitmentApplication(Request $request, $id)
     {
-        // $this->validate($request,array(
-        //     'amount'    => 'required',
-        //     'trxid'     => 'sometimes'
-        // ));
+        $application = Member::findOrFail($id);
+        $application->status = 1;
+        $application->save();
 
-        // $application = User::findOrFail($id);
-        // $application->payment_status = 1;
-        // $application->amount = $request->amount;
-        // $application->trxid = $request->trxid;
-        // $application->save();
-
-        // Session::flash('success', 'Approved Successfully!');
-        // return redirect()->route('dashboard.applications');
+        Session::flash('success', 'Approved Successfully!');
+        return redirect()->route('dashboard.recruitment.applications');
     }
 
     public function deleteRecruitmentApplication($id)

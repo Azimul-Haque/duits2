@@ -32,19 +32,28 @@
                       <div class="row">
                         <div class="col-md-6">
                           <div class="form-group">
-                              <label class="control-label">Event Name:</label>
-                              <select class="form-control" name="event" required style="font-family: 'Open Sans', sans-serif; font-size: 12px;">
-                                  <option value="" selected="" disabled="">Select Event Name</option>
-                                  <option value="1,Apps in Life">Apps in Life</option>
-                                  <option value="2,Robo Project Showcasing">Robo Project Showcasing</option>
-                                  <option value="3,IT Project Showcasing">IT Project Showcasing</option>
-                                  <option value="4,Idea Contest">Idea Contest</option>
-                                  <option value="5,Hackathon">Hackathon</option>
-                                  <option value="" disabled="">──────────</option>
-                                  <option value="6,Gaming Contest (NFS Most Wanted)">Gaming Contest (NFS Most Wanted)</option>
-                                  <option value="7,Gaming Contest (FIFA-19)">Gaming Contest (FIFA-19)</option>
-                                  <option value="8,Gaming Contes (Counter-Strike: Global Offensive)">Gaming Contes (Counter-Strike: Global Offensive)</option>
-                              </select>
+                              <label class="control-label">হলের নাম</label>
+                              <select class="form-control single-select-custom" id="hall_id1" name="hall_id">
+                                <option value="অমর একুশে হল">অমর একুশে হল</option>
+                                <option value="বঙ্গমাতা শেখ ফজিলাতুন্নেছা মুজিব হল">বঙ্গমাতা শেখ ফজিলাতুন্নেছা মুজিব হল</option>
+                                <option value="16">বাংলাদেশ কুয়েত মৈত্রী হল</option>
+                                <option value="22">বিজয় একাত্তর হল</option>
+                                <option value="3">ড. মুহম্মদ শহীদুল্লাহ হল</option>
+                                <option value="4">ফজলুল হক মুসলিম হল</option>
+                                <option value="9">হাজী মুহম্মদ মুহসীন হল</option>
+                                <option value="1">জগন্নাথ হল</option>
+                                <option value="14">জাতির জনক বঙ্গবন্ধু শেখ মুজিবুর রহমান হল</option>
+                                <option value="11">কবি জসীম উদদীন হল</option>
+                                <option value="21">কবি সুফিয়া কামাল হল</option>
+                                <option value="15"> মুক্তিযোদ্ধা জিয়াউর রহমান হল</option>
+                                <option value="6">রোকেয়া হল</option>
+                                <option value="2">সলিমুল্লাহ মুসলিম হল</option>
+                                <option value="5">শহীদ সার্জেন্ট জহুরুল হক হল</option>
+                                <option value="10">শামসুন নাহার হল</option>
+                                <option value="12">স্যার এ এফ রহমান হল</option>
+                                <option value="8">সূর্যসেন হল</option>
+                                <option value="8">আন্তর্জাতিক হল</option>
+                            </select>
                           </div>
                         </div>
                         <div class="col-md-6">

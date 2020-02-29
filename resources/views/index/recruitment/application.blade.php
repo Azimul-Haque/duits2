@@ -221,7 +221,7 @@
                         </div>
                         <div class="col-md-3">
                           <div class="form-group">
-                              <label class="control-label">HSC (School Name)</label>
+                              <label class="control-label">HSC (College Name)</label>
                               <input type="text" class="form-control" placeholder="Write Your College Name" name="hsc" value="{{ old('hsc') }}" required="">
                           </div>
                         </div>

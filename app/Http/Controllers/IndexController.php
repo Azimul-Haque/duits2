@@ -428,7 +428,7 @@ class IndexController extends Controller
     {
         $application = Member::where('member_id', $member_id)->first();
 
-        return view('index.recruitment.newapplicant')->withMpplication($application);
+        return view('index.recruitment.newapplicant')->withApplication($application);
     }
 
     // clear configs, routes and serve

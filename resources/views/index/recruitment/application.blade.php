@@ -33,21 +33,21 @@
                         <div class="col-md-6">
                           <div class="form-group">
                               <label class="control-label">Name</label>
-                              <input type="text" class="form-control" placeholder="Write your name" name="name" value="{{ old('name') }}">
+                              <input type="text" class="form-control" placeholder="Write Your Name" name="name" value="{{ old('name') }}" required="">
                           </div>
                         </div>
                         <div class="col-md-6">
                           <div class="form-group">
                               <label class="control-label">Department</label>
-                              <input type="text" class="form-control" placeholder="Department (i.e Economics, Software Engineering)" name="dept" value="{{ old('dept') }}">
+                              <input type="text" class="form-control" placeholder="Department (i.e Economics, Software Engineering)" name="dept" value="{{ old('dept') }}" required="">
                           </div>
                         </div>
                       </div>
                       <div class="row">
                         <div class="col-md-6">
                           <div class="form-group">
-                              <label class="control-label">Hall</label>
-                              <select class="form-control" id="hall" name="hall">
+                            <label class="control-label">Hall</label>
+                            <select class="form-control" id="hall" name="hall" required="">
                                 <option value="" selected="" disabled="">Select Hall</option>
                                 <option value="Amar Ekushey Hall">Amar Ekushey Hall</option>
                                 <option value="Bangamata Sheikh Fazilatunnesa Mujib Hall">Bangamata Sheikh Fazilatunnesa Mujib Hall</option>
@@ -73,8 +73,8 @@
                         </div>
                         <div class="col-md-6">
                           <div class="form-group">
-                              <label class="control-label">Residency</label>
-                              <select class="form-control" id="residency" name="residency">
+                            <label class="control-label">Residency</label>
+                            <select class="form-control" id="residency" name="residency" required="">
                                 <option value="" selected="" disabled="">Select Residency</option>
                                 <option value="1">Resident</option>
                                 <option value="0">Non-resident</option>
@@ -84,37 +84,45 @@
                       </div>
                       <div class="row">
                         <div class="col-md-6">
-                          <div class="form-group">
-                              <label class="control-label">Member 1 Name (if any):</label>
-                              <input type="text" class="form-control" placeholder="" name="member1" value="{{ old('member1') }}">
-                          </div>
+                            <div class="form-group">
+                              <label class="control-label">Session</label>
+                              <select class="form-control" id="session" name="session" required="">
+                                  <option value="" selected="" disabled="">Select Session</option>
+                                  @php
+                                    $current_year = date('Y');
+                                  @endphp
+                                  @for($current_year; $current_year > 2000; $current_year--)
+                                    <option value="{{ $current_year }}-{{ $current_year + 1 }}">{{ $current_year }}-{{ $current_year + 1 }}</option>
+                                  @endfor
+                              </select>
+                            </div>
                         </div>
                         <div class="col-md-6">
                           <div class="form-group">
-                              <label class="control-label">Member 2 Name (if any):</label>
-                              <input type="text" class="form-control" placeholder="" name="member2" value="{{ old('member2') }}">
-                          </div>
-                        </div>
-                      </div>
-                      <div class="row">
-                        <div class="col-md-6">
-                          <div class="form-group">
-                              <label class="control-label">Member 3 Name (if any):</label>
-                              <input type="text" class="form-control" placeholder="" name="member3" value="{{ old('member3') }}">
-                          </div>
-                        </div>
-                        <div class="col-md-6">
-                          <div class="form-group">
-                              <label class="control-label">Member 4 Name (if any):</label>
-                              <input type="text" class="form-control" placeholder="" name="member4" value="{{ old('member4') }}">
+                              <label class="control-label">Email Address</label>
+                              <input type="email" class="form-control" placeholder="Write Email Address" name="email" value="{{ old('email') }}" required="">
                           </div>
                         </div>
                       </div>
                       <div class="row">
                         <div class="col-md-6">
                           <div class="form-group">
-                              <label class="control-label">Institution:</label>
-                              <input type="text" class="form-control" placeholder="" required name="institution" value="{{ old('institution') }}">
+                              <label class="control-label">Contact No</label>
+                              <input type="text" class="form-control" placeholder="Write Your Contact No" name="contact1" value="{{ old('contact1') }}" required>
+                          </div>
+                        </div>
+                        <div class="col-md-6">
+                          <div class="form-group">
+                              <label class="control-label">Alternative Contact No</label>
+                              <input type="text" class="form-control" placeholder="Write an Alternative Contact No" name="contact2" value="{{ old('contact2') }}" required>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-md-6">
+                          <div class="form-group">
+                              <label class="control-label">Date of Birth</label>
+                              <input type="text" class="form-control" placeholder="Date of Birth" id="dob" name="dob" value="{{ old('dob') }}" required>
                           </div>
                         </div>
                         <div class="col-md-6">

@@ -33,7 +33,7 @@
   <table>
     <tbody>
       <tr>
-        <td width="20%"></td>
+        <td width="10%"></td>
         <td width="15%">
           <center><img src="{{ public_path('images/logo.png') }}" style="height: 70px; width: auto;"></center>
         </td>
@@ -46,55 +46,23 @@
         <td width="15%">
           <center><img src="{{ public_path('images/du_logo.png') }}" style="height: 70px; width: auto;"></center>
         </td>
-        <td width="20%"></td>
+        <td width="10%"></td>
       </tr>
     </tbody>
   </table>
 
+  <br/>
   <table class="bordertable">
-    <thead>
-      <tr>
-        <th width="15%">Name</th>
-        <th>Application ID</th>
-        <th>DU Data</th>
-        <th>Contact</th>
-        <th>Co-curricular</th>
-        <th>Hobby</th>
-        <th>Other DU Societies</th>
-        <th>Payment</th>
-        <th>Status</th>
-        <th>Photo</th>
-      </tr>
-    </thead>
     <tbody>
-      @foreach($applications as $application)
       <tr>
-        <td>{{ $application->name }}</td>
-        <td><big><b>{{ $application->member_id }}</b></big></td>
-        <td><small>{{ $application->dept }},<br/>{{ $application->hall }}</small></td>
-        <td><small>{{ $application->contact1 }}, {{ $application->contact1 }},<br/>{{ $application->email }}</small></td>
-        <td><small>{{ $application->cocurricular }}</small></td>
-        <td><small>{{ $application->hobby }}</small></td>
-        <td><small>{{ $application->othersocieties }}</small></td>
-        <td>{{ $application->payment_method }}<br/>{{ $application->trxid }}</td>
-        <td>
-          @if($application->status == 1)
-            Active
-          @else
-            Pending
-          @endif
-        </td>
-        <td>
-          @if($application->image != null && file_exists(public_path('images/members/' . $application->image)))
-          <img src="{{ public_path('images/members/'.$application->image)}}" style="height: 50px; width: auto;" />
-          @else
-          <img src="{{ public_path('images/user.png')}}" style="height: 50px; width: auto;" />
-          @endif
-        </td>
+        <td colspan="2">Name: {{ $application->name }}</td>
       </tr>
-      @endforeach
+      <tr>
+        <td>Department: {{ $application->dept }}</td>
+        <td>Hall: {{ $application->hall }}</td>
+      </tr>
     </tbody>
-  </table><br/>
+  </table>
 
   <htmlpageheader name="page-header">
     <table>

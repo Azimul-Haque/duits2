@@ -23,7 +23,7 @@
     <section class="wow fadeIn">
         <div class="container">
             <div class="row">
-              <div class="col-md-8">
+              <div class="col-md-12">
                 <div class="login-box">
                   <form action="{{ route('application.store') }}" method="post" enctype='multipart/form-data' data-parsley-validate="">
                       {!! csrf_field() !!}
@@ -31,21 +31,19 @@
                         <h2>Registration Form</h2><br/>
                       </center>
                       <div class="row">
-                        <div class="col-md-6">
+                        <div class="col-md-4">
                           <div class="form-group">
                               <label class="control-label">Name</label>
                               <input type="text" class="form-control" placeholder="Write Your Name" name="name" value="{{ old('name') }}" required="">
                           </div>
                         </div>
-                        <div class="col-md-6">
+                        <div class="col-md-4">
                           <div class="form-group">
                               <label class="control-label">Department</label>
                               <input type="text" class="form-control" placeholder="Department (i.e Economics, Software Engineering)" name="dept" value="{{ old('dept') }}" required="">
                           </div>
                         </div>
-                      </div>
-                      <div class="row">
-                        <div class="col-md-6">
+                        <div class="col-md-4">
                           <div class="form-group">
                             <label class="control-label">Hall</label>
                             <select class="form-control" id="hall" name="hall" required="">
@@ -72,7 +70,9 @@
                             </select>
                           </div>
                         </div>
-                        <div class="col-md-6">
+                      </div>
+                      <div class="row">
+                        <div class="col-md-4">
                           <div class="form-group">
                             <label class="control-label">Residency</label>
                             <select class="form-control" id="residency" name="residency" required="">
@@ -82,9 +82,7 @@
                             </select>
                           </div>
                         </div>
-                      </div>
-                      <div class="row">
-                        <div class="col-md-6">
+                        <div class="col-md-4">
                             <div class="form-group">
                               <label class="control-label">Session</label>
                               <select class="form-control" id="session" name="session" required="">
@@ -98,7 +96,7 @@
                               </select>
                             </div>
                         </div>
-                        <div class="col-md-6">
+                        <div class="col-md-4">
                           <div class="form-group">
                               <label class="control-label">Email Address</label>
                               <input type="email" class="form-control" placeholder="Write Email Address" name="email" value="{{ old('email') }}" required="">
@@ -106,33 +104,52 @@
                         </div>
                       </div>
                       <div class="row">
-                        <div class="col-md-6">
+                        <div class="col-md-4">
                           <div class="form-group">
-                              <label class="control-label">Contact No</label>
+                              <label class="control-label">Contact No (11 digit number)</label>
                               <input type="text" class="form-control" placeholder="Write Your Contact No" name="contact1" value="{{ old('contact1') }}" required>
                           </div>
                         </div>
-                        <div class="col-md-6">
+                        <div class="col-md-4">
                           <div class="form-group">
-                              <label class="control-label">Alternative Contact No</label>
+                              <label class="control-label">Alternative Contact No (11 digit number)</label>
                               <input type="text" class="form-control" placeholder="Write an Alternative Contact No" name="contact2" value="{{ old('contact2') }}" required>
                           </div>
                         </div>
-                      </div>
-                      <div class="row">
-                        <div class="col-md-6">
+                        <div class="col-md-4">
                           <div class="form-group">
                               <label class="control-label">Date of Birth</label>
                               <input type="text" class="form-control" placeholder="Date of Birth" id="dob" name="dob" data-field="date" value="{{ old('dob') }}" autocomplete="off" required>
                           </div>
                         </div>
-                        <div class="col-md-6">
-                          <div class="form-group">
-                              <label class="control-label">Address:</label>
-                              <input type="text" class="form-control" placeholder="" required name="address" value="{{ old('address') }}">
+                      </div>
+                      <div class="row">
+                        <div class="col-md-4">
+                          <label class="control-label">Blood Group</label>
+                          <select class="form-control" id="bloodgroup" name="bloodgroup" required="">
+                              <option value="" selected="" disabled="">Select Blood Group</option>
+                              <option value="A+">A+</option>
+                              <option value="A-">A-</option>
+                              <option value="B+">B+</option>
+                              <option value="B-">B-</option>
+                              <option value="AB+">AB+</option>
+                              <option value="AB-">AB-</option>
+                              <option value="O+">O+</option>
+                              <option value="O-">O-</option>
+                          </select>
+                        </div>
+                        <div class="col-md-4">
+                          <div class="form-group no-margin-bottom">
+                              <label><strong>Photo (300 X 300 &amp; 200Kb Max):</strong></label>
+                              <input type="file" id="image" name="image" required="">
                           </div>
                         </div>
+                        <div class="col-md-4">
+                          <img src="{{ asset('images/user.png')}}" id='img-upload' style="height: 80px; width: 80px; " />
+                        </div>
                       </div>
+
+
                       <div class="row">
                         <div class="col-md-6">
                           <div class="form-group">
@@ -154,25 +171,13 @@
                               <input type="text" class="form-control" placeholder="" required name="emergencycontact" value="{{ old('emergencycontact') }}" pattern="\d*" maxlength="11">
                           </div>
                         </div>
-                        <div class="col-md-6">
-                          <div class="row">
-                            <div class="col-md-8">
-                                <div class="form-group no-margin-bottom">
-                                    <label><strong>Photo (300 X 300 &amp; 200Kb Max):</strong></label>
-                                    <input type="file" id="image" name="image" required="">
-                                </div>
-                            </div>
-                            <div class="col-md-4">
-                              <img src="{{ asset('images/user.png')}}" id='img-upload' style="height: 80px; width: auto; padding: 5px;" />
-                            </div>
-                          </div>
-                        </div>
+                        
                       </div>
                       <button class="btn highlight-button-dark btn-bg btn-round margin-five no-margin-right" type="submit"><i class="fa fa-arrow-right"></i> Next</button>
                   </form>
                 </div>
               </div>
-              <div class="col-md-4">
+              {{-- <div class="col-md-4">
                 <div class="login-box">
                   <center>
                     <h2>Call For Participation 2019</h2><br/>
@@ -188,7 +193,7 @@
                     <button class="btn highlight-button-dark btn-bg btn-round margin-five" id="btn_check" type="button"><i class="fa fa-search"></i> Check Status</button>
                   </center>
                 </div>
-              </div>
+              </div> --}}
             </div>
         </div>
         <div id="dtBox"></div>
@@ -244,9 +249,9 @@
           var imagewidth = this.width;
           var imageheight = this.height;
           filesize = parseInt((file.size / 1024));
-          if(filesize > 300) {
+          if(filesize > 200) {
             $("#image").val('');
-            toastr.warning('Filesize: '+filesize+' KB. Please upload within 300KB', 'WARNING').css('width', '400px;');
+            toastr.warning('Filesize: '+filesize+' KB. Please upload within 200KB', 'WARNING').css('width', '400px;');
             setTimeout(function() {
               $("#img-upload").attr('src', '{{ asset('images/user.png') }}');
             }, 1000);
@@ -271,23 +276,5 @@
       }
     });
   });
-
-  $('#btn_check').click(function() {
-    var registration_id = $('#id_to_check').val();
-    if(isEmptyOrSpaces(registration_id)) {
-      if($(window).width() > 768) {
-        toastr.warning('Write something on search box!', 'WARNING').css('width', '400px');
-      } else {
-        toastr.warning('Write something on search box!', 'WARNING').css('width', ($(window).width()-25)+'px');
-      }
-    } else {
-      window.location.href = '/application/payorcheck/' + registration_id;
-    }
-  });
-
-  // on enter search
-  function isEmptyOrSpaces(str){
-      return str === null || str.match(/^ *$/) !== null;
-  }
   </script>
 @endsection

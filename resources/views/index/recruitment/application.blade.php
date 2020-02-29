@@ -83,7 +83,7 @@
                                 <option value="Haji Muhammad Mohsin Hall">Haji Muhammad Mohsin Hall</option>
                                 <option value="Jagannath Hall">Jagannath Hall</option>
                                 <option value="Bangabandhu Sheikh Mujibur Rahman Hall">Bangabandhu Sheikh Mujibur Rahman Hall</option>
-                                <option value="Kobi Jasimuddin Hall">Kobi Jasimuddin Hall</option>
+                                <option value="Kabi Jasimuddin Hall">Kabi Jasimuddin Hall</option>
                                 <option value="Kabi Sufia Kamal Hall">Kabi Sufia Kamal Hall</option>
                                 <option value="Muktijoddha Ziaur Rahman Hall">Muktijoddha Ziaur Rahman Hall</option>
                                 <option value="Ruqayyah Hall">Ruqayyah Hall</option>
@@ -92,6 +92,11 @@
                                 <option value="Shamsun Nahar Hall">Shamsun Nahar Hall</option>
                                 <option value="Sir A F Rahman Hall">Sir A F Rahman Hall</option>
                                 <option value="Masterda Surja Sen Hall">Masterda Surja Sen Hall</option>
+                                <option value="Shahnewsaz Hostel">Shahnewsaz Hostel</option>
+                                <option value="IBA Hostel">IBA Hostel</option>
+                                <option value="Nawab Faizunnessa Chowdhurani Chhatrinibash">Nawab Faizunnessa Chowdhurani Chhatrinibash</option>
+                                <option value="Dr. Qudrat-E-Khuda Hostel">Dr. Qudrat-E-Khuda Hostel</option>
+                                <option value="Shahid Athlet Sultana Kamal Hostel">Shahid Athlet Sultana Kamal Hostel</option>
                                 <option value="Sir P.J. Hartog International Hall">Sir P.J. Hartog International Hall</option>
                             </select>
                           </div>
@@ -116,7 +121,7 @@
                                   @php
                                     $current_year = date('Y');
                                   @endphp
-                                  @for($current_year; $current_year > 2000; $current_year--)
+                                  @for($current_year; $current_year > 2017; $current_year--)
                                     <option value="{{ $current_year }}-{{ $current_year + 1 }}">{{ $current_year }}-{{ $current_year + 1 }}</option>
                                   @endfor
                               </select>
@@ -188,7 +193,7 @@
                         <div class="col-md-3">
                           <div class="form-group">
                               <label class="control-label">Contact No of Father</label>
-                              <input type="text" class="form-control" placeholder="Father's Contact No" name="fcontact" value="{{ old('fcontact') }}" pattern="\d*" maxlength="11" required>
+                              <input type="text" class="form-control" placeholder="Father's Contact No" name="fcontact" value="{{ old('fcontact') }}" pattern="\d*" maxlength="11">
                           </div>
                         </div>
                         <div class="col-md-3">
@@ -200,7 +205,7 @@
                         <div class="col-md-3">
                           <div class="form-group">
                               <label class="control-label">Contact No of Mother</label>
-                              <input type="text" class="form-control" placeholder="Mother's Contact No" name="mcontact" value="{{ old('mcontact') }}" pattern="\d*" maxlength="11" required>
+                              <input type="text" class="form-control" placeholder="Mother's Contact No" name="mcontact" value="{{ old('mcontact') }}" pattern="\d*" maxlength="11">
                           </div>
                         </div>
                       </div>
@@ -253,19 +258,13 @@
                               <textarea class="form-control" placeholder="Why do you want to be a member of DUITS" name="reason" value="{{ old('reason') }}" required=""></textarea>
                           </div>
                         </div>
-                        <div class="col-md-4">
-                          <div class="form-group">
-                              <label class="control-label">Social Network Use</label>
-                              <input type="text" class="form-control" placeholder="Social Networks (i.e. Facebook, Instagram)" name="socialnets" value="{{ old('socialnets') }}" required="">
-                          </div>
-                        </div>
-                        <div class="col-md-4">
+                        <div class="col-md-6">
                           <div class="form-group">
                               <label class="control-label">Blogs You Visits Usually</label>
                               <input type="text" class="form-control" placeholder="Blogs You Visits Usually" name="blogs" value="{{ old('blogs') }}" required="">
                           </div>
                         </div>
-                        <div class="col-md-4">
+                        <div class="col-md-6">
                           <div class="form-group">
                               <label class="control-label">Member of Other Societies of DU</label>
                               <input type="text" class="form-control" placeholder="i.e. DUPS, DUFS, DUCS" name="othersocieties" value="{{ old('othersocieties') }}" required="">

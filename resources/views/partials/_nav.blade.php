@@ -65,7 +65,7 @@
                             </a>
                             <ul id="activities_dropdown" class="dropdown-menu panel-collapse collapse" role="menu">
                                 <li>
-                                    <a href="{{ route('ongoingactivities.recruitment') }}" title="Recruitment Application">Membership</a>
+                                    <a href="{{ route('ongoingactivities.recruitment') }}" title="Recruitment Application">Member Recruitment</a>
                                 </li>
                                 <li>
                                     <a href="{{ route('index.application') }}" title="6th DUITS National Campus IT Fest">6th IT Fest</a>

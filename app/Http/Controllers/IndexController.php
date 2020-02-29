@@ -352,9 +352,9 @@ class IndexController extends Controller
             'dob'                       => 'required',
             'bloodgroup'                => 'required',
             'father'                    => 'required|max:255',
-            'fcontact'                  => 'required|numeric',
+            'fcontact'                  => 'sometimes|numeric',
             'mother'                    => 'required|max:255',
-            'mcontact'                  => 'required|numeric',
+            'mcontact'                  => 'sometimes|numeric',
             'ssc'                       => 'required|max:255',
             'ssc_passing_year'          => 'required|max:255',
             'hsc'                       => 'required|max:255',
@@ -362,9 +362,8 @@ class IndexController extends Controller
             'cocurricular'              => 'required|max:255',
             'hobby'                     => 'required|max:255',
             'reason'                    => 'required',
-            'socialnets'                => 'required|max:255',
             'blogs'                     => 'required|max:255',
-            'othersocieties'            => 'required|max:255',
+            'othersocieties'            => 'sometimes|max:255',
             'image'                     => 'required|image|max:200',
             'payment_method'            => 'required|max:255',
             'trxid'                     => 'required|max:255'
@@ -394,7 +393,6 @@ class IndexController extends Controller
         $application->cocurricular = htmlspecialchars(preg_replace("/\s+/", " ", $request->cocurricular));
         $application->hobby = htmlspecialchars(preg_replace("/\s+/", " ", $request->hobby));
         $application->reason = htmlspecialchars(preg_replace("/\s+/", " ", $request->reason));
-        $application->socialnets = htmlspecialchars(preg_replace("/\s+/", " ", $request->socialnets));
         $application->blogs = htmlspecialchars(preg_replace("/\s+/", " ", $request->blogs));
         $application->othersocieties = htmlspecialchars(preg_replace("/\s+/", " ", $request->othersocieties));
 

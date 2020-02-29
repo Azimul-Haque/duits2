@@ -464,11 +464,11 @@ class DashboardController extends Controller
 
     public function getRecruitmentApplicationSiglePDF($id)
     {
-        // $applications = Application::orderBy('id', 'desc')->get();
+        $application = Member::find($id);
         
-        // $pdf = PDF::loadView('dashboard.pdfapplications', ['applications' => $applications], [] ,['mode' => 'utf-8', 'format' => 'A4-L']);
-        // $fileName = 'IT_Fest_Participants_List.pdf';
-        // return $pdf->download($fileName);
+        $pdf = PDF::loadView('dashboard.recruitment.pdf.singleapplicaiton', ['application' => $application]);
+        $fileName = 'DUITS_Member_' . $application->member_id . '.pdf';
+        return $pdf->stream($fileName);
     }
 
     public function approveRecruitmentApplication(Request $request, $id)

@@ -49,7 +49,10 @@
             <div class="row">
               <div class="col-md-12">
                 <div class="login-box">
-                  <form action="{{ route('ongoingactivities.recruitment.store') }}" method="post" enctype='multipart/form-data' data-parsley-validate="">
+                  <center>
+                    <h2>Registration is closed!</h2>
+                  </center>
+                  {{-- <form action="{{ route('ongoingactivities.recruitment.store') }}" method="post" enctype='multipart/form-data' data-parsley-validate="">
                       {!! csrf_field() !!}
                       <center>
                         <h2>Registration Form</h2><br/>
@@ -293,7 +296,7 @@
                       </div>
 
                       <button class="btn highlight-button-dark btn-bg btn-round margin-five no-margin-right" type="submit"><i class="fa fa-arrow-right"></i> Next</button>
-                  </form>
+                  </form> --}}
                 </div>
               </div>
             </div>

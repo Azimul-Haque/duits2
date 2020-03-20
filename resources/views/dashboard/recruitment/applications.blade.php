@@ -17,7 +17,7 @@
 
 @section('content_header')
     <h1>
-      Recrtuiment Applications (Total <b>{{ $applications->count() }}</b> Applications)
+      Recrtuiment Applications (Total <b>{{ $totalapplications }}</b> Applications)
       <div class="pull-right">
         <a class="btn btn-primary" href="{{ route('dashboard.recruitment.applications.pdf') }}"><i class="fa fa-fw fa-download" aria-hidden="true"></i> Download List</a>
         <a class="btn btn-success" href="{{ route('ongoingactivities.recruitment') }}" target="_blank"><i class="fa fa-fw fa-plus" aria-hidden="true"></i> Register New Member</a>

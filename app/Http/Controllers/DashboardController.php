@@ -449,8 +449,11 @@ class DashboardController extends Controller
     public function getRecruitmentApplications()
     {
         $applications = Member::orderBy('id', 'desc')->paginate(10);
+        $totalapplications = Member::count();
 
-        return view('dashboard.recruitment.applications')->withApplications($applications);
+        return view('dashboard.recruitment.applications')
+                            ->withApplications($applications)
+                            ->withTotalapplications($totalapplications);
     }
 
     public function getRecruitmentApplicationPDF()

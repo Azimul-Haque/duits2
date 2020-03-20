@@ -55,12 +55,12 @@
     <thead>
       <tr>
         <th width="15%">Name</th>
-        <th>Application ID</th>
+        <th>App. ID</th>
         <th>DU Data</th>
         <th>Contact</th>
         <th>Co-curricular</th>
         <th>Hobby</th>
-        <th>Other DU Societies</th>
+        <th>Societies</th>
         <th>Payment</th>
         <th>Status</th>
         <th>Photo</th>

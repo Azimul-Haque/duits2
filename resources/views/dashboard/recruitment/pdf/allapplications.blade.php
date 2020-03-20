@@ -70,13 +70,13 @@
       @foreach($applications as $application)
       <tr>
         <td>{{ $application->name }}</td>
-        <td><big><b>{{ $application->member_id }}</b></big></td>
+        <td><b>{{ $application->member_id }}</b></td>
         <td><small>{{ $application->dept }},<br/>{{ $application->hall }}</small></td>
         <td><small>{{ $application->contact1 }}, {{ $application->contact1 }},<br/>{{ $application->email }}</small></td>
         <td><small>{{ $application->cocurricular }}</small></td>
         <td><small>{{ $application->hobby }}</small></td>
         <td><small>{{ $application->othersocieties }}</small></td>
-        <td>{{ $application->payment_method }}<br/>{{ $application->trxid }}</td>
+        <td><small>{{ $application->payment_method }}<br/>{{ $application->trxid }}<small></td>
         <td>
           @if($application->status == 1)
             Active

@@ -76,6 +76,7 @@
                                     <img src="{{ asset('images/aamarpay.png') }}" class="img-responsive">
                                     {!! 
                                     aamarpay_post_button([
+                                        'tran_id'   => 'rifat' . random_string(10),
                                         'cus_name'  => $application->team,
                                         'cus_email' => $application->email,
                                         'cus_phone' => $application->mobile,

@@ -26,7 +26,8 @@ class PaymentController extends Controller
         $amount_request = $request->get('opt_b');
         $amount_paid = $request->get('amount');
         
-        if($amount_paid == $amount_request) {
+        if($amount_paid == $amount_request)
+        {
           $registration = Application::where('registration_id', $registration_id)->first();
           $registration->trxid = $request->get('pg_txnid');
           $registration->payment_status = 1;

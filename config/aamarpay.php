@@ -1,8 +1,8 @@
 <?php
 
 return [
-    'store_id' => 'sererl',
-    'signature_key' => '3c831409a577666bd9c49b6a46473acc',
+    'store_id' => 'duits',
+    'signature_key' => '4170582cc27b67e484153f90131bcf05',
     'sandbox' => false,
     'redirect_url' => [
         'success' => [
